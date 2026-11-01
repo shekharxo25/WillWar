@@ -13,6 +13,7 @@ const OWN_TABLES = [
   ["shields", "user_id"],
   ["affirmations", "user_id"],
   ["entitlements", "user_id"],
+  ["season_orders", "user_id"],
   ["war_chests", "user_id"],
   ["season_members", "user_id"],
   ["push_subscriptions", "user_id"],

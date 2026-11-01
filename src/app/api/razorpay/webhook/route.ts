@@ -7,12 +7,14 @@ import { getAdminSupabase } from "@/lib/supabase/admin";
 
 // The only path that changes entitlements or activates/refunds a War Chest stake.
 // Signature verified over the raw body; idempotent by event id; amounts are re-checked by
-// the database against the stored chest, never trusted from the client.
+// the database against the stored season order or chest, never trusted from the client.
 const notes = z.record(z.string(), z.unknown()).optional().default({});
 const event = z.object({
   event: z.string(),
   payload: z.object({
-    payment: z.object({ entity: z.object({ id: z.string(), amount: z.number(), currency: z.string(), notes }) }).optional(),
+    payment: z
+      .object({ entity: z.object({ id: z.string(), order_id: z.string().nullish(), amount: z.number(), currency: z.string(), notes }) })
+      .optional(),
     subscription: z.object({ entity: z.object({ id: z.string(), current_end: z.number().nullish(), notes }) }).optional(),
     refund: z.object({ entity: z.object({ id: z.string(), amount: z.number(), notes }) }).optional(),
   }),
@@ -54,20 +56,30 @@ export async function POST(request: Request) {
 
     if (name === "payment.captured" && payload.payment) {
       const p = payload.payment.entity;
-      if (p.notes.kind === "season") {
-        const user = uuid.safeParse(p.notes.user_id);
-        if (!user.success) return log(name, "bad_user"), ok({ ignored: "user" });
-        const { data: prof } = await admin.from("profiles").select("timezone").eq("id", user.data).maybeSingle();
-        const end = seasonPassEnd(new Date(), (prof?.timezone as string | undefined) ?? "Asia/Kolkata");
-        const { error } = await admin.rpc("upsert_entitlement", {
-          p_user: user.data,
-          p_plan: "season",
-          p_status: "active",
-          p_period_end: end.toISOString(),
-          p_provider_ref: p.id,
-        });
-        if (error) throw new Error("entitlement_failed");
-        return log(name, "season_active"), ok({ ok: true });
+      // Season pass: the user, amount and currency come from the order stored at checkout.
+      // Payment notes can be set in the browser, so they only route; they never identify anyone.
+      let order: { user_id: string } | null = null;
+      if (p.order_id) {
+        const found = await admin.from("season_orders").select("user_id").eq("order_id", p.order_id).maybeSingle();
+        if (found.error) throw new Error("order_lookup_failed");
+        order = found.data as { user_id: string } | null;
+      }
+      if (order || p.notes.kind === "season") {
+        if (order && p.order_id) {
+          const { data: prof } = await admin.from("profiles").select("timezone").eq("id", order.user_id).maybeSingle();
+          const end = seasonPassEnd(new Date(), (prof?.timezone as string | undefined) ?? "Asia/Kolkata");
+          const { error } = await admin.rpc("activate_season_order", {
+            p_order: p.order_id,
+            p_payment_ref: p.id,
+            p_amount_minor: p.amount,
+            p_currency: p.currency,
+            p_period_end: end.toISOString(),
+          });
+          if (!error) return log(name, "season_active"), ok({ ok: true });
+        }
+        // An unknown order or a mismatch is logged and alerted, never trusted; 200 stops Razorpay retrying.
+        console.error(JSON.stringify({ route: "razorpay/webhook", alert: "season_rejected", order: p.order_id ?? null }));
+        return ok({ ignored: "season_rejected" });
       }
       if (p.notes.kind === "war_chest") {
         const chest = uuid.safeParse(p.notes.war_chest_id);

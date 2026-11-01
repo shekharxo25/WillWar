@@ -40,6 +40,8 @@ describe("RLS gate", () => {
          ('public.activate_stake_chest(uuid,text,int,text)'),
          ('public.record_refund(uuid,text,int)'),
          ('public.settle_due_war_chests()'),
+         ('public.create_season_order(text,uuid,int,text)'),
+         ('public.activate_season_order(text,text,int,text,timestamptz)'),
          ('public.grant_shield(uuid,text)')) f(sig)
        where has_function_privilege('authenticated', f.sig, 'execute')
           or has_function_privilege('anon', f.sig, 'execute')`,

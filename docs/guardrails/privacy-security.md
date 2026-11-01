@@ -23,7 +23,7 @@ Anything not on this list doesn't get stored. Adding a row needs founder approva
 | Urge sessions (game, duration, intensity) | `urge_sessions` | Personal stats | 24 months |
 | Morning lines | `affirmations` | Cache | 90 days |
 | Pact membership, challenges, preset nudges | pact tables | Social | Until deletion; nudges 90 days |
-| Entitlements, payment references | `entitlements` | Pro access | As tax law requires |
+| Entitlements, payment references, season pass orders | `entitlements`, `season_orders` | Pro access; checking each payment against the order the server created | As tax law requires |
 | Push subscription endpoints | `push_subscriptions` | Reminders | Until unsubscribed or 410 |
 | Goal end date, pledge timestamp | `goals` | Challenge window, War Chest eligibility | Until deletion |
 | War Chest amount, rule, cause, status, payment and refund references, events | `war_chests`, `war_chest_events` | The commitment and its refund | Until deletion (an active stake is refunded first) |

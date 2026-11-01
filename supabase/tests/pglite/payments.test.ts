@@ -45,6 +45,52 @@ describe("entitlements", () => {
   });
 });
 
+describe("season pass orders (server-only)", () => {
+  const S = "00000000-0000-4000-8000-0000000000a2";
+  const activate = (order: string, pay: string, amount: number, currency = "INR") =>
+    db.query("select public.activate_season_order($1, $2, $3, $4, now() + interval '29 days')", [order, pay, amount, currency]);
+  const plan = async () =>
+    (await db.query<{ plan: string; provider_ref: string }>("select plan, provider_ref from public.entitlements where user_id = $1", [S])).rows;
+
+  beforeAll(async () => {
+    await addUser(db, S);
+    await asUser(db, S, (tx) => onboard(tx, "season_buyer"));
+    await db.query("select public.create_season_order('order_s1', $1, 14900, 'INR')", [S]);
+  });
+
+  it("rejects an unknown order, a short payment or the wrong currency", async () => {
+    expect(await raises(activate("order_forged", "pay_f", 14900))).toMatch(/unknown_order/);
+    expect(await raises(activate("order_s1", "pay_cheap", 100))).toMatch(/amount_mismatch/);
+    expect(await raises(activate("order_s1", "pay_usd", 14900, "USD"))).toMatch(/amount_mismatch/);
+    expect(await plan()).toEqual([]);
+  });
+
+  it("grants the season pass to the order's owner on the exact amount", async () => {
+    await activate("order_s1", "pay_s1", 14900);
+    expect(await plan()).toEqual([{ plan: "season", provider_ref: "pay_s1" }]);
+    const o = await db.query<{ status: string }>("select status from public.season_orders where order_id = 'order_s1'");
+    expect(o.rows[0].status).toBe("paid");
+  });
+
+  it("accepts the same payment again but not a second payment on a paid order", async () => {
+    await activate("order_s1", "pay_s1", 14900);
+    expect(await raises(activate("order_s1", "pay_s2", 14900))).toMatch(/already_paid/);
+  });
+
+  it("people read only their own orders and can't write any", async () => {
+    const own = await asUser(db, S, (tx) => tx.query("select order_id from public.season_orders"));
+    expect(own.rows).toHaveLength(1);
+    const other = await asUser(db, P, (tx) => tx.query("select order_id from public.season_orders"));
+    expect(other.rows).toHaveLength(0);
+    expect(
+      await raises(asUser(db, P, (tx) => tx.query("insert into public.season_orders (order_id, user_id, amount_minor, currency) values ('o', $1, 1, 'INR')", [P]))),
+    ).toMatch(/permission denied/);
+    expect(await raises(asUser(db, P, (tx) => tx.query("select public.create_season_order('o2', $1, 1, 'INR')", [P])))).toMatch(
+      /permission denied/,
+    );
+  });
+});
+
 describe("War Chest stake (server-only)", () => {
   let chest = "";
 

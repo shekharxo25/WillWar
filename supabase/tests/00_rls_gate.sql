@@ -18,7 +18,9 @@ select is(
      ('public.create_stake_chest(uuid,int,text,text,text)'),
      ('public.activate_stake_chest(uuid,text,int,text)'),
      ('public.record_refund(uuid,text,int)'),
-     ('public.settle_due_war_chests()')) f(sig)
+     ('public.settle_due_war_chests()'),
+     ('public.create_season_order(text,uuid,int,text)'),
+     ('public.activate_season_order(text,text,int,text,timestamptz)')) f(sig)
    where has_function_privilege('authenticated', f.sig, 'execute')
       or has_function_privilege('anon', f.sig, 'execute')),
   0, 'money-moving functions are server-only');
