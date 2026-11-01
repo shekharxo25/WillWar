@@ -52,7 +52,7 @@ export function Toggle({ checked, onChange, label }: { checked: boolean; onChang
       aria-checked={checked}
       aria-label={label}
       onClick={() => onChange(!checked)}
-      className={`relative h-[31px] w-[51px] shrink-0 rounded-full transition-colors duration-[180ms] ${checked ? "bg-lamp-go" : "bg-[var(--hairline)]"}`}
+      className={`relative h-[31px] w-[51px] shrink-0 rounded-full transition-colors duration-[180ms] ${checked ? "bg-lamp-go" : "bg-[var(--text-3)]"}`}
     >
       <span className={`absolute top-[2px] h-[27px] w-[27px] rounded-full bg-[var(--knob)] transition-transform duration-[180ms] ${checked ? "translate-x-[22px]" : "translate-x-[2px]"}`} />
     </button>

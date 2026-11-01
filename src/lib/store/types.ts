@@ -157,6 +157,7 @@ export interface Store {
   saveUrgeSession(s: Omit<UrgeSession, "id">): Promise<void>;
   updatePreferences(p: Preferences): Promise<void>;
   startGoal(endsOn: string | null, seasonId: string | null): Promise<void>;
+  changeEndDate(endsOn: string): Promise<void>;
   warChestOfferEligible(): Promise<boolean>;
   markWarChestOffered(): Promise<void>;
   createPromiseChest(amountMinor: number, currency: "INR" | "USD", rule: "steady" | "strict", causeId: string): Promise<void>;

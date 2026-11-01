@@ -58,7 +58,7 @@ export function Sheet({
           <div className="no-select flex h-6 shrink-0 cursor-grab items-center justify-center touch-none" onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}>
             <div className="h-[5px] w-9 rounded-full bg-[var(--text-3)]" aria-hidden />
           </div>
-          <div className="overflow-y-auto px-4 pb-6 sm:px-5">
+          <div className="sheet-body overflow-y-auto px-4 pb-6 sm:px-5">
             <Dialog.Title className="display text-[28px] leading-[30px]">{title}</Dialog.Title>
             {description ? (
               <Dialog.Description className="mt-2 text-[17px] leading-[22px] text-text-2">{description}</Dialog.Description>

@@ -78,3 +78,4 @@ input, select, textarea { font-size: max(16px, 1em); }
 }
 
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 180ms; animation-timing-function: var(--ease-mech); }
+.sheet-body .btn-secondary { background: var(--bg); }

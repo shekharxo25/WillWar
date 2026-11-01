@@ -76,6 +76,9 @@ export const deviceStore: Store = {
   async startGoal(endsOn, seasonId) {
     apply((s, now) => E.startGoal(s, endsOn, seasonId, now));
   },
+  async changeEndDate(endsOn) {
+    apply((s, now) => E.changeEndDate(s, endsOn, now));
+  },
   async warChestOfferEligible() {
     return E.warChestOfferEligible(must(), new Date());
   },

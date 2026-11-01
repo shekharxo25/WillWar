@@ -3,6 +3,7 @@ import { elapsed, shortDate } from "@/lib/time";
 import { Housing } from "./Housing";
 import { Lamps } from "./Lamps";
 import { LedReadout } from "./LedReadout";
+import { FitWidth } from "./FitWidth";
 
 /**
  * The signature: a gym interval timer. Computes from timestamps every render
@@ -44,19 +45,19 @@ export function Clock({
       <Housing className="mt-3 px-4 pb-4 pt-6" style={housingStyle}>
         <div className="flex items-center gap-4">
           <Lamps go={!preseason && checkedIn} warn={preseason || !checkedIn} red={roundActive} />
-          <div className="min-w-0 flex-1 overflow-hidden">
-            <div className="origin-left scale-[0.86] min-[380px]:scale-100">
+          <div className="min-w-0 flex-1">
+            <FitWidth>
               <LedReadout
                 groups={groups}
                 labels={["d", "h", "m", "s"]}
-                size={44}
+                size={52}
                 ariaLabel={
                   e
                     ? `${preseason ? "Starts in" : "Streak"} ${e.days} days ${e.hours} hours ${e.minutes} minutes`
                     : "Clock"
                 }
               />
-            </div>
+            </FitWidth>
           </div>
         </div>
       </Housing>

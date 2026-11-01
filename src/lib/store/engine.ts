@@ -226,6 +226,16 @@ export function startGoal(s: DeviceState, endsOn: string | null, seasonId: strin
   return { ...closed, goal };
 }
 
+/** change_goal_end: custom (non-season) goals only; never while a stake is active. */
+export function changeEndDate(s: DeviceState, endsOn: string, now: Date): DeviceState {
+  const t = today(s, now);
+  if (!s.goal || s.goal.closedAt) throw new StoreError("no_open_goal");
+  if (s.goal.seasonId) throw new StoreError("season_goal");
+  if (s.warChest && s.warChest.goalId === s.goal.id && s.warChest.mode === "stake" && s.warChest.status === "active") throw new StoreError("stake_active");
+  if (endsOn <= t || daysBetween(t, endsOn) > 365) throw new StoreError("bad_end_date");
+  return { ...s, goal: { ...s.goal, endsOn } };
+}
+
 /** Part of settle_due_war_chests: goals close after their last local day; promise chests settle. */
 export function closeFinishedGoal(s: DeviceState, now: Date): DeviceState {
   if (!s.goal || s.goal.closedAt) return s;

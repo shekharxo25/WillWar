@@ -133,6 +133,9 @@ export function cloudStore(sb: SupabaseClient): Store {
     async startGoal(endsOn, seasonId) {
       await rpc(sb, "start_goal", { p_ends_on: endsOn, p_season: seasonId });
     },
+    async changeEndDate(endsOn) {
+      await rpc(sb, "change_goal_end", { p_ends_on: endsOn });
+    },
     async warChestOfferEligible() {
       return rpc<boolean>(sb, "war_chest_offer_eligible");
     },
