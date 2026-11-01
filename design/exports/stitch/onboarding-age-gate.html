@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>WillWar - Age Verification</title>
+<!-- Fonts: Geist & Epilogue for editorial rigor -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Geist:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#a8edff",
+            "tertiary-fixed": "#c3e8ff",
+            "surface-bright": "#f9f9fe",
+            "tertiary-container": "#4e7a92",
+            "on-secondary": "#ffffff",
+            "secondary": "#006878",
+            "surface-dim": "#d9dade",
+            "on-primary-fixed-variant": "#604100",
+            "on-secondary-container": "#066c7d",
+            "on-surface": "#1a1c1f",
+            "tertiary-fixed-dim": "#a0cce7",
+            "inverse-on-surface": "#f0f0f5",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#4f4537",
+            "outline": "#827565",
+            "inverse-primary": "#f6bd5d",
+            "secondary-container": "#9eecff",
+            "surface-container-highest": "#e2e2e7",
+            "surface-tint": "#7f5700",
+            "on-secondary-fixed": "#001f26",
+            "on-primary-fixed": "#281900",
+            "on-tertiary-fixed": "#001e2c",
+            "primary-fixed": "#ffdead",
+            "on-primary-container": "#fffbff",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "surface-container-high": "#e8e8ed",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f3f3f8",
+            "primary-container": "#9a6c0f",
+            "inverse-surface": "#2e3034",
+            "surface-variant": "#e2e2e7",
+            "secondary-fixed-dim": "#84d2e5",
+            "primary": "#7c5400",
+            "error": "#ba1a1a",
+            "outline-variant": "#d3c4b1",
+            "tertiary": "#356178",
+            "surface-container": "#ededf2",
+            "on-secondary-fixed-variant": "#004e5b",
+            "on-tertiary-container": "#fbfcff",
+            "surface": "#f9f9fe",
+            "on-background": "#1a1c1f",
+            "primary-fixed-dim": "#f6bd5d",
+            "background": "#f9f9fe"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin-desktop": "3rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.25rem",
+            "margin-tablet": "2rem",
+            "space-sm": "0.5rem",
+            "margin": "1.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Geist", "sans-serif"],
+            "body-lg": ["Geist", "sans-serif"],
+            "headline-lg-mobile": ["Epilogue", "sans-serif"],
+            "telemetry-num": ["Geist", "monospace"],
+            "title-md": ["Geist", "sans-serif"],
+            "label-md": ["Geist", "sans-serif"],
+            "headline-lg": ["Epilogue", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "display": ["Epilogue", "sans-serif"],
+            "headline-sm": ["Epilogue", "sans-serif"],
+            "headline-md": ["Epilogue", "sans-serif"]
+          },
+          "fontSize": {
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+            "body-lg": ["1.0625rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "telemetry-num": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+            "display": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.625rem", "fontWeight": "500" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Wheel Picker Specific Refinements */
+    .wheel-column {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-snap-type: y mandatory;
+    }
+    .wheel-column::-webkit-scrollbar {
+      display: none;
+    }
+    .wheel-item {
+      scroll-snap-align: center;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .picker-gradient-overlay {
+      pointer-events: none;
+      background: linear-gradient(
+        180deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.4) 28%, 
+        rgba(255, 255, 255, 0) 45%, 
+        rgba(255, 255, 255, 0) 55%, 
+        rgba(255, 255, 255, 0.4) 72%, 
+        rgba(255, 255, 255, 0.95) 100%
+      );
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-high flex justify-center items-center min-h-screen text-on-surface antialiased p-0 md:p-6 select-none">
+<!-- iPhone Shell Presentation Frame (393 x 852 native viewport) -->
+<main class="w-full max-w-[393px] h-[884px] max-h-[852px] bg-surface-container-low shadow-2xl md:rounded-[54px] relative flex flex-col justify-between overflow-hidden border border-outline-variant/30">
+<!-- Ambient Instrument Fluid Light Top Reflection -->
+<div class="absolute -top-24 -right-16 w-64 h-64 bg-secondary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/3 -left-28 w-56 h-56 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- iOS Native Status Bar (Light Style) -->
+<header class="pt-3 px-7 flex justify-between items-center z-20 shrink-0">
+<div class="font-telemetry-num text-telemetry-num text-on-surface font-semibold tracking-tight text-[15px]">9:41</div>
+<!-- Hardware Notch Pill (Apple Dynamic Island aesthetic preview) -->
+<div class="w-28 h-[26px] bg-on-surface rounded-full flex items-center justify-end px-2.5 space-x-1.5 shadow-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-dim/40"></div>
+</div>
+<div class="flex items-center space-x-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px] font-semibold" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[17px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="battery_full">battery_full</span>
+</div>
+</header>
+<!-- Top Minimal Brand Bar & Safety Anchor -->
+<div class="px-6 pt-4 pb-2 flex items-center justify-between z-20">
+<div class="flex items-center space-x-2">
+<!-- WillWar Mark / Wave Nautical Instrument Icon -->
+<div class="w-7 h-7 rounded-full bg-surface-container-lowest border border-outline-variant/30 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="waves">waves</span>
+</div>
+<span class="font-headline-sm text-headline-sm tracking-tight text-on-surface text-[15px] font-semibold">WillWar</span>
+</div>
+<!-- Privacy Badge -->
+<div class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/80 border border-outline-variant/30 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[12px] text-secondary" data-icon="lock">lock</span>
+<span>Zero Storage</span>
+</div>
+</div>
+<!-- Main Editorial Content Canvas -->
+<div class="px-6 flex-1 flex flex-col justify-start pt-4 z-10">
+<!-- Brass Telemetry Tag -->
+<div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-primary-fixed/25 border border-primary/20 w-fit mb-3">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="font-label-md text-label-md font-semibold text-primary tracking-wide">VERIFICATION 01</span>
+</div>
+<!-- Large Title -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight mb-2">
+        WillWar is for adults.
+      </h1>
+<!-- Body Copy -->
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+        Enter your date of birth. We use it once to confirm you're 18 or over and don't store it.
+      </p>
+<!-- Date of Birth Wheel Card (Liquid Glass Deck) -->
+<div class="w-full bg-surface-container-lowest/90 backdrop-blur-xl rounded-[24px] border border-outline-variant/40 p-3 shadow-sm relative mb-4">
+<!-- Subtle Instrument Dial Header -->
+<div class="flex justify-between items-center px-4 py-2 border-b border-surface-container-high/60 text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline font-semibold">Day</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline font-semibold">Month</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline font-semibold">Year</span>
+</div>
+<!-- 3-Column iOS Native Wheel Container -->
+<div class="relative h-[190px] w-full flex overflow-hidden">
+<!-- Central Focus Selection Band (Native iOS Style Horizon) -->
+<div class="absolute top-[73px] inset-x-2 h-[44px] bg-secondary-container/20 border-y border-secondary/20 rounded-xl pointer-events-none z-10 flex items-center justify-between px-3">
+<div class="w-1 h-2 rounded-full bg-secondary/40"></div>
+<div class="w-1 h-2 rounded-full bg-secondary/40"></div>
+</div>
+<!-- Vertical Gradient Masks for Natural Roll Deprecation -->
+<div class="absolute inset-0 picker-gradient-overlay z-20 pointer-events-none"></div>
+<!-- Day Column -->
+<div class="wheel-column flex-1 h-full overflow-y-scroll text-center py-[73px] z-0" id="col-day">
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-40">12</div>
+<div class="wheel-item font-body-lg text-body-lg text-on-surface-variant opacity-70">13</div>
+<!-- Focused Active Entry -->
+<div class="wheel-item font-telemetry-num text-[21px] font-semibold text-on-surface">14</div>
+<div class="wheel-item font-body-lg text-body-lg text-on-surface-variant opacity-70">15</div>
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-40">16</div>
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-25">17</div>
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-15">18</div>
+</div>
+<!-- Month Column -->
+<div class="wheel-column flex-[1.4] h-full overflow-y-scroll text-center py-[73px] z-0" id="col-month">
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-40">September</div>
+<div class="wheel-item font-body-lg text-body-lg text-on-surface-variant opacity-70">October</div>
+<!-- Focused Active Entry -->
+<div class="wheel-item font-telemetry-num text-[20px] font-semibold text-on-surface">November</div>
+<div class="wheel-item font-body-lg text-body-lg text-on-surface-variant opacity-70">December</div>
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-40">January</div>
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-25">February</div>
+</div>
+<!-- Year Column -->
+<div class="wheel-column flex-1 h-full overflow-y-scroll text-center py-[73px] z-0" id="col-year">
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-40">1999</div>
+<div class="wheel-item font-body-lg text-body-lg text-on-surface-variant opacity-70">2000</div>
+<!-- Focused Active Entry: 2001 confirms age >= 18 -->
+<div class="wheel-item font-telemetry-num text-[21px] font-semibold text-on-surface">2001</div>
+<div class="wheel-item font-body-lg text-body-lg text-on-surface-variant opacity-70">2002</div>
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-40">2003</div>
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-25">2004</div>
+<div class="wheel-item font-body-lg text-body-lg text-outline-variant opacity-15">2005</div>
+</div>
+</div>
+<!-- Verification Confirmation Micro-chip -->
+<div class="mt-2 pt-2 border-t border-surface-container-high/40 flex items-center justify-center space-x-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-telemetry-num text-[12px] text-secondary font-medium tracking-tight">Verified 23 years of age</span>
+</div>
+</div>
+<!-- Trust Note / Discretion Guarantee -->
+<div class="flex items-start space-x-2.5 px-2 py-1">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5" data-icon="shield">shield</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+          Strictly local validation. No identity databases queried. Your age remains confidential on this physical device.
+        </p>
+</div>
+</div>
+<!-- Bottom Anchor: Helper Callout & Primary Action -->
+<div class="px-6 pb-8 pt-3 bg-surface-container-low/90 backdrop-blur-md flex flex-col space-y-4 z-20">
+<!-- Under-18 Helper / Mental Health Support Footnote -->
+<div class="bg-surface-container-lowest/80 rounded-2xl p-3 border border-outline-variant/30 flex items-start space-x-2.5">
+<span class="material-symbols-outlined text-secondary text-[17px] shrink-0 mt-0.5" data-icon="support_agent">support_agent</span>
+<div class="text-left">
+<p class="font-body-sm text-[12px] leading-[17px] text-on-surface-variant">
+            If you're working on a habit, talk to someone you trust. Tele-MANAS is free and open 24/7 at 
+            <a class="font-semibold text-secondary underline decoration-secondary/30 ml-0.5" href="tel:14416">14416</a>.
+          </p>
+</div>
+</div>
+<!-- Primary Action: Tide Fill (#006878 / #0B6E7F) 50pt Height Pill Button -->
+<button class="w-full h-[50px] bg-secondary active:scale-[0.98] transition-all duration-150 rounded-[14px] flex items-center justify-center shadow-md shadow-secondary/15 group cursor-pointer border border-surface-container-lowest/20" onclick="this.classList.add('opacity-90'); setTimeout(() =&gt; this.classList.remove('opacity-90'), 200);" type="button">
+<span class="font-body-lg text-[17px] font-semibold text-on-secondary tracking-tight">Continue</span>
+<span class="material-symbols-outlined text-on-secondary text-[18px] ml-1.5 transition-transform group-hover:translate-x-0.5" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Native Home Indicator Pill Bar -->
+<div class="w-32 h-1 bg-on-surface/20 rounded-full mx-auto mt-2"></div>
+</div>
+</main>
+<!-- Interactive Scroll Feedback Simulation -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const columns = ['col-day', 'col-month', 'col-year'];
+      
+      columns.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          // Center the default 2001 / November / 14 selection
+          el.scrollTop = 88; 
+          
+          // Subtle iOS haptic style visual opacity adjustments on scroll
+          el.addEventListener('scroll', () => {
+            const items = el.querySelectorAll('.wheel-item');
+            const center = el.scrollTop + 95;
+            items.forEach((item) => {
+              const itemTop = item.offsetTop;
+              const dist = Math.abs(center - itemTop);
+              if (dist < 25) {
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1.04)';
+              } else if (dist < 60) {
+                item.style.opacity = '0.6';
+                item.style.transform = 'scale(0.96)';
+              } else {
+                item.style.opacity = '0.25';
+                item.style.transform = 'scale(0.90)';
+              }
+            });
+          });
+        }
+      });
+    });
+  </script>
+</body></html>

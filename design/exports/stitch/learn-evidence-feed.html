@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>WillWar - Learn</title>
+<!-- Google Fonts: Epilogue & Geist -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#f9f9fe",
+            "primary-container": "#9a6c0f",
+            "on-primary-fixed-variant": "#604100",
+            "on-primary": "#ffffff",
+            "on-surface": "#1a1c1f",
+            "secondary-fixed-dim": "#84d2e5",
+            "surface-container": "#ededf2",
+            "surface-container-low": "#f3f3f8",
+            "on-background": "#1a1c1f",
+            "on-secondary-fixed-variant": "#004e5b",
+            "outline": "#827565",
+            "on-secondary-fixed": "#001f26",
+            "inverse-primary": "#f6bd5d",
+            "on-secondary-container": "#066c7d",
+            "surface-variant": "#e2e2e7",
+            "secondary": "#006878",
+            "on-primary-fixed": "#281900",
+            "primary-fixed-dim": "#f6bd5d",
+            "inverse-surface": "#2e3034",
+            "secondary-fixed": "#a8edff",
+            "surface-tint": "#7f5700",
+            "tertiary-fixed": "#c3e8ff",
+            "secondary-container": "#9eecff",
+            "on-tertiary-fixed": "#001e2c",
+            "on-error": "#ffffff",
+            "tertiary-container": "#4e7a92",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#e2e2e7",
+            "on-surface-variant": "#4f4537",
+            "background": "#f9f9fe",
+            "on-tertiary-container": "#fbfcff",
+            "tertiary": "#356178",
+            "error": "#ba1a1a",
+            "surface-dim": "#d9dade",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#ffdead",
+            "surface-bright": "#f9f9fe",
+            "on-primary-container": "#fffbff",
+            "outline-variant": "#d3c4b1",
+            "surface-container-high": "#e8e8ed",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "inverse-on-surface": "#f0f0f5",
+            "tertiary-fixed-dim": "#a0cce7",
+            "primary": "#7c5400",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "margin": "1.25rem",
+            "space-xl": "2.25rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "margin-desktop": "3rem",
+            "margin-tablet": "2rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Geist"],
+            "headline-lg": ["Epilogue"],
+            "telemetry-num": ["Geist"],
+            "headline-lg-mobile": ["Epilogue"],
+            "body-md": ["Geist"],
+            "title-md": ["Geist"],
+            "label-md": ["Geist"],
+            "headline-sm": ["Epilogue"],
+            "body-sm": ["Geist"],
+            "headline-md": ["Epilogue"],
+            "display": ["Epilogue"]
+          },
+          "fontSize": {
+            "body-lg": ["1.0625rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "telemetry-num": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.625rem", "fontWeight": "500" }],
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 16px);
+    }
+    /* Hide scrollbars for chrome feel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Instrument brass milestone linear button */
+    .brass-burnish-gradient {
+      background: linear-gradient(180deg, #9a6c0f 0%, #7c5400 100%);
+      box-shadow: 0 4px 16px rgba(124, 84, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+    /* Liquid glass backdrop */
+    .liquid-glass {
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      box-shadow: 0 8px 32px rgba(10, 63, 85, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen">
+<!-- Content Shell constrained for hand-held marine fidelity -->
+<div class="max-w-md mx-auto min-h-screen flex flex-col relative bg-surface">
+<!-- Top Fluid Header -->
+<header class="sticky top-0 z-30 pt-12 pb-3 px-5 bg-surface/85 backdrop-blur-xl border-b border-surface-variant/40">
+<div class="flex items-center justify-between mb-3">
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile md:text-headline-lg md:font-headline-lg text-on-surface tracking-tight">
+          Learn
+        </h1>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-surface-container border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="menu_book">menu_book</span>
+<span class="text-label-md font-label-md text-secondary">Library</span>
+</div>
+</div>
+<!-- iOS Utility Search Bar -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 pointer-events-none text-lg" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low/90 rounded-full border border-outline-variant/30 text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-1 focus:ring-secondary focus:bg-surface-container-lowest transition-all" placeholder="Search articles, evidence..." type="text"/>
+</div>
+</header>
+<!-- Filter Chips Row (Horizontally Scrollable) -->
+<nav aria-label="Evidence Filters" class="pt-3 pb-1 px-5 flex items-center gap-2 overflow-x-auto no-scrollbar">
+<!-- 'All' chip: Selected in Tide-wash fill with Tide text -->
+<button class="shrink-0 px-4 py-1.5 rounded-full text-label-md font-label-md bg-secondary-container/50 text-secondary border border-secondary/20 shadow-xs active:scale-95 transition-transform">
+        All
+      </button>
+<!-- 'Strong' chip -->
+<button class="shrink-0 px-4 py-1.5 rounded-full text-label-md font-label-md bg-surface-container-low text-on-surface-variant border border-outline-variant/30 hover:border-secondary/40 active:scale-95 transition-transform flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Strong
+      </button>
+<!-- 'Moderate' chip -->
+<button class="shrink-0 px-4 py-1.5 rounded-full text-label-md font-label-md bg-surface-container-low text-on-surface-variant border border-outline-variant/30 hover:border-secondary/40 active:scale-95 transition-transform flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span>
+        Moderate
+      </button>
+<!-- 'Mixed' chip -->
+<button class="shrink-0 px-4 py-1.5 rounded-full text-label-md font-label-md bg-surface-container-low text-on-surface-variant border border-outline-variant/30 hover:border-secondary/40 active:scale-95 transition-transform">
+        Mixed
+      </button>
+<!-- 'Myth' chip -->
+<button class="shrink-0 px-4 py-1.5 rounded-full text-label-md font-label-md bg-surface-container-low text-on-surface-variant border border-outline-variant/30 hover:border-secondary/40 active:scale-95 transition-transform flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="cancel">cancel</span>
+        Myth
+      </button>
+</nav>
+<!-- Main Content Area: Evidence-graded Article Cards -->
+<main class="flex-1 px-5 pt-4 pb-44 space-y-4">
+<!-- Card 1: Myth Claim -->
+<article class="p-5 bg-surface-container-lowest rounded-DEFAULT border border-surface-variant transition-all hover:border-outline-variant/60 active:scale-[0.99]">
+<div class="flex items-center justify-between mb-3">
+<!-- Evidence Chip: Myth (subtle hairline, strike-through icon, neutral label) -->
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-outline-variant/40 bg-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined text-xs leading-none text-on-surface-variant/80" data-icon="strikethrough_s">strikethrough_s</span>
+<span class="text-label-md font-label-md uppercase tracking-wider text-xs">Myth</span>
+</div>
+<span class="material-symbols-outlined text-outline text-base" data-icon="bookmark_border">bookmark_border</span>
+</div>
+<h2 class="text-title-md font-title-md text-on-surface mb-2 leading-snug">
+          The day-7 testosterone claim, traced to its source
+        </h2>
+<p class="text-body-md font-body-md text-on-surface-variant/90 mb-4">
+          Why the 2001 Zhejiang University study doesn't mean what fitness forums claim it means.
+        </p>
+<div class="pt-3 border-t border-surface-container flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant/70">
+<span>4 min read · Endocrinology</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</article>
+<!-- Card 2: Moderate Claim -->
+<article class="p-5 bg-surface-container-lowest rounded-DEFAULT border border-surface-variant transition-all hover:border-outline-variant/60 active:scale-[0.99]">
+<div class="flex items-center justify-between mb-3">
+<!-- Evidence Chip: Moderate (--tide-wash fill, --tide text) -->
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/40 text-secondary border border-secondary/20">
+<span class="material-symbols-outlined text-xs leading-none text-secondary" data-icon="flaky">flaky</span>
+<span class="text-label-md font-label-md uppercase tracking-wider text-xs">Moderate</span>
+</div>
+<span class="material-symbols-outlined text-outline text-base" data-icon="bookmark_border">bookmark_border</span>
+</div>
+<h2 class="text-title-md font-title-md text-on-surface mb-2 leading-snug">
+          Why one slip turns into a week, and how to stop it
+        </h2>
+<p class="text-body-md font-body-md text-on-surface-variant/90 mb-4">
+          The abstinence violation effect and cognitive framing after a broken commitment.
+        </p>
+<div class="pt-3 border-t border-surface-container flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant/70">
+<span>6 min read · Behavioral psychology</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</article>
+<!-- Card 3: Strong Claim -->
+<article class="p-5 bg-surface-container-lowest rounded-DEFAULT border border-surface-variant transition-all hover:border-outline-variant/60 active:scale-[0.99]">
+<div class="flex items-center justify-between mb-3">
+<!-- Evidence Chip: Strong (--tide fill, white text) -->
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary text-on-secondary shadow-xs">
+<span class="material-symbols-outlined text-xs leading-none" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-md font-label-md uppercase tracking-wider text-xs">Strong</span>
+</div>
+<span class="material-symbols-outlined text-outline text-base" data-icon="bookmark_border">bookmark_border</span>
+</div>
+<h2 class="text-title-md font-title-md text-on-surface mb-2 leading-snug">
+          Three minutes of a puzzle versus a sudden craving
+        </h2>
+<p class="text-body-md font-body-md text-on-surface-variant/90 mb-4">
+          University of Plymouth trial showing visuospatial load interrupts craving imagery.
+        </p>
+<div class="pt-3 border-t border-surface-container flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant/70">
+<span>5 min read · Cognitive load</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</article>
+<!-- Bottom Disclaimer Footnote -->
+<footer class="pt-4 pb-2 px-2 text-center">
+<p class="text-label-md font-label-md text-outline">
+          Not medical advice. Graded against peer-reviewed literature.
+        </p>
+</footer>
+</main>
+<!-- Floating Navigation & Action Container -->
+<div class="fixed bottom-0 inset-x-0 z-50 flex flex-col items-center pointer-events-none max-w-md mx-auto">
+<!-- Persistent 'Ride it out' Pill floating 12pt (16px) above Tab Bar -->
+<div class="pointer-events-auto mb-3 w-full px-7">
+<button class="w-full brass-burnish-gradient py-3.5 px-6 rounded-full flex items-center justify-center gap-2.5 text-on-primary font-title-md text-title-md shadow-md active:scale-95 transition-transform duration-150 group">
+<span class="material-symbols-outlined text-xl transition-transform group-hover:scale-110" data-icon="waves">waves</span>
+<span>Ride it out</span>
+</button>
+</div>
+<!-- Liquid Glass Bottom Tab Bar (as defined in Shared Components JSON) -->
+<nav aria-label="App Navigation" class="pointer-events-auto bg-surface-container-low/85 backdrop-blur-2xl rounded-full mx-auto mb-5 max-w-sm w-[calc(100%-2.5rem)] border border-outline-variant/30 shadow-lg shadow-on-surface/5 flex justify-around items-center px-4 py-2 pb-safe">
+<!-- Today Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95" href="#today">
+<span class="material-symbols-outlined text-2xl" data-icon="waves">waves</span>
+<span class="text-label-md font-label-md mt-0.5">Today</span>
+</a>
+<!-- Pact Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95" href="#pact">
+<span class="material-symbols-outlined text-2xl" data-icon="verified">verified</span>
+<span class="text-label-md font-label-md mt-0.5">Pact</span>
+</a>
+<!-- Learn Tab (ACTIVE MATCH) -->
+<a class="flex flex-col items-center justify-center text-secondary font-semibold px-3 py-1.5 rounded-full bg-secondary-container/30 active:scale-95 transition-transform duration-150" href="#learn">
+<span class="material-symbols-outlined text-2xl" data-icon="menu_book" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="text-label-md font-label-md mt-0.5">Learn</span>
+</a>
+<!-- Me Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95" href="#me">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="text-label-md font-label-md mt-0.5">Me</span>
+</a>
+</nav>
+</div>
+</div>
+</body></html>

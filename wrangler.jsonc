@@ -1,0 +1,37 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "willwar",
+  "compatibility_date": "2026-10-15",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      // Self-reference service binding; must match "name" above.
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "willwar"
+    }
+  ],
+  "r2_buckets": [
+    {
+      // Create before the first deploy: npx wrangler r2 bucket create willwar-opennext-cache
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "willwar-opennext-cache"
+    }
+  ],
+  "images": {
+    "binding": "IMAGES"
+  },
+  "observability": {
+    "enabled": true
+  },
+  // Daily War Chest settlement (docs/guardrails/war-chest.md). The worker's scheduled
+  // handler is not wired by OpenNext; scripts/cron-trigger.md describes calling
+  // /api/cron/war-chest-settle with the CRON_SECRET header from a Cron Trigger worker.
+  "triggers": {
+    "crons": []
+  }
+}

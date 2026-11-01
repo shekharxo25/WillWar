@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>WillWar Onboarding — Identity &amp; Pebble</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#a8edff",
+            "tertiary-fixed": "#c3e8ff",
+            "surface-bright": "#f9f9fe",
+            "tertiary-container": "#4e7a92",
+            "on-secondary": "#ffffff",
+            "secondary": "#006878",
+            "surface-dim": "#d9dade",
+            "on-primary-fixed-variant": "#604100",
+            "on-secondary-container": "#066c7d",
+            "on-surface": "#1a1c1f",
+            "tertiary-fixed-dim": "#a0cce7",
+            "inverse-on-surface": "#f0f0f5",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#4f4537",
+            "outline": "#827565",
+            "inverse-primary": "#f6bd5d",
+            "secondary-container": "#9eecff",
+            "surface-container-highest": "#e2e2e7",
+            "surface-tint": "#7f5700",
+            "on-secondary-fixed": "#001f26",
+            "on-primary-fixed": "#281900",
+            "on-tertiary-fixed": "#001e2c",
+            "primary-fixed": "#ffdead",
+            "on-primary-container": "#fffbff",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "surface-container-high": "#e8e8ed",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f3f3f8",
+            "primary-container": "#9a6c0f",
+            "inverse-surface": "#2e3034",
+            "surface-variant": "#e2e2e7",
+            "secondary-fixed-dim": "#84d2e5",
+            "primary": "#7c5400",
+            "error": "#ba1a1a",
+            "outline-variant": "#d3c4b1",
+            "tertiary": "#356178",
+            "surface-container": "#ededf2",
+            "on-secondary-fixed-variant": "#004e5b",
+            "on-tertiary-container": "#fbfcff",
+            "surface": "#f9f9fe",
+            "on-background": "#1a1c1f",
+            "primary-fixed-dim": "#f6bd5d",
+            "background": "#f9f9fe"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin-desktop": "3rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.25rem",
+            "margin-tablet": "2rem",
+            "space-sm": "0.5rem",
+            "margin": "1.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Geist"],
+            "body-lg": ["Geist"],
+            "headline-lg-mobile": ["Epilogue"],
+            "telemetry-num": ["Geist"],
+            "title-md": ["Geist"],
+            "label-md": ["Geist"],
+            "headline-lg": ["Epilogue"],
+            "body-md": ["Geist"],
+            "display": ["Epilogue"],
+            "headline-sm": ["Epilogue"],
+            "headline-md": ["Epilogue"]
+          },
+          "fontSize": {
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+            "body-lg": ["1.0625rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "telemetry-num": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+            "display": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.625rem", "fontWeight": "500" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Dynamic Pebble Organic Radii Transitions */
+    .pebble-morph {
+      transition: border-radius 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.4s ease;
+    }
+    /* Subsurface Tide Glow */
+    .subsurface-glow {
+      box-shadow: 0 16px 36px -8px rgba(0, 104, 120, 0.28), inset 0 2px 4px rgba(255, 255, 255, 0.45);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim font-body-md text-on-surface antialiased min-h-screen flex items-center justify-center p-0 md:p-6 select-none">
+<!-- iPhone Frame Mockup (393 x 852 physical screen ratio) -->
+<main class="w-full max-w-[393px] h-[852px] bg-background relative flex flex-col justify-between overflow-hidden shadow-2xl md:rounded-[48px] border-0 md:border-[7px] border-inverse-surface/85">
+<!-- Top Bar / Safe Area Header -->
+<header class="pt-3 px-5 pb-2 shrink-0 z-20">
+<!-- Dynamic Island / Speaker notch simulation in mobile frame -->
+<div class="w-28 h-5 bg-inverse-surface rounded-full mx-auto mb-3 hidden md:block"></div>
+<!-- Navigation & Step Telemetry -->
+<div class="flex items-center justify-between h-10 mb-2">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant/30 flex items-center justify-center text-secondary hover:text-on-surface active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="arrow_back">arrow_back</span>
+</button>
+<!-- Progress Indicator (Step 5 of 6) -->
+<div class="flex items-center gap-2">
+<span class="font-telemetry-num text-label-md text-secondary uppercase font-semibold tracking-wider">Step 5 of 6</span>
+<div class="w-24 h-1.5 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="w-5/6 h-full bg-secondary rounded-full"></div>
+</div>
+</div>
+<!-- Metric Balance Anchor -->
+<div class="w-9 h-9 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-base" data-icon="waves">waves</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas (Scroll-safe with fluid breathing room) -->
+<div class="px-6 flex-1 flex flex-col justify-start overflow-y-auto no-scrollbar pt-1 pb-4">
+<!-- Editorial Titles -->
+<section class="mb-5">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mb-1.5">
+          Pick a handle.
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Your pact sees this. Don't use your real name.
+        </p>
+</section>
+<!-- Input Field: 52pt height (~69px in web render), radius 12, Apple Native Focus -->
+<section class="mb-5">
+<div class="relative flex items-center">
+<input autocomplete="off" class="w-full h-[52px] bg-background border border-outline-variant/50 focus:border-secondary focus:ring-2 focus:ring-secondary/20 rounded-[12px] pl-4 pr-28 font-body-lg text-body-lg text-on-surface placeholder:text-outline/60 transition-all outline-none" id="handle-input" placeholder="@alias" spellcheck="false" type="text" value="@quietmile"/>
+<!-- Real-time Availability Badge -->
+<div class="absolute right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/40 border border-secondary/20 pointer-events-none">
+<span class="material-symbols-outlined text-secondary text-sm font-semibold" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md font-medium text-secondary">Available</span>
+</div>
+</div>
+<!-- Helper Note -->
+<p class="mt-2 pl-1 font-body-sm text-body-sm text-outline flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs" data-icon="info">info</span>
+          Use 3–20 letters, numbers, or underscores.
+        </p>
+</section>
+<!-- Avatar Pebble Section -->
+<section class="bg-surface-container-lowest border border-outline-variant/30 rounded-2xl p-4 shadow-sm mb-4 relative overflow-hidden">
+<!-- Telemetry Card Header -->
+<div class="flex items-center justify-between mb-3">
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Avatar pebble</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Procedural identity token</p>
+</div>
+<span class="px-2.5 py-0.5 rounded-full font-telemetry-num text-label-md bg-secondary/10 text-secondary font-medium">Tide Active</span>
+</div>
+<!-- Pebble Visualization Vessel -->
+<div class="h-36 w-full rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center relative overflow-hidden">
+<!-- Fine Instrument Grid Texture -->
+<div class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#006878_1px,transparent_1px)] [background-size:12px_12px]"></div>
+<!-- Organic Procedural Pebble -->
+<div class="pebble-morph relative w-24 h-24 subsurface-glow flex items-center justify-center cursor-pointer select-none" id="pebble-token" style="border-radius: 64% 36% 47% 53% / 41% 54% 46% 59%; background: linear-gradient(135deg, #066c7d 0%, #00363f 100%);" title="Click shuffle or tap to morph">
+<!-- Water Refraction Highlight Layer -->
+<div class="absolute inset-1.5 rounded-[inherit] opacity-40 bg-gradient-to-tr from-transparent via-secondary-container/40 to-white/70 pointer-events-none"></div>
+<!-- Inset Tactile Brass Milestone Center Node -->
+<div class="w-5 h-5 rounded-full bg-gradient-to-b from-primary to-primary-container border border-white/40 shadow-inner flex items-center justify-center opacity-90">
+<div class="w-1.5 h-1.5 rounded-full bg-white/90"></div>
+</div>
+</div>
+<!-- Shuffle Pebble Floating Glass Button -->
+<button aria-label="Shuffle pebble shape and tone" class="absolute bottom-2.5 right-2.5 w-10 h-10 rounded-full bg-surface-container-lowest/80 backdrop-blur-xl border border-white/80 shadow-md flex items-center justify-center text-secondary hover:text-on-surface active:scale-90 active:rotate-180 transition-all duration-300" id="shuffle-btn" type="button">
+<span class="material-symbols-outlined text-lg leading-none" data-icon="casino">casino</span>
+</button>
+</div>
+</section>
+<!-- Privacy Assurance Card -->
+<section class="bg-surface-container-low/60 rounded-xl p-3.5 border border-outline-variant/25 flex items-start gap-3">
+<div class="w-7 h-7 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0 border border-outline-variant/30 text-secondary">
+<span class="material-symbols-outlined text-base" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div>
+<h3 class="font-title-md text-body-sm font-semibold text-on-surface mb-0.5">Handles, not names.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+            Your pact sees your streak number, never the reason it reset.
+          </p>
+</div>
+</section>
+</div>
+<!-- Persistent Bottom Bar Action Canvas (50pt height primary action: ~67px, radius 14) -->
+<footer class="p-6 pt-2 pb-8 bg-surface/90 backdrop-blur-md border-t border-outline-variant/15 shrink-0 z-20">
+<button class="w-full h-[50px] bg-secondary hover:bg-on-secondary-container active:scale-[0.98] text-on-secondary font-title-md text-title-md rounded-[14px] flex items-center justify-center gap-2 shadow-lg shadow-secondary/20 transition-all duration-150" type="button">
+<span>Continue</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Apple Home Indicator Bar -->
+<div class="w-32 h-1 bg-on-surface/20 rounded-full mx-auto mt-4"></div>
+</footer>
+</main>
+<!-- Interactive Organic Pebble Morphing Micro-Script -->
+<script>
+    const pebble = document.getElementById('pebble-token');
+    const shuffleBtn = document.getElementById('shuffle-btn');
+
+    const organicShapes = [
+      '64% 36% 47% 53% / 41% 54% 46% 59%',
+      '38% 62% 63% 37% / 70% 33% 67% 30%',
+      '50% 50% 30% 70% / 55% 42% 58% 45%',
+      '71% 29% 40% 60% / 30% 69% 31% 70%',
+      '45% 55% 72% 28% / 60% 40% 60% 40%'
+    ];
+
+    const marinePalettes = [
+      'linear-gradient(135deg, #066c7d 0%, #00363f 100%)',
+      'linear-gradient(145deg, #006878 0%, #06404d 100%)',
+      'linear-gradient(130deg, #356178 0%, #004e5b 100%)',
+      'linear-gradient(160deg, #0a3f55 0%, #002830 100%)'
+    ];
+
+    let shapeIdx = 0;
+    let colorIdx = 0;
+
+    function randomizePebble() {
+      shapeIdx = (shapeIdx + 1) % organicShapes.length;
+      colorIdx = (colorIdx + 1) % marinePalettes.length;
+
+      pebble.style.borderRadius = organicShapes[shapeIdx];
+      pebble.style.background = marinePalettes[colorIdx];
+      pebble.style.transform = `scale(0.94) rotate(${Math.floor(Math.random() * 20) - 10}deg)`;
+
+      setTimeout(() => {
+        pebble.style.transform = 'scale(1) rotate(0deg)';
+      }, 250);
+    }
+
+    if (shuffleBtn) {
+      shuffleBtn.addEventListener('click', randomizePebble);
+    }
+    if (pebble) {
+      pebble.addEventListener('click', randomizePebble);
+    }
+  </script>
+</body></html>

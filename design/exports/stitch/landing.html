@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WillWar — Make it to December.</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Typography fonts: Geist and Epilogue -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Geist:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#f6bd5d",
+            "tertiary-container": "#4e7a92",
+            "surface-tint": "#7f5700",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#c3e8ff",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "background": "#f9f9fe",
+            "primary-fixed": "#ffdead",
+            "tertiary-fixed-dim": "#a0cce7",
+            "primary-container": "#9a6c0f",
+            "on-surface": "#1a1c1f",
+            "outline-variant": "#d3c4b1",
+            "surface-bright": "#f9f9fe",
+            "on-background": "#1a1c1f",
+            "primary": "#7c5400",
+            "inverse-on-surface": "#f0f0f5",
+            "secondary": "#006878",
+            "on-secondary-fixed-variant": "#004e5b",
+            "on-secondary-fixed": "#001f26",
+            "on-secondary-container": "#066c7d",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#84d2e5",
+            "surface-container-highest": "#e2e2e7",
+            "on-primary-fixed": "#281900",
+            "secondary-container": "#9eecff",
+            "on-primary-container": "#fffbff",
+            "inverse-primary": "#f6bd5d",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#a8edff",
+            "surface-container": "#ededf2",
+            "on-surface-variant": "#4f4537",
+            "surface-container-low": "#f3f3f8",
+            "surface-container-high": "#e8e8ed",
+            "on-tertiary-container": "#fbfcff",
+            "inverse-surface": "#2e3034",
+            "on-error": "#ffffff",
+            "outline": "#827565",
+            "on-error-container": "#93000a",
+            "surface-dim": "#d9dade",
+            "on-primary-fixed-variant": "#604100",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#356178",
+            "on-tertiary-fixed": "#001e2c",
+            "surface-variant": "#e2e2e7",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#f9f9fe"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-xl": "2.25rem",
+            "gutter": "1rem",
+            "margin-tablet": "2rem",
+            "margin": "1.25rem",
+            "margin-desktop": "3rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "telemetry-num": ["Geist", "monospace"],
+            "body-sm": ["Geist", "sans-serif"],
+            "headline-lg-mobile": ["Epilogue", "serif"],
+            "body-lg": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "label-md": ["Geist", "sans-serif"],
+            "title-md": ["Geist", "sans-serif"],
+            "headline-lg": ["Epilogue", "serif"],
+            "display": ["Epilogue", "serif"],
+            "headline-md": ["Epilogue", "serif"],
+            "headline-sm": ["Epilogue", "serif"]
+          },
+          "fontSize": {
+            "telemetry-num": [
+              "0.9375rem",
+              {
+                "lineHeight": "1.25rem",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "500"
+              }
+            ],
+            "body-sm": [
+              "0.8125rem",
+              {
+                "lineHeight": "1.125rem",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-lg-mobile": [
+              "1.75rem",
+              {
+                "lineHeight": "2.125rem",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-lg": [
+              "1.0625rem",
+              {
+                "lineHeight": "1.625rem",
+                "fontWeight": "400"
+              }
+            ],
+            "body-md": [
+              "0.9375rem",
+              {
+                "lineHeight": "1.375rem",
+                "fontWeight": "400"
+              }
+            ],
+            "label-md": [
+              "0.75rem",
+              {
+                "lineHeight": "1rem",
+                "letterSpacing": "0.04em",
+                "fontWeight": "500"
+              }
+            ],
+            "title-md": [
+              "1.125rem",
+              {
+                "lineHeight": "1.5rem",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg": [
+              "2.25rem",
+              {
+                "lineHeight": "2.625rem",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "display": [
+              "3.5rem",
+              {
+                "lineHeight": "3.75rem",
+                "letterSpacing": "-0.03em",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-md": [
+              "1.5rem",
+              {
+                "lineHeight": "1.875rem",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-sm": [
+              "1.25rem",
+              {
+                "lineHeight": "1.625rem",
+                "fontWeight": "500"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .tnum { font-feature-settings: "tnum" 1, "zero" 1; }
+    .brass-glow { box-shadow: 0 4px 20px rgba(184, 134, 43, 0.22); }
+    .brass-gradient { background: linear-gradient(135deg, #b8862b 0%, #8a6114 100%); }
+    .tide-shadow { box-shadow: 0 8px 30px rgba(0, 104, 120, 0.18); }
+    .glass-specular {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(24px) saturate(180%);
+      border-top: 1px solid rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid rgba(0, 104, 120, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen relative font-body-md text-body-md overflow-x-hidden">
+<!-- ==================== HEADER ==================== -->
+<header class="fixed top-0 inset-x-0 z-50 transition-all duration-200">
+<div class="max-w-7xl mx-auto px-5 sm:px-8 pt-4 pb-3">
+<nav class="glass-specular rounded-full px-5 sm:px-7 py-3 flex items-center justify-between shadow-sm border border-outline-variant/30">
+<!-- Wordmark -->
+<a class="flex items-center gap-2.5 group" href="#">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center transition-transform group-hover:scale-95 duration-150">
+<span class="material-symbols-outlined text-sm" data-icon="waves" style="font-variation-settings: 'FILL' 1;">waves</span>
+</div>
+<span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold">WillWar</span>
+<span class="text-label-md font-label-md px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary border border-secondary/15 ml-1 hidden sm:inline-block">Off-season</span>
+</a>
+<!-- Middle Links (Desktop) -->
+<div class="hidden md:flex items-center gap-7 text-label-md font-label-md text-on-surface-variant font-medium">
+<a class="hover:text-secondary transition-colors duration-150" href="#timeline">30-day timeline</a>
+<a class="hover:text-secondary transition-colors duration-150" href="#ride-it-out">Ride it out</a>
+<a class="hover:text-secondary transition-colors duration-150" href="#pacts">Pacts</a>
+<a class="hover:text-secondary transition-colors duration-150" href="#war-chest">War chest</a>
+<a class="hover:text-secondary transition-colors duration-150" href="#learn">Evidence</a>
+<a class="hover:text-secondary transition-colors duration-150" href="#pricing">Access</a>
+</div>
+<!-- Right Action Hub -->
+<div class="flex items-center gap-3">
+<a class="text-label-md font-label-md px-3.5 py-2 text-on-surface hover:text-secondary transition-colors duration-150 font-medium hidden sm:inline-block" href="#signin">
+            Sign in
+          </a>
+<a class="text-label-md font-label-md px-5 py-2.5 rounded-full bg-secondary text-on-secondary hover:bg-secondary/90 transition-transform active:scale-95 duration-150 font-medium shadow-sm flex items-center gap-1.5" href="#start">
+<span>Start my 30 days</span>
+<span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</nav>
+</div>
+</header>
+<!-- ==================== HERO SECTION ==================== -->
+<section class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+<!-- Subtle Subsurface Refraction Glow -->
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[480px] bg-gradient-to-b from-secondary-container/40 via-tertiary-fixed-dim/20 to-transparent blur-3xl -z-10 rounded-full pointer-events-none"></div>
+<div class="max-w-6xl mx-auto px-5 sm:px-8">
+<!-- Off-season Toggle Chip -->
+<div class="flex justify-center mb-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-low/90 border border-outline-variant/40 shadow-sm backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-label-md font-label-md text-on-surface-variant font-medium">Off-season mode: Thirty days. Starting tonight.</span>
+<span class="text-label-md font-label-md text-secondary font-semibold ml-1">Nov 1 – Dec 1</span>
+</div>
+</div>
+<!-- Main Headline -->
+<div class="text-center max-w-4xl mx-auto">
+<h1 class="text-display font-display tracking-tight text-on-surface leading-[1.05] text-[clamp(2.75rem,7vw,5.5rem)] font-bold mb-6">
+          Make it to December.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed">
+          A streak clock that counts every second, a three-minute game for when the urge hits, and a private leaderboard with the friends you trust.
+        </p>
+<!-- Live Clock Terminal -->
+<div class="inline-flex flex-col items-center mb-8">
+<div class="bg-surface-container-lowest/90 px-6 sm:px-8 py-3.5 rounded-2xl border border-outline-variant/30 shadow-sm backdrop-blur-xl flex items-center gap-4">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-base animate-spin" data-icon="timelapse" style="animation-duration: 12s;">timelapse</span>
+<span class="text-label-md font-label-md uppercase tracking-wider font-semibold text-secondary">Active Session</span>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant/40"></div>
+<!-- Live Tabular Ticking Clock -->
+<div class="font-telemetry-num text-telemetry-num tnum text-on-surface font-semibold text-xl tracking-tight" id="hero-clock">
+              00d 00h 01m 24s
+            </div>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant/70 mt-2">
+            This clock started when you opened the page.
+          </span>
+</div>
+<!-- Primary CTA Stack -->
+<div class="flex flex-col items-center justify-center gap-3">
+<a class="w-full sm:w-auto h-[50px] px-8 rounded-full bg-secondary text-on-secondary hover:bg-secondary/90 flex items-center justify-center gap-2 font-title-md text-title-md font-medium transition-all active:scale-[0.98] tide-shadow" href="#start">
+<span>Start my 30 days</span>
+<span class="material-symbols-outlined text-lg" data-icon="north_east">north_east</span>
+</a>
+<span class="text-label-md font-label-md text-on-surface-variant/80">
+            Free. 18+ only. Installs from your browser, no app store.
+          </span>
+</div>
+</div>
+<!-- Hero Visual Phone Frame -->
+<div class="mt-14 relative max-w-sm sm:max-w-md mx-auto">
+<!-- Marine Ambient Halo -->
+<div class="absolute -inset-4 bg-gradient-to-b from-secondary/15 to-transparent rounded-[48px] blur-2xl -z-10"></div>
+<!-- Hardware Rim -->
+<div class="rounded-[44px] p-2 bg-gradient-to-b from-outline-variant/60 via-outline/20 to-outline-variant/80 shadow-2xl shadow-secondary/10">
+<div class="bg-surface-container-lowest rounded-[38px] overflow-hidden border border-outline-variant/30 relative aspect-[9/18.5] flex flex-col justify-between p-5">
+<!-- Mobile Dynamic Island / Speaker Notch -->
+<div class="w-28 h-5 bg-inverse-surface rounded-full mx-auto mb-4 flex items-center justify-end px-2">
+<div class="w-2 h-2 rounded-full bg-secondary/70"></div>
+</div>
+<!-- Phone Top: Waterline & Header Preview -->
+<div class="flex items-center justify-between text-on-surface-variant mb-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="waves" style="font-variation-settings: 'FILL' 1;">waves</span>
+<span class="text-label-md font-label-md font-semibold text-on-surface">WillWar</span>
+</div>
+<div class="flex items-center gap-2 text-label-md font-label-md">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-medium">Day 1</span>
+<span class="material-symbols-outlined text-sm" data-icon="tune">tune</span>
+</div>
+</div>
+<!-- The Rising Tide Level Dial in Phone -->
+<div class="my-auto text-center relative py-6">
+<div class="relative w-52 h-52 mx-auto rounded-full border border-secondary/20 flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-surface-container-lowest via-secondary-container/10 to-secondary-container/30">
+<!-- Tide fluid fill level -->
+<div class="absolute inset-x-0 bottom-0 h-2/5 bg-secondary/15 border-t border-secondary/30 backdrop-blur-sm"></div>
+<div class="relative z-10">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-semibold">Tide Depth</span>
+<div class="font-telemetry-num text-3xl font-bold tracking-tight text-on-surface tnum my-1">
+                    01d 04h
+                  </div>
+<span class="text-label-md font-label-md text-on-surface-variant font-medium">Goal: 30d 00h</span>
+</div>
+</div>
+<p class="text-label-md font-label-md text-on-surface-variant mt-4">Waterline calm. Next milestone in 5d 20h.</p>
+</div>
+<!-- Phone Action: Ride It Out Button -->
+<div class="space-y-2 mt-auto">
+<button class="w-full py-3 rounded-full bg-secondary text-on-secondary text-label-md font-label-md font-semibold flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+<span>Ride it out (3 min)</span>
+</button>
+<!-- Bottom Dock within Mockup -->
+<div class="pt-2 flex justify-around text-on-surface-variant text-label-md font-label-md">
+<span class="text-secondary font-semibold flex flex-col items-center gap-0.5">
+<span class="material-symbols-outlined text-base" data-icon="waves" style="font-variation-settings: 'FILL' 1;">waves</span>
+                  Today
+                </span>
+<span class="flex flex-col items-center gap-0.5">
+<span class="material-symbols-outlined text-base" data-icon="verified">verified</span>
+                  Pact
+                </span>
+<span class="flex flex-col items-center gap-0.5">
+<span class="material-symbols-outlined text-base" data-icon="menu_book">menu_book</span>
+                  Learn
+                </span>
+<span class="flex flex-col items-center gap-0.5">
+<span class="material-symbols-outlined text-base" data-icon="person">person</span>
+                  Me
+                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== "SCROLL THROUGH YOUR 30 DAYS" (SIGNATURE MOMENT) ==================== -->
+<section class="py-24 bg-surface-container-low/60 border-y border-outline-variant/30 relative" id="timeline">
+<div class="max-w-6xl mx-auto px-5 sm:px-8">
+<div class="max-w-2xl mb-14">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-bold">Progressive Telemetry</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight text-on-surface mt-2 mb-4 font-bold">
+          Scroll through your 30 days.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Waterlines rise silently. Day 1 is quiet resolve; Day 7 brings your first brass mark. See how the terrain changes before you step onto it.
+        </p>
+</div>
+<!-- Scrubber Timeline Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Sequence Milestones -->
+<div class="lg:col-span-7 space-y-4">
+<!-- Day 1 Card -->
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm transition-all hover:border-secondary/40">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2.5 py-0.5 rounded-full text-label-md font-label-md bg-secondary-container/30 text-on-secondary-container font-semibold">
+                Day 1
+              </span>
+<span class="text-label-md font-label-md text-on-surface-variant font-mono">Waterline: 3%</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-1">
+              The easy part. Pick your reason and tell one friend.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Adrenaline is high and memory of why you started is fresh. Set your morning notification time and select your pledge.
+            </p>
+</div>
+<!-- Day 3 Card -->
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm transition-all hover:border-secondary/40">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2.5 py-0.5 rounded-full text-label-md font-label-md bg-secondary-container/30 text-on-secondary-container font-semibold">
+                Day 3
+              </span>
+<span class="text-label-md font-label-md text-on-surface-variant font-mono">Waterline: 10%</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-1">
+              Boredom shows up. Have a three-minute plan for it.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Novelty fades. This is where drift puzzles break automatic finger patterns before habits lock in.
+            </p>
+</div>
+<!-- Day 7 Card (Brass Accent) -->
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest border border-primary/40 shadow-sm relative overflow-hidden transition-all hover:border-primary">
+<div class="absolute -right-10 -bottom-10 w-32 h-32 rounded-full bg-primary-fixed/20 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full text-label-md font-label-md brass-gradient text-on-primary font-semibold shadow-xs">
+                  Day 7
+                </span>
+<span class="text-label-md font-label-md text-primary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+                  Brass Milestone I
+                </span>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant font-mono">Waterline: 23%</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-1">
+              First milestone. Your pact sees it light up.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              A week of clean wakeups. Your private crew receives the badge in their morning telemetry feed.
+            </p>
+</div>
+<!-- Day 14 Card (Brass Accent) -->
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest border border-primary/40 shadow-sm relative overflow-hidden transition-all hover:border-primary">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full text-label-md font-label-md brass-gradient text-on-primary font-semibold">
+                  Day 14
+                </span>
+<span class="text-label-md font-label-md text-primary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                  Brass Milestone II
+                </span>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant font-mono">Waterline: 46%</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-1">
+              Halfway. Your urge log shows what sets you off.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Patterns emerge: 11:30 PM after long screens, or Sunday afternoons alone. Now you predict them.
+            </p>
+</div>
+<!-- Day 21 Card (Brass Accent) -->
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest border border-primary/40 shadow-sm relative overflow-hidden transition-all hover:border-primary">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full text-label-md font-label-md brass-gradient text-on-primary font-semibold">
+                  Day 21
+                </span>
+<span class="text-label-md font-label-md text-primary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="military_tech" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+                  Brass Milestone III
+                </span>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant font-mono">Waterline: 70%</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-1">
+              The routine is doing the work now.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Willpower requirement drops. The friction of breaking a 3-week string exceeds the transient pull of old loops.
+            </p>
+</div>
+<!-- Day 30 Card (Full Crown) -->
+<div class="p-6 sm:p-7 rounded-2xl bg-surface-container-lowest border-2 border-primary shadow-md relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary-fixed/20 via-transparent to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full text-label-md font-label-md brass-gradient text-on-primary font-bold shadow-sm">
+                  Day 30
+                </span>
+<span class="text-label-md font-label-md text-primary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="trophy" style="font-variation-settings: 'FILL' 1;">trophy</span>
+                  Full Brass Horizon
+                </span>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant font-mono font-bold">100% Complete</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">
+              December 1st. Your record stays, even if you go again.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              The full chronometer seals. The pledge unlocks, your War Chest returns in full, and the proof remains on your device forever.
+            </p>
+</div>
+</div>
+<!-- Right: Sticky Live Milestones Dial Device -->
+<div class="lg:col-span-5 sticky top-28 hidden lg:block">
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 shadow-lg">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-4 mb-6">
+<div>
+<span class="text-label-md font-label-md text-on-surface-variant">Active Chronometer</span>
+<h4 class="font-title-md text-title-md font-semibold text-on-surface">The 30-Day Rise</h4>
+</div>
+<span class="px-3 py-1 rounded-full text-label-md font-label-md brass-gradient text-on-primary font-medium">Dec 01 Target</span>
+</div>
+<!-- Instrument Circular Horizon Gauge -->
+<div class="relative w-64 h-64 mx-auto rounded-full border-4 border-outline-variant/30 flex items-center justify-center p-3 bg-surface-container-low/40">
+<!-- Animated Rising Water Mask -->
+<div class="w-full h-full rounded-full overflow-hidden relative border border-secondary/30 flex items-end">
+<div class="w-full h-3/4 bg-gradient-to-t from-secondary via-secondary/70 to-secondary-container/40 transition-all duration-700 relative">
+<div class="absolute inset-x-0 top-0 h-1.5 bg-on-secondary/60"></div>
+</div>
+<!-- Radial Instrument Markings -->
+<div class="absolute inset-0 flex flex-col justify-between items-center py-4 pointer-events-none">
+<span class="text-label-md font-label-md font-mono text-on-surface-variant font-bold">30d (Dec 1)</span>
+<div class="text-center bg-surface-container-lowest/80 backdrop-blur-md px-4 py-2 rounded-xl border border-outline-variant/20 shadow-xs">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-semibold block">Milestone 3</span>
+<span class="font-telemetry-num text-xl font-bold text-on-surface">Day 21 Reached</span>
+</div>
+<span class="text-label-md font-label-md font-mono text-on-secondary font-bold">Day 0 (Start)</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-5 border-t border-outline-variant/20 flex items-center justify-between text-label-md font-label-md text-on-surface-variant">
+<span>Next Checkpoint: Brass Crown</span>
+<span class="font-mono text-secondary font-bold">9 days left</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== "RIDE IT OUT" (URGES CREST, THEN THEY FALL) ==================== -->
+<section class="py-24 relative overflow-hidden" id="ride-it-out">
+<div class="max-w-6xl mx-auto px-5 sm:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Text & Science -->
+<div class="lg:col-span-6 space-y-5">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/30 border border-secondary/20 text-on-secondary-container text-label-md font-label-md font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="psychology">psychology</span>
+<span>Cognitive Load Protocol</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg tracking-tight text-on-surface font-bold">
+            Urges crest. Then they fall.
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Tap <strong class="text-on-surface font-semibold">Ride it out</strong> and play a three-minute visual puzzle. In a week-long study at the University of Plymouth, three minutes of a block puzzle made cravings noticeably weaker, for food and drink as well as activities like sex.
+          </p>
+<!-- Citation Link -->
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5" data-icon="menu_book">menu_book</span>
+<p class="text-label-md font-label-md text-on-surface-variant">
+              Skorka-Brown et al., <em class="italic">Addictive Behaviors</em>, 2015. 
+              <span class="block text-on-surface-variant/70 mt-0.5">Visual-spatial tasks compete directly with mental imagery of cravings.</span>
+</p>
+</div>
+<!-- Micro Cards for the 3 Exercises -->
+<div class="grid grid-cols-3 gap-3 pt-2">
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/30 text-center">
+<span class="material-symbols-outlined text-secondary text-xl mb-1" data-icon="grid_view">grid_view</span>
+<div class="font-title-md text-body-sm font-semibold text-on-surface">Drift</div>
+<span class="text-label-md font-label-md text-on-surface-variant/80">Spatial raft</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/30 text-center">
+<span class="material-symbols-outlined text-secondary text-xl mb-1" data-icon="air">air</span>
+<div class="font-title-md text-body-sm font-semibold text-on-surface">Swell</div>
+<span class="text-label-md font-label-md text-on-surface-variant/80">4s/6s cadence</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/30 text-center relative overflow-hidden">
+<span class="absolute top-1 right-1 px-1 rounded bg-primary-fixed text-on-primary-fixed text-[10px] font-bold">PRO</span>
+<span class="material-symbols-outlined text-primary text-xl mb-1" data-icon="conversion_path">conversion_path</span>
+<div class="font-title-md text-body-sm font-semibold text-on-surface">Knots</div>
+<span class="text-label-md font-label-md text-on-surface-variant/80">Line untangling</span>
+</div>
+</div>
+</div>
+<!-- Interactive Tactile Demo Card -->
+<div class="lg:col-span-6">
+<div class="p-8 rounded-3xl bg-surface-container-lowest border border-outline-variant/40 shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between pb-6 border-b border-outline-variant/20 mb-6">
+<div>
+<span class="text-label-md font-label-md text-secondary font-bold uppercase tracking-wider">Tactile Wave Module</span>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">Live Urge Buffer</h3>
+</div>
+<span class="text-label-md font-label-md font-mono text-on-surface-variant" id="wave-timer-text">03:00 Remaining</span>
+</div>
+<!-- Calming Waterline Wave Visualization -->
+<div class="h-44 rounded-2xl bg-surface-container-low/70 border border-outline-variant/20 flex flex-col justify-end overflow-hidden relative mb-6">
+<!-- Wave height progress -->
+<div class="w-full h-1/3 bg-gradient-to-t from-secondary to-secondary-container transition-all duration-300 relative flex items-center justify-center" id="interactive-wave-fill">
+<div class="w-full h-1 bg-white/70 absolute top-0 shadow-sm"></div>
+</div>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="text-title-md font-title-md text-on-surface font-semibold transition-all" id="wave-status-text">Wave in progress</span>
+<span class="text-label-md font-label-md text-on-surface-variant/80 mt-1">Sustain contact until sea calms</span>
+</div>
+</div>
+<!-- Hold to Ride a Wave Button -->
+<button class="w-full py-4 rounded-full brass-gradient text-on-primary font-semibold text-title-md flex items-center justify-center gap-2 transition-transform active:scale-[0.98] brass-glow cursor-pointer select-none" id="wave-hold-btn">
+<span class="material-symbols-outlined text-xl" data-icon="touch_app">touch_app</span>
+<span id="wave-btn-text">Hold to ride a wave</span>
+</button>
+<p class="text-label-md font-label-md text-center text-on-surface-variant/70 mt-3">
+              Press and hold. Releases trigger gentle haptic dampening.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== "PACTS" SECTION ==================== -->
+<section class="py-24 bg-surface-container-low/60 border-y border-outline-variant/30" id="pacts">
+<div class="max-w-6xl mx-auto px-5 sm:px-8">
+<div class="max-w-2xl mx-auto text-center mb-16">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-bold">Quiet Accountability</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight text-on-surface mt-2 mb-4 font-bold">
+          Bring the friends who'll actually check.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Handles, not names. Your pact sees your number, never the reason it reset. No public feeds, no commentary threads.
+        </p>
+</div>
+<!-- Leaderboard Mockup Card -->
+<div class="max-w-xl mx-auto rounded-3xl bg-surface-container-lowest border border-outline-variant/30 shadow-lg p-6 sm:p-8">
+<!-- Pact Header & Segmented Control -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-outline-variant/20">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="groups">groups</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">The Dawn Crew</h3>
+</div>
+<p class="text-label-md font-label-md text-on-surface-variant">4 members · Closed circle</p>
+</div>
+<!-- Segmented Filter Control -->
+<div class="inline-flex p-1 rounded-full bg-surface-container border border-outline-variant/30 text-label-md font-label-md self-start sm:self-auto">
+<button class="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-semibold shadow-xs">Current</button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-on-surface font-medium">Best</button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-on-surface font-medium">Days</button>
+</div>
+</div>
+<!-- Members Table -->
+<div class="divide-y divide-outline-variant/20 my-2">
+<!-- Member 1 -->
+<div class="py-4 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center font-mono text-label-md font-semibold text-on-surface">
+                1
+              </div>
+<div>
+<div class="font-title-md text-body-md font-semibold text-on-surface">@dev.s</div>
+<div class="text-label-md font-label-md text-secondary font-medium">Milestone II achieved</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-telemetry-num text-telemetry-num font-bold text-on-surface tnum">14d 08h</span>
+<button class="px-3 py-1 text-label-md font-label-md rounded-full bg-surface-container hover:bg-secondary-container/30 text-secondary transition-colors font-medium">
+                Nudge
+              </button>
+</div>
+</div>
+<!-- Member 2 (YOU) -->
+<div class="py-4 flex items-center justify-between gap-3 bg-secondary-container/10 -mx-4 px-4 rounded-xl">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full brass-gradient text-on-primary flex items-center justify-center font-mono text-label-md font-semibold shadow-xs">
+                2
+              </div>
+<div>
+<div class="font-title-md text-body-md font-bold text-on-surface flex items-center gap-2">
+<span>@quietmile</span>
+<span class="px-2 py-0.2 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-semibold">YOU · Backed</span>
+</div>
+<div class="text-label-md font-label-md text-on-surface-variant">War Chest: ₹499 locked</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-telemetry-num text-telemetry-num font-bold text-secondary tnum">06d 14h</span>
+<span class="px-2.5 py-1 text-label-md font-label-md text-on-surface-variant font-medium">Clear</span>
+</div>
+</div>
+<!-- Member 3 -->
+<div class="py-4 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center font-mono text-label-md font-semibold text-on-surface">
+                3
+              </div>
+<div>
+<div class="font-title-md text-body-md font-semibold text-on-surface">@rohan_k</div>
+<div class="text-label-md font-label-md text-on-surface-variant">Approaching Day 7</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-telemetry-num text-telemetry-num font-bold text-on-surface tnum">04d 21h</span>
+<button class="px-3 py-1 text-label-md font-label-md rounded-full bg-surface-container hover:bg-secondary-container/30 text-secondary transition-colors font-medium">
+                Nudge
+              </button>
+</div>
+</div>
+<!-- Member 4 (Paused) -->
+<div class="py-4 flex items-center justify-between gap-3 opacity-60">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center font-mono text-label-md font-semibold text-on-surface">
+                4
+              </div>
+<div>
+<div class="font-title-md text-body-md font-semibold text-on-surface flex items-center gap-2">
+<span>@arjun_m</span>
+<span class="text-label-md font-label-md px-1.5 py-0.5 rounded bg-surface-variant text-on-surface-variant font-medium">Paused</span>
+</div>
+<div class="text-label-md font-label-md text-on-surface-variant">Clock resting</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-telemetry-num text-telemetry-num font-medium text-on-surface-variant tnum">—</span>
+<button class="px-3 py-1 text-label-md font-label-md rounded-full bg-surface-container hover:bg-surface-variant text-on-surface-variant transition-colors font-medium">
+                Reach out
+              </button>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-md font-label-md text-on-surface-variant">
+<span>Encrypted broadcast. No messages or direct chats.</span>
+<span class="text-secondary font-semibold cursor-pointer hover:underline">Invite fifth friend</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== "WAR CHEST" SECTION ==================== -->
+<section class="py-24 relative overflow-hidden" id="war-chest">
+<div class="max-w-6xl mx-auto px-5 sm:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Visual Stake Card -->
+<div class="lg:col-span-6 order-2 lg:order-1">
+<div class="p-8 rounded-3xl bg-surface-container-lowest border border-outline-variant/40 shadow-xl relative">
+<div class="flex items-center justify-between pb-6 border-b border-outline-variant/20 mb-6">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-2xl bg-secondary-container/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-xl" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">Commitment Contract</h3>
+<span class="text-label-md font-label-md text-on-surface-variant font-mono">ID: CHEST-30-2024</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full text-label-md font-label-md bg-secondary text-on-secondary font-semibold">Active Vault</span>
+</div>
+<!-- Stake Breakdown -->
+<div class="space-y-4 mb-6">
+<div class="flex items-baseline justify-between">
+<span class="text-body-md font-body-md text-on-surface-variant">Total Collateral Staked</span>
+<span class="font-telemetry-num text-3xl font-bold text-on-surface tnum">₹499</span>
+</div>
+<!-- Split Progress Bar (3/4 Tide vs 1/4 Donated) -->
+<div>
+<div class="h-3.5 w-full rounded-full bg-surface-container overflow-hidden flex p-0.5">
+<div class="h-full bg-secondary rounded-l-full" style="width: 75%;"></div>
+<div class="h-full bg-error/70 rounded-r-full" style="width: 25%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-md font-label-md mt-2">
+<span class="text-secondary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    Still yours: ₹375 (75%)
+                  </span>
+<span class="text-on-surface-variant font-medium flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error/70"></span>
+                    Given to cause: ₹125 (25%)
+                  </span>
+</div>
+</div>
+</div>
+<!-- Recipient Cause Details -->
+<div class="p-4 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-base" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div>
+<div class="text-body-sm font-semibold text-on-surface">Designated: The Ocean Cleanup</div>
+<div class="text-label-md font-label-md text-on-surface-variant">Dispatched on verified resets</div>
+</div>
+</div>
+<span class="text-label-md font-label-md text-secondary font-semibold">Verified non-profit</span>
+</div>
+<!-- Promise Mode Note -->
+<div class="mt-5 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-md font-label-md text-on-surface-variant">
+<span>Alternative: <strong>Promise Mode</strong> (donate yourself on honor)</span>
+<span class="material-symbols-outlined text-base" data-icon="info">info</span>
+</div>
+</div>
+</div>
+<!-- Copy & Scientific Evidence -->
+<div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-bold">Skin in the game</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight text-on-surface font-bold">
+            Put something on it.
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Pick an amount and a cause you care about. Each reset sends a quarter of it to that cause. Make it to the end, and whatever's left comes back to you. WillWar never keeps any of it.
+          </p>
+<!-- Reassurance Pills -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant text-label-md font-label-md font-medium border border-outline-variant/30">
+              Optional. Free to skip.
+            </span>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant text-label-md font-label-md font-medium border border-outline-variant/30">
+              Honor system: nobody checks but you.
+            </span>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant text-label-md font-label-md font-medium border border-outline-variant/30">
+              Zero platform take.
+            </span>
+</div>
+<!-- Academic Citation -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 mt-4">
+<p class="text-label-md font-label-md text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Behavioral Economics Foundation:</strong> "In a field study, smokers offered a contract like this, with their own money returned on success and given to charity otherwise, were more likely to quit."
+              <span class="block text-secondary font-medium mt-1">Giné, Karlan and Zinman, <em class="italic">American Economic Review</em>, 2010.</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== "MORNING LINE" SECTION ==================== -->
+<section class="py-24 bg-surface-container-low/60 border-y border-outline-variant/30">
+<div class="max-w-6xl mx-auto px-5 sm:px-8">
+<div class="max-w-2xl mx-auto text-center mb-16">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-bold">Daily Calibration</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight text-on-surface mt-2 mb-4 font-bold">
+          One line every morning, written for your day.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          No generic aphorisms. Just a calibrated 15-second orientation waiting when you unlock your phone. Choose the voice that actually grounds you.
+        </p>
+</div>
+<!-- 4 Tone Preview Cards Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Tone 1: Steady -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col justify-between hover:border-secondary transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-md font-label-md px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-semibold">
+                Steady
+              </span>
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="anchor">anchor</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-relaxed italic">
+              "Day 9. You've already handled nine evenings like this one. Handle tonight the same way."
+            </p>
+</div>
+<div class="pt-5 mt-4 border-t border-outline-variant/20 text-label-md font-label-md text-on-surface-variant">
+            Delivered at 07:00 AM
+          </div>
+</div>
+<!-- Tone 2: Stoic -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col justify-between hover:border-secondary transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-md font-label-md px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-semibold">
+                Stoic
+              </span>
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="shield">shield</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-relaxed italic">
+              "Day 9. The urge asks for your attention. Give it three minutes of breathing instead."
+            </p>
+</div>
+<div class="pt-5 mt-4 border-t border-outline-variant/20 text-label-md font-label-md text-on-surface-variant">
+            Delivered at 07:00 AM
+          </div>
+</div>
+<!-- Tone 3: Coach -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col justify-between hover:border-secondary transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-md font-label-md px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-semibold">
+                Coach
+              </span>
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="flag">flag</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-relaxed italic">
+              "Day 9. Phone out of the bedroom tonight. That's the whole plan."
+            </p>
+</div>
+<div class="pt-5 mt-4 border-t border-outline-variant/20 text-label-md font-label-md text-on-surface-variant">
+            Delivered at 07:00 AM
+          </div>
+</div>
+<!-- Tone 4: Playful -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col justify-between hover:border-secondary transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-md font-label-md px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-semibold">
+                Playful
+              </span>
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="sailing">sailing</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-relaxed italic">
+              "Day 9. Single digits for one more day. Make tomorrow a double."
+            </p>
+</div>
+<div class="pt-5 mt-4 border-t border-outline-variant/20 text-label-md font-label-md text-on-surface-variant">
+            Delivered at 07:00 AM
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== "PRIVACY" SECTION ==================== -->
+<section class="py-24 relative">
+<div class="max-w-6xl mx-auto px-5 sm:px-8">
+<div class="max-w-2xl mb-14">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-bold">Uncompromising Restraint</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight text-on-surface mt-2 mb-4 font-bold">
+          Your streak is yours.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          We designed WillWar around the premise that vulnerability requires zero audience. What happens on your device stays on your physical hardware.
+        </p>
+</div>
+<!-- 2x2 Grid of Privacy Commitments -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 sm:p-7 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex items-start gap-4">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/40 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="badge">badge</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-1">
+              We never ask for your real name.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Pick any handle you want for pacts. No legal names, no contact book scraping, and no automated social linking.
+            </p>
+</div>
+</div>
+<div class="p-6 sm:p-7 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex items-start gap-4">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/40 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="phonelink_lock">phonelink_lock</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-1">
+              Your journal stays on your phone.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Urge triggers and notes are saved directly in IndexedDB. Unless you enable encrypted Pro cloud backups, it never touches our servers.
+            </p>
+</div>
+</div>
+<div class="p-6 sm:p-7 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex items-start gap-4">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/40 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="visibility_off">visibility_off</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-1">
+              Ads here never use what you do in the app.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Free users see discreet, context-agnostic banner placements. We do not integrate tracking pixels or sell behavioral profiles.
+            </p>
+</div>
+</div>
+<div class="p-6 sm:p-7 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex items-start gap-4">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/40 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="delete_forever">delete_forever</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-1">
+              Delete everything in one tap.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              A clean nuclear button in Settings wipes browser cache, IndexedDB records, and removes your handle from pacts immediately.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== "LEARN" SECTION ==================== -->
+<section class="py-24 bg-surface-container-low/60 border-y border-outline-variant/30" id="learn">
+<div class="max-w-6xl mx-auto px-5 sm:px-8">
+<div class="max-w-2xl mb-14">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-bold">Research Library</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight text-on-surface mt-2 mb-4 font-bold">
+          Straight answers, graded.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Every article shows how strong the evidence is. When the internet says one thing and the research says another, we show you both without editorial spin.
+        </p>
+</div>
+<!-- 3 Article Cards with Evidence Chips -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Article 1: Myth -->
+<article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col justify-between hover:border-outline transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-0.5 rounded-full text-label-md font-label-md bg-error/10 text-error font-bold border border-error/20">
+                [Myth]
+              </span>
+<span class="text-label-md font-label-md text-on-surface-variant">4 min read</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-2 leading-snug">
+              The day-7 testosterone claim, traced to its source
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              How a single 2003 Chinese study with 28 participants was turned into internet doctrine, and what hormonal tracking actually shows.
+            </p>
+</div>
+<div class="pt-5 mt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-md font-label-md text-on-surface-variant">
+<span>Endocrinology</span>
+<span class="text-secondary font-semibold flex items-center gap-0.5">Read <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+</article>
+<!-- Article 2: Moderate -->
+<article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col justify-between hover:border-outline transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-0.5 rounded-full text-label-md font-label-md bg-primary-fixed/40 text-on-primary-fixed-variant font-bold border border-primary/20">
+                [Moderate]
+              </span>
+<span class="text-label-md font-label-md text-on-surface-variant">6 min read</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-2 leading-snug">
+              Why one slip turns into a week, and how to stop it
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              The Abstinence Violation Effect: the cognitive trap where people decide that because perfection ended, total collapse is justified.
+            </p>
+</div>
+<div class="pt-5 mt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-md font-label-md text-on-surface-variant">
+<span>Behavioral psychology</span>
+<span class="text-secondary font-semibold flex items-center gap-0.5">Read <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+</article>
+<!-- Article 3: Strong -->
+<article class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col justify-between hover:border-outline transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-0.5 rounded-full text-label-md font-label-md bg-secondary-container/40 text-on-secondary-container font-bold border border-secondary/20">
+                [Strong]
+              </span>
+<span class="text-label-md font-label-md text-on-surface-variant">5 min read</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mb-2 leading-snug">
+              Three minutes of a puzzle versus a craving
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Why working memory load directly inhibits intrusive mental imagery, and how spatial interaction overrides compulsive physical loops.
+            </p>
+</div>
+<div class="pt-5 mt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-md font-label-md text-on-surface-variant">
+<span>Cognitive load</span>
+<span class="text-secondary font-semibold flex items-center gap-0.5">Read <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- ==================== "PRICING" SECTION ==================== -->
+<section class="py-24 relative" id="pricing">
+<div class="max-w-6xl mx-auto px-5 sm:px-8">
+<div class="max-w-2xl mx-auto text-center mb-16">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-bold">Clear Terms</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight text-on-surface mt-2 mb-4 font-bold">
+          Transparent access. No dark patterns.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Free is fully functional for 30 days. Pro adds deep ergonomics, audio coaching, and zero interruptions.
+        </p>
+</div>
+<!-- Pricing Columns -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- FREE TIER -->
+<div class="p-8 rounded-3xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Free</h3>
+<span class="text-label-md font-label-md px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">Standard</span>
+</div>
+<div class="mb-6">
+<span class="font-telemetry-num text-4xl font-bold text-on-surface tnum">₹0</span>
+<span class="text-body-sm text-on-surface-variant ml-1">/ always free</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 pb-6 border-b border-outline-variant/20">
+              The complete navigational toolkit to make it to December 1st without financial obligation.
+            </p>
+<ul class="space-y-3.5 mb-8 font-body-md text-body-md text-on-surface">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>Streak clock counting down to second</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>Daily check-in &amp; morning line</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>Two urge games (Drift &amp; Swell)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>One pact circle (up to 5 friends)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>All research &amp; evidence library</span>
+</li>
+<li class="flex items-center gap-2.5 text-on-surface-variant/80">
+<span class="material-symbols-outlined text-outline text-lg" data-icon="info">info</span>
+<span>Includes discreet static ads</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-3.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-variant text-center font-title-md text-title-md font-semibold transition-colors" href="#start">
+            Start free
+          </a>
+</div>
+<!-- PRO TIER (Featured) -->
+<div class="p-8 rounded-3xl bg-surface-container-lowest border-2 border-secondary shadow-xl relative flex flex-col justify-between">
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-secondary text-on-secondary text-label-md font-label-md font-semibold tracking-wide uppercase">
+            Recommended
+          </div>
+<div>
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Pro</h3>
+<span class="text-label-md font-label-md px-3 py-1 rounded-full brass-gradient text-on-primary font-semibold">Unlimited</span>
+</div>
+<div class="mb-6 flex items-baseline gap-2">
+<span class="font-telemetry-num text-4xl font-bold text-on-surface tnum">₹149</span>
+<span class="text-body-sm text-on-surface-variant font-medium">season pass / or $3.99</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 pb-6 border-b border-outline-variant/20">
+              For individuals seeking maximal telemetry, audio coaching, and zero commercial noise.
+            </p>
+<ul class="space-y-3.5 mb-8 font-body-md text-body-md text-on-surface">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="done_all">done_all</span>
+<span class="font-medium">Everything in Free</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>All 3 urge games (including Knots)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>Audio urge coach (guided sessions)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>Unlimited pacts up to 50 people</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>Trigger insights &amp; time-of-day analytics</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>2 streak shields per month</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check">check</span>
+<span>Encrypted private journal backup</span>
+</li>
+<li class="flex items-center gap-2.5 text-secondary font-semibold">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="verified">verified</span>
+<span>Zero advertisements ever</span>
+</li>
+</ul>
+</div>
+<div>
+<div class="text-label-md font-label-md text-on-surface-variant text-center mb-3">
+              Annual pass also available: ₹799 / $24.99
+            </div>
+<a class="w-full py-3.5 rounded-full bg-secondary text-on-secondary hover:bg-secondary/90 text-center font-title-md text-title-md font-semibold transition-transform active:scale-[0.98] tide-shadow block" href="#pro">
+              Get Pro
+            </a>
+</div>
+</div>
+</div>
+<!-- Pricing Footnote -->
+<div class="text-center max-w-xl mx-auto mt-10 text-label-md font-label-md text-on-surface-variant/75">
+        Prices include taxes. Cancel anytime in Settings with immediate confirmation. The War Chest is separate, completely optional and available on Free and Pro alike.
+      </div>
+</div>
+</section>
+<!-- ==================== "QUESTIONS" (FAQ ACCORDION) ==================== -->
+<section class="py-24 bg-surface-container-low/60 border-y border-outline-variant/30">
+<div class="max-w-4xl mx-auto px-5 sm:px-8">
+<div class="mb-14">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-bold">Inquiries</span>
+<h2 class="font-headline-lg text-headline-lg tracking-tight text-on-surface mt-2 mb-4 font-bold">
+          Frequently asked questions.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Clear, unvarnished policies on installation, age restrictions, and streak resets.
+        </p>
+</div>
+<div class="space-y-4">
+<!-- Q1: Under 18 -->
+<details class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 transition-all [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer font-title-md text-title-md font-semibold text-on-surface">
+<span>Why is WillWar strictly 18+ only?</span>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            WillWar is built for mature adults navigating digital sobriety and sexual self-regulation. We maintain an uncompromising boundary to guarantee that all microcopy, evidence discussions, and features remain frank, clinical, and intended solely for independent adults.
+          </div>
+</details>
+<!-- Q2: Safari PWA -->
+<details class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 transition-all [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer font-title-md text-title-md font-semibold text-on-surface">
+<span>How does it install from Safari without an App Store?</span>
+<summary class="hidden"></summary>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            WillWar is an engineered Progressive Web App (PWA). In Safari on your iPhone, tap the Share icon and select <strong class="text-on-surface font-semibold">"Add to Home Screen"</strong>. It runs in its own full-screen container with offline capability, swift performance, and zero App Store surveillance.
+          </div>
+</details>
+<!-- Q3: Reset Slip -->
+<details class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 transition-all [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer font-title-md text-title-md font-semibold text-on-surface">
+<span>What happens if I slip and reset my streak?</span>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            There is zero shame or gamified penalty. The app asks for a simple, optional trigger tag (e.g., "Late night exhaustion") to populate your insights. Your pact members see your number return to Day 0, but never the cause. Your historical days logged remain permanently in your journal.
+          </div>
+</details>
+<!-- Q4: Pact Privacy -->
+<details class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 transition-all [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer font-title-md text-title-md font-semibold text-on-surface">
+<span>Can anyone in my pact see my private journal notes?</span>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Never. Pacts only broadcast two data points: your anonymized handle and your current streak duration. Journals, urge timestamps, and personal reflections are isolated inside your device storage.
+          </div>
+</details>
+<!-- Q5: Offline Support -->
+<details class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 transition-all [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer font-title-md text-title-md font-semibold text-on-surface">
+<span>Does the clock work offline on airplanes or without data?</span>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Yes. The chronometer derives its state from hardware epoch time. You can play Drift and Swell completely offline. Pact synchronization occurs silently the moment your connection re-establishes.
+          </div>
+</details>
+<!-- Q6: Medical Disclaimer -->
+<details class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 transition-all [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer font-title-md text-title-md font-semibold text-on-surface">
+<span>Is WillWar considered medical therapy?</span>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            No. WillWar is a self-directed behavioral accountability tool, not psychotherapy, medical treatment, or clinical intervention. If you are struggling with compulsive behavioral disorders that impair daily functioning, please consult a licensed mental health professional.
+          </div>
+</details>
+<!-- Q7: War Chest Mechanism -->
+<details class="group p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 transition-all [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer font-title-md text-title-md font-semibold text-on-surface">
+<span>How does the War Chest handle payments and charity transfers?</span>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Collateral is held in segregated trust. If a reset occurs, that fractional sum is sent directly via payment partner to the verified 501(c)(3) or charitable trust you selected. Upon successful completion of your 30-day challenge on December 1st, 100% of remaining funds return to your originating payment method. WillWar charges zero brokerage fees on pledges.
+          </div>
+</details>
+</div>
+</div>
+</section>
+<!-- ==================== FINAL CTA BANNER ==================== -->
+<section class="py-20 relative overflow-hidden bg-surface-container-lowest">
+<div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+<div class="w-12 h-12 rounded-full brass-gradient text-on-primary flex items-center justify-center mx-auto mb-6 shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="waves" style="font-variation-settings: 'FILL' 1;">waves</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-4 tracking-tight">
+        The clock starts when you say it does.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto mb-8">
+        No email verification bottlenecks. No App Store gatekeepers. Install to your home screen in 10 seconds.
+      </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+<a class="w-full sm:w-auto h-[50px] px-8 rounded-full bg-secondary text-on-secondary hover:bg-secondary/90 flex items-center justify-center gap-2 font-title-md text-title-md font-semibold tide-shadow transition-transform active:scale-95" href="#start">
+<span>Start my 30 days</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<span class="block text-label-md font-label-md text-on-surface-variant/75 mt-3">
+        Off-season target: 30 days through December 1st.
+      </span>
+</div>
+</section>
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/30 pt-16 pb-12 text-body-sm font-body-sm">
+<div class="max-w-6xl mx-auto px-5 sm:px-8">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-outline-variant/20">
+<!-- Brand Info -->
+<div class="md:col-span-2 space-y-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" data-icon="waves" style="font-variation-settings: 'FILL' 1;">waves</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">WillWar</span>
+</div>
+<p class="text-on-surface-variant max-w-xs leading-relaxed">
+            A 30-day streak tracker for adults. Built on cognitive load theory, quiet accountability, and zero hyperbole.
+          </p>
+<div class="text-label-md font-label-md text-on-surface-variant/70 pt-2">
+            Designed for mobile hardware Safari PWA.
+          </div>
+</div>
+<!-- Product Col -->
+<div class="space-y-2.5">
+<div class="text-label-md font-label-md font-bold text-on-surface uppercase tracking-wider">Product</div>
+<ul class="space-y-2 text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#timeline">30-Day Timeline</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#ride-it-out">Ride It Out Game</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#pacts">Private Pacts</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#war-chest">War Chest Contract</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#pricing">Pro Pass</a></li>
+</ul>
+</div>
+<!-- Help Col -->
+<div class="space-y-2.5">
+<div class="text-label-md font-label-md font-bold text-on-surface uppercase tracking-wider">Support</div>
+<ul class="space-y-2 text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#">iOS Installation Guide</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Android PWA Setup</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#learn">Evidence Sources</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Contact Support</a></li>
+</ul>
+</div>
+<!-- Legal Col -->
+<div class="space-y-2.5">
+<div class="text-label-md font-label-md font-bold text-on-surface uppercase tracking-wider">Legal</div>
+<ul class="space-y-2 text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#">Privacy Architecture</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Age Verification Policy</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Medical Disclaimer</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-label-md font-label-md text-on-surface-variant/75">
+<div>
+          18+ only. Not medical advice. © WillWar. All rights reserved.
+        </div>
+<div class="flex items-center gap-4">
+<span>Tide Engine v2.4</span>
+<span>•</span>
+<span>Local Device Storage</span>
+<span>•</span>
+<span class="text-secondary font-medium">Off-Season Active</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- ==================== JAVASCRIPT: MICRO-INTERACTIONS ==================== -->
+<script>
+    // 1. Live Ticking Telemetry Clock in Hero
+    let secondsElapsed = 84; // 1m 24s initial offset
+    const clockEl = document.getElementById('hero-clock');
+    
+    function formatTime(totalSecs) {
+      const d = Math.floor(totalSecs / 86400);
+      const h = Math.floor((totalSecs % 86400) / 3600);
+      const m = Math.floor((totalSecs % 3600) / 60);
+      const s = totalSecs % 60;
+      
+      const pad = (n) => String(n).padStart(2, '0');
+      return `${pad(d)}d ${pad(h)}h ${pad(m)}g`.replace('g', pad(m) + 'm ') + `${pad(s)}s`;
+    }
+
+    function updateHeroClock() {
+      secondsElapsed++;
+      const d = Math.floor(secondsElapsed / 86400);
+      const h = Math.floor((secondsElapsed % 86400) / 3600);
+      const m = Math.floor((secondsElapsed % 3600) / 60);
+      const s = secondsElapsed % 60;
+      const pad = (n) => String(n).padStart(2, '0');
+      if (clockEl) {
+        clockEl.textContent = `${pad(d)}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+      }
+    }
+    setInterval(updateHeroClock, 1000);
+
+    // 2. Interactive Tactile Wave Press & Hold Demo
+    const holdBtn = document.getElementById('wave-hold-btn');
+    const waveFill = document.getElementById('interactive-wave-fill');
+    const waveStatus = document.getElementById('wave-status-text');
+    const waveBtnText = document.getElementById('wave-btn-text');
+    let holdTimer = null;
+    let progress = 33;
+
+    function startWaveHold() {
+      waveBtnText.textContent = "Holding steady...";
+      holdTimer = setInterval(() => {
+        if (progress > 5) {
+          progress -= 2;
+          waveFill.style.height = progress + '%';
+        } else {
+          clearInterval(holdTimer);
+          waveStatus.textContent = "Wave passed.";
+          waveStatus.classList.add("text-secondary");
+          waveBtnText.textContent = "Wave subsided. Breathe.";
+          if (navigator.vibrate) navigator.vibrate([40, 60, 40]);
+        }
+      }, 50);
+    }
+
+    function stopWaveHold() {
+      clearInterval(holdTimer);
+      if (progress > 5) {
+        progress = 33;
+        waveFill.style.height = '33%';
+        waveBtnText.textContent = "Hold to ride a wave";
+        waveStatus.textContent = "Wave in progress";
+      }
+    }
+
+    if (holdBtn) {
+      holdBtn.addEventListener('mousedown', startWaveHold);
+      holdBtn.addEventListener('mouseup', stopWaveHold);
+      holdBtn.addEventListener('mouseleave', stopWaveHold);
+      holdBtn.addEventListener('touchstart', (e) => { e.preventDefault(); startWaveHold(); });
+      holdBtn.addEventListener('touchend', stopWaveHold);
+    }
+  </script>
+</body></html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>WillWar - Today</title>
+<!-- Google Fonts: Geist & Epilogue -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#a0cce7",
+            "primary-container": "#9a6c0f",
+            "on-secondary-container": "#066c7d",
+            "on-surface": "#1a1c1f",
+            "on-secondary": "#ffffff",
+            "tertiary": "#356178",
+            "on-tertiary-container": "#fbfcff",
+            "surface-bright": "#f9f9fe",
+            "surface-variant": "#e2e2e7",
+            "on-error": "#ffffff",
+            "surface-dim": "#d9dade",
+            "secondary-fixed": "#a8edff",
+            "surface": "#f9f9fe",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#c3e8ff",
+            "inverse-primary": "#f6bd5d",
+            "primary-fixed": "#ffdead",
+            "surface-tint": "#7f5700",
+            "on-primary-fixed": "#281900",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "outline": "#827565",
+            "surface-container": "#ededf2",
+            "on-secondary-fixed-variant": "#004e5b",
+            "background": "#f9f9fe",
+            "on-tertiary-fixed": "#001e2c",
+            "outline-variant": "#d3c4b1",
+            "secondary": "#006878",
+            "on-primary-container": "#fffbff",
+            "surface-container-highest": "#e2e2e7",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#604100",
+            "inverse-on-surface": "#f0f0f5",
+            "on-secondary-fixed": "#001f26",
+            "on-surface-variant": "#4f4537",
+            "secondary-container": "#9eecff",
+            "secondary-fixed-dim": "#84d2e5",
+            "primary": "#7c5400",
+            "surface-container-high": "#e8e8ed",
+            "primary-fixed-dim": "#f6bd5d",
+            "inverse-surface": "#2e3034",
+            "surface-container-low": "#f3f3f8",
+            "on-background": "#1a1c1f",
+            "tertiary-container": "#4e7a92",
+            "on-error-container": "#93000a",
+            "tide": "#0B6E7F",
+            "tide-deep": "#063A44",
+            "brass": "#B8862B",
+            "brass-dark": "#8A6114"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.25rem",
+            "space-lg": "1.5rem",
+            "margin-desktop": "3rem",
+            "margin-tablet": "2rem",
+            "space-md": "1rem",
+            "margin": "1.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "title-md": ["Geist", "sans-serif"],
+            "label-md": ["Geist", "sans-serif"],
+            "headline-lg": ["Epilogue", "sans-serif"],
+            "telemetry-num": ["Geist", "monospace"],
+            "body-lg": ["Geist", "sans-serif"],
+            "headline-lg-mobile": ["Epilogue", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "display": ["Epilogue", "sans-serif"],
+            "headline-sm": ["Epilogue", "sans-serif"],
+            "headline-md": ["Epilogue", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"]
+          },
+          "fontSize": {
+            "title-md": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "telemetry-num": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-lg": ["1.0625rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+            "display": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.625rem", "fontWeight": "500" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    
+    /* Native wave animation */
+    @keyframes waveFlow {
+      0% { transform: translateX(0) translateZ(0); }
+      50% { transform: translateX(-25%) translateZ(0); }
+      100% { transform: translateX(-50%) translateZ(0); }
+    }
+    .wave-layer-1 {
+      animation: waveFlow 18s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    }
+    .wave-layer-2 {
+      animation: waveFlow 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) -4s infinite;
+    }
+
+    /* Tabular figures for telemetry */
+    .tabular-timer {
+      font-feature-settings: "tnum" 1, "ss01" 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="h-full bg-surface text-on-surface antialiased flex justify-center items-start sm:py-6 selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- iPhone 15 Pro Canvas Container (393px × 852px) -->
+<div class="relative w-full max-w-[393px] h-[852px] max-h-[852px] bg-surface flex flex-col overflow-hidden shadow-2xl sm:rounded-[54px] border-[6px] border-surface-container-high/60">
+<!-- 1. Native iOS Status Bar -->
+<header class="w-full h-11 pt-3 px-7 flex items-center justify-between z-30 shrink-0 select-none bg-surface/80 backdrop-blur-md">
+<span class="font-telemetry-num text-telemetry-num font-semibold text-on-surface tracking-tight">9:41</span>
+<div class="flex items-center space-x-2 text-on-surface">
+<span class="material-symbols-outlined text-[17px]" data-icon="signal_cellular_4_bar">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="battery_full">battery_full</span>
+</div>
+</header>
+<!-- Top App Bar Navigation Element (from Shared Components JSON specs) -->
+<div class="px-5 pt-3 pb-2 flex items-center justify-between shrink-0 z-20">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-medium">Cadence</p>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-on-surface">Today</h1>
+</div>
+<!-- Profile Pebble trailing button leading to Me -->
+<a aria-label="Profile Me" class="relative group flex items-center justify-center w-11 h-11 rounded-full bg-surface-container-lowest border border-outline-variant/30 shadow-sm active:scale-95 transition-transform" href="#me">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-secondary-container to-surface-variant flex items-center justify-center text-secondary border border-white/60">
+<span class="material-symbols-outlined text-[20px]" data-icon="person">person</span>
+</div>
+<span class="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 bg-primary rounded-full border-2 border-surface-container-lowest"></span>
+</a>
+</div>
+<!-- Scrollable Main Content Stream -->
+<main class="flex-1 overflow-y-auto px-5 pt-2 pb-36 space-y-4 no-scrollbar">
+<!-- 3. The Tide card (Signature component, 320pt tall, radius 22) -->
+<section class="relative w-full h-[320px] rounded-[22px] overflow-hidden bg-gradient-to-b from-[#0B6E7F] to-[#063A44] shadow-md flex flex-col justify-between p-5 text-white border border-white/10 select-none">
+<!-- Organic Water Liquid Layers (Day 6 of 30 fill height ~ 22% visually grounded) -->
+<div class="absolute inset-x-0 bottom-0 h-[28%] pointer-events-none overflow-hidden opacity-40">
+<svg class="absolute w-[200%] h-full wave-layer-1 fill-white/20" preserveaspectratio="none" viewbox="0 0 1000 120">
+<path d="M0,40 C150,90 350,-10 500,40 C650,90 850,-10 1000,40 L1000,120 L0,120 Z"></path>
+</svg>
+<svg class="absolute w-[200%] h-full wave-layer-2 fill-white/25 bottom-0" preserveaspectratio="none" viewbox="0 0 1000 120">
+<path d="M0,60 C200,10 300,80 500,50 C700,20 800,80 1000,50 L1000,120 L0,120 Z"></path>
+</svg>
+</div>
+<!-- Upper Card Header: Telemetry & Nautical indicator -->
+<div class="flex items-start justify-between z-10">
+<div class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed" data-icon="waves">waves</span>
+<span class="font-label-md text-label-md font-medium text-white/95 tracking-wide">Tide level · 20%</span>
+</div>
+<div class="text-right">
+<span class="font-telemetry-num text-telemetry-num text-white/70 block leading-none">Day cycle</span>
+<span class="font-title-md text-title-md font-semibold text-white">06 / 30</span>
+</div>
+</div>
+<!-- Vertical Milestone Ticks on Right Edge -->
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 flex flex-col items-center space-y-4 z-10 py-2">
+<!-- Day 7 with brass outline glow -->
+<div class="relative group flex items-center justify-center">
+<span class="absolute -left-9 font-label-md text-[10px] text-[#f6bd5d] font-semibold opacity-90 tracking-tighter">D7</span>
+<div class="w-3 h-3 rounded-full bg-[#B8862B] ring-2 ring-[#ffdead]/80 shadow-[0_0_10px_#B8862B]"></div>
+</div>
+<!-- Day 14 -->
+<div class="relative flex items-center justify-center">
+<span class="absolute -left-9 font-label-md text-[10px] text-white/40 tracking-tighter">D14</span>
+<div class="w-2 h-2 rounded-full bg-white/25"></div>
+</div>
+<!-- Day 21 -->
+<div class="relative flex items-center justify-center">
+<span class="absolute -left-9 font-label-md text-[10px] text-white/40 tracking-tighter">D21</span>
+<div class="w-2 h-2 rounded-full bg-white/25"></div>
+</div>
+<!-- Day 30 Harbor -->
+<div class="relative flex items-center justify-center">
+<span class="absolute -left-9 font-label-md text-[10px] text-white/40 tracking-tighter">D30</span>
+<div class="w-2.5 h-2.5 rounded-full border border-white/40 bg-white/10"></div>
+</div>
+</div>
+<!-- Middle / Core Display: ui-rounded tabular numerals clock -->
+<div class="z-10 my-auto pr-6">
+<p class="font-label-md text-label-md uppercase tracking-widest text-white/60 mb-1">Time sustained</p>
+<div class="font-headline-lg text-[2rem] leading-tight font-bold tracking-tight text-white tabular-timer" id="chronometer">
+            06d 14h 22m 45s
+          </div>
+<p class="font-body-sm text-body-sm text-white/80 mt-1 font-normal">
+            Started Sun 1 Nov · Goal: 30 days
+          </p>
+</div>
+<!-- Footnote milestone baseline progress indicator -->
+<div class="z-10 pt-2 border-t border-white/10 flex items-center justify-between text-white/70">
+<span class="font-label-md text-label-md">Next gate: Harbor 1</span>
+<span class="font-label-md text-label-md font-medium text-[#ffdead]">Tomorrow 09:00</span>
+</div>
+</section>
+<!-- 4. Primary Action Button: 'I held today' (height 50, radius 14, fill #0B6E7F) -->
+<button class="w-full h-[50px] rounded-[14px] bg-[#0B6E7F] hover:bg-[#095b69] active:scale-[0.98] text-white font-title-md text-[17px] font-semibold shadow-sm flex items-center justify-center space-x-2 transition-all duration-150 border-t border-white/20">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+<span>I held today</span>
+</button>
+<!-- 5. Morning line card (radius 16, white card) -->
+<section class="w-full rounded-[16px] bg-surface-container-lowest p-4 border border-outline-variant/30 shadow-[0_2px_12px_rgba(10,63,85,0.03)]">
+<div class="flex items-center space-x-1.5 mb-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="wb_twilight">wb_twilight</span>
+<h2 class="font-label-md text-[13px] font-medium tracking-tight text-on-surface-variant">Morning line</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Day 6. You’ve already handled six evenings like this one. Handle tonight the same way.
+        </p>
+</section>
+<!-- 6. Inset grouped cells (radius 12, bg-white, separators) -->
+<section class="w-full rounded-[12px] bg-surface-container-lowest border border-outline-variant/30 shadow-[0_2px_8px_rgba(0,0,0,0.02)] overflow-hidden divide-y divide-outline-variant/20">
+<!-- Cell 1: Pact check-in -->
+<a class="flex items-center justify-between p-3.5 hover:bg-surface-container-low/50 active:bg-surface-container-low transition-colors" href="#pact">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container/40 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Pact</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3 of 4 checked in</span>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<!-- Small pebble avatars -->
+<div class="flex -space-x-1.5 overflow-hidden">
+<div class="inline-block h-6 w-6 rounded-full ring-2 ring-white bg-[#0B6E7F] text-[10px] text-white font-medium flex items-center justify-center">AR</div>
+<div class="inline-block h-6 w-6 rounded-full ring-2 ring-white bg-[#B8862B] text-[10px] text-white font-medium flex items-center justify-center">MK</div>
+<div class="inline-block h-6 w-6 rounded-full ring-2 ring-white bg-tertiary text-[10px] text-white font-medium flex items-center justify-center">SL</div>
+<div class="inline-block h-6 w-6 rounded-full ring-2 ring-white bg-surface-container text-[10px] text-on-surface-variant font-medium flex items-center justify-center border border-dashed border-outline-variant">?</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</a>
+<!-- Cell 2: Streak shields -->
+<a class="flex items-center justify-between p-3.5 hover:bg-surface-container-low/50 active:bg-surface-container-low transition-colors" href="#shields">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-[#B8862B]/10 text-primary flex items-center justify-center shrink-0 border border-[#B8862B]/20">
+<span class="material-symbols-outlined text-[18px]" data-icon="shield">shield</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Streak shields</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">1 available</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<!-- Cell 3: War Chest -->
+<a class="flex items-center justify-between p-3.5 hover:bg-surface-container-low/50 active:bg-surface-container-low transition-colors" href="#warchest">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">War Chest</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">₹499 still yours</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+</section>
+<!-- Subdued Editorial Grounding Note -->
+<div class="text-center pt-1 pb-4">
+<p class="font-label-md text-label-md text-on-surface-variant/70">Reflect with stillness · Steady water</p>
+</div>
+</main>
+<!-- 7. Persistent floating 'Ride it out' pill capsule -->
+<!-- Positioned exactly 12pt (~48px) above bottom tab bar docking -->
+<div class="absolute bottom-[84px] inset-x-5 z-40 pointer-events-auto">
+<button class="w-full h-[52px] rounded-full bg-gradient-to-r from-[#0B6E7F] to-[#06424e] active:scale-[0.98] text-white shadow-[0_6px_20px_rgba(11,110,127,0.35)] flex items-center justify-center space-x-2 border border-white/25 transition-transform duration-150">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed animate-pulse" data-icon="waves">waves</span>
+<span class="font-title-md text-[16px] font-semibold text-white tracking-wide">Ride it out</span>
+</button>
+</div>
+<!-- 8. Floating glass tab bar (BottomNavBar from Shared Components JSON) -->
+<!-- Specs: 4 tabs: Today (active), Pact, Learn, Me -->
+<nav class="fixed bottom-0 inset-x-0 z-50 flex justify-around items-center px-4 py-2 pb-safe max-w-[393px] mx-auto pointer-events-none">
+<div class="w-full rounded-full mx-auto mb-3 max-w-sm bg-surface-container-low/85 backdrop-blur-2xl border border-outline-variant/30 shadow-lg shadow-on-surface/5 px-2 py-1.5 flex justify-between items-center pointer-events-auto">
+<!-- Tab 1: Today (ACTIVE) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-secondary font-semibold px-4 py-1 rounded-full bg-secondary-container/30 transition-transform duration-150 active:scale-95" href="#today">
+<span class="material-symbols-outlined text-[22px]" data-icon="waves">waves</span>
+<span class="font-label-md text-[11px] leading-tight mt-0.5">Today</span>
+</a>
+<!-- Tab 2: Pact -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 rounded-full hover:text-secondary transition-colors duration-150 active:scale-95" href="#pact">
+<span class="material-symbols-outlined text-[22px]" data-icon="verified">verified</span>
+<span class="font-label-md text-[11px] leading-tight mt-0.5">Pact</span>
+</a>
+<!-- Tab 3: Learn -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 rounded-full hover:text-secondary transition-colors duration-150 active:scale-95" href="#learn">
+<span class="material-symbols-outlined text-[22px]" data-icon="menu_book">menu_book</span>
+<span class="font-label-md text-[11px] leading-tight mt-0.5">Learn</span>
+</a>
+<!-- Tab 4: Me -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 rounded-full hover:text-secondary transition-colors duration-150 active:scale-95" href="#me">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+<span class="font-label-md text-[11px] leading-tight mt-0.5">Me</span>
+</a>
+</div>
+</nav>
+<!-- Native Home Bar Indicator -->
+<div class="absolute bottom-1.5 inset-x-0 flex justify-center pointer-events-none z-50">
+<div class="w-32 h-1 bg-on-surface/30 rounded-full"></div>
+</div>
+</div>
+<!-- Lightweight Chronometer simulation for authentic presence -->
+<script>
+    (function initClock() {
+      let seconds = 45;
+      let minutes = 22;
+      let hours = 14;
+      let days = 6;
+      const el = document.getElementById('chronometer');
+      if (!el) return;
+
+      setInterval(() => {
+        seconds++;
+        if (seconds >= 60) {
+          seconds = 0;
+          minutes++;
+          if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+            if (hours >= 24) {
+              hours = 0;
+              days++;
+            }
+          }
+        }
+        const sStr = String(seconds).padStart(2, '0');
+        const mStr = String(minutes).padStart(2, '0');
+        const hStr = String(hours).padStart(2, '0');
+        const dStr = String(days).padStart(2, '0');
+        el.textContent = `${dStr}d ${hStr}h ${mStr}m ${sStr}s`;
+      }, 1000);
+    })();
+  </script>
+</body></html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>War Chest - Active Detail &amp; Telemetry</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#4f4537",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#001e2c",
+            "primary-container": "#9a6c0f",
+            "on-primary-container": "#fffbff",
+            "outline-variant": "#d3c4b1",
+            "on-primary-fixed": "#281900",
+            "primary": "#7c5400",
+            "outline": "#827565",
+            "inverse-on-surface": "#f0f0f5",
+            "secondary-fixed": "#a8edff",
+            "on-background": "#1a1c1f",
+            "inverse-primary": "#f6bd5d",
+            "on-surface": "#1a1c1f",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#066c7d",
+            "on-secondary-fixed-variant": "#004e5b",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#f6bd5d",
+            "secondary-container": "#9eecff",
+            "on-tertiary-container": "#fbfcff",
+            "background": "#f9f9fe",
+            "surface": "#f9f9fe",
+            "inverse-surface": "#2e3034",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "surface-container-highest": "#e2e2e7",
+            "error": "#ba1a1a",
+            "surface-dim": "#d9dade",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-container": "#4e7a92",
+            "surface-container-high": "#e8e8ed",
+            "on-secondary-fixed": "#001f26",
+            "surface-container-low": "#f3f3f8",
+            "tertiary-fixed": "#c3e8ff",
+            "surface-variant": "#e2e2e7",
+            "surface-bright": "#f9f9fe",
+            "surface-container": "#ededf2",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdead",
+            "surface-tint": "#7f5700",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#a0cce7",
+            "tertiary": "#356178",
+            "on-primary-fixed-variant": "#604100",
+            "secondary-fixed-dim": "#84d2e5",
+            "on-tertiary": "#ffffff",
+            "secondary": "#006878"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin-tablet": "2rem",
+            "space-md": "1rem",
+            "margin": "1.25rem",
+            "space-xl": "2.25rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "margin-desktop": "3rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label-md": ["Geist"],
+            "telemetry-num": ["Geist"],
+            "title-md": ["Geist"],
+            "body-md": ["Geist"],
+            "headline-md": ["Epilogue"],
+            "body-lg": ["Geist"],
+            "headline-lg-mobile": ["Epilogue"],
+            "display": ["Epilogue"],
+            "headline-lg": ["Epilogue"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Epilogue"]
+          },
+          "fontSize": {
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "telemetry-num": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["1.0625rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.625rem", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      background-color: #f3f3f8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-low text-on-surface font-body-md antialiased min-h-screen flex justify-center selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Mobile iPhone Frame (Viewport Container) -->
+<main class="w-full max-w-md bg-background min-h-screen relative flex flex-col pb-36 shadow-2xl">
+<!-- Top App Header & Telemetry Subhead -->
+<header class="sticky top-0 z-40 bg-surface/85 backdrop-blur-xl px-5 pt-12 pb-4 border-b border-outline-variant/15 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="waves">waves</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tight text-on-surface font-bold">War Chest</h1>
+</div>
+<button aria-label="Settings and Information" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors duration-150 active:scale-95 bg-surface-container-lowest border border-outline-variant/30 shadow-sm" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="tune">tune</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-label-md text-label-md font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Active Compact
+        </span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">· Ends 30 Nov</span>
+</div>
+</header>
+<!-- Content Deck -->
+<div class="px-5 pt-5 flex flex-col gap-5">
+<!-- SECTION 1: The Signature Chest Card -->
+<section class="bg-surface-container-lowest rounded-[1rem] p-5 shadow-sm border border-outline-variant/25 relative overflow-hidden">
+<!-- Ambient subtle marine glow -->
+<div class="absolute -top-12 -right-12 w-36 h-36 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-medium">Escrow Status</span>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile tracking-tight font-bold text-on-surface">₹375</span>
+<span class="font-title-md text-title-md text-secondary font-medium ml-1">still yours</span>
+</div>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-surface-container-low border border-outline-variant/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-base" data-icon="lock">lock</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Protected</span>
+</div>
+</div>
+<!-- Two-Part Proportional Split Progress Bar (75% Tide / 25% Cause neutral) -->
+<div class="mt-5">
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden flex p-0.5 gap-0.5 border border-outline-variant/20">
+<!-- 75% Tide Fill -->
+<div aria-label="75% active stake" class="h-full bg-secondary rounded-full transition-all duration-500 ease-out" style="width: 75%;"></div>
+<!-- 25% Allocated to Cause Fill -->
+<div aria-label="25% allocated to cause" class="h-full bg-surface-variant rounded-full transition-all duration-500 ease-out" style="width: 25%;"></div>
+</div>
+<!-- Progress Legend Breakdown -->
+<div class="mt-3.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-telemetry-num text-telemetry-num font-medium text-on-surface">₹375 Active</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-body-sm text-body-sm">₹125 to The Ocean Cleanup</span>
+</div>
+</div>
+</div>
+<!-- Subtext Footer within Chest Card -->
+<div class="mt-5 pt-3.5 border-t border-outline-variant/20 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="event">event</span>
+            Comes back on Tue 1 Dec
+          </span>
+<span class="font-label-md text-label-md text-tertiary font-medium">Held in escrow</span>
+</div>
+</section>
+<!-- SECTION 2: Compact Details (Inset Grouped Architecture) -->
+<section class="bg-surface-container-lowest rounded-[1rem] p-1 shadow-sm border border-outline-variant/25 divide-y divide-outline-variant/15">
+<!-- Cell 1: Cause with outbound link -->
+<a class="flex items-center justify-between p-3.5 hover:bg-surface-container-low/50 transition-colors duration-150 rounded-t-[0.875rem]" href="#ocean-cleanup">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Committed Cause</p>
+<p class="font-title-md text-body-lg font-semibold text-on-surface leading-tight">The Ocean Cleanup</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-secondary">
+<span class="font-label-md text-label-md font-medium">501(c)(3)</span>
+<span class="material-symbols-outlined text-base" data-icon="open_in_new">open_in_new</span>
+</div>
+</a>
+<!-- Cell 2: Compact Rule -->
+<div class="flex items-center justify-between p-3.5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-lg" data-icon="balance">balance</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Compact Rule</p>
+<p class="font-body-md text-body-md font-medium text-on-surface">Steady (25% per reset)</p>
+</div>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-full">1 of 4 spent</span>
+</div>
+<!-- Cell 3: Pact Badge Status Toggle / Visibility -->
+<div class="flex items-center justify-between p-3.5 rounded-b-[0.875rem]">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="verified">verified</span>
+</div>
+<div class="pr-2">
+<p class="font-label-md text-label-md text-on-surface-variant">Pact Telemetry</p>
+<p class="font-body-sm text-body-sm text-on-surface font-medium leading-snug">Backed badge visible to <span class="text-secondary font-semibold">@The Dawn Crew</span></p>
+</div>
+</div>
+<!-- Hydraulic slider toggle state -->
+<button aria-pressed="true" class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-secondary transition-colors duration-200 ease-in-out focus:outline-none" type="button">
+<span class="sr-only">Toggle crew visibility</span>
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-on-secondary shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</section>
+<!-- SECTION 3: Event Timeline (Calm Accounting Log) -->
+<section class="flex flex-col gap-2">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-medium">Accounting Timeline</h2>
+<span class="font-label-md text-label-md text-tertiary">Cryptographic Log</span>
+</div>
+<div class="bg-surface-container-lowest rounded-[1rem] p-4 shadow-sm border border-outline-variant/25 flex flex-col gap-4">
+<!-- Event 1: Recent Streak Reset -->
+<div class="flex items-start gap-3 relative">
+<div class="relative z-10 w-7 h-7 rounded-full bg-surface-variant flex items-center justify-center text-tertiary shrink-0 mt-0.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm" data-icon="update">update</span>
+</div>
+<!-- Connecting line down -->
+<div class="absolute top-7 left-3.5 w-px h-10 bg-outline-variant/30 -ml-[0.5px]"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-num text-body-sm font-semibold text-on-surface">10 Nov, 08:30</span>
+<span class="text-xs px-2 py-0.2 rounded-full bg-surface-container font-label-md text-on-surface-variant">Streak reset</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+                Streak reset logged. <span class="font-medium text-on-surface">₹125 allocated to cause</span>.
+              </p>
+</div>
+</div>
+<!-- Event 2: War Chest Inception -->
+<div class="flex items-start gap-3 relative pt-1">
+<div class="relative z-10 w-7 h-7 rounded-full bg-secondary/15 flex items-center justify-center text-secondary shrink-0 mt-0.5 border border-secondary/20">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-telemetry-num text-body-sm font-semibold text-on-surface">01 Nov, 09:15</span>
+<span class="text-xs px-2 py-0.2 rounded-full bg-secondary/10 text-secondary font-label-md font-medium">Inception</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+                War Chest established with <span class="font-medium text-on-surface">₹499</span>.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Support & Safety Actions -->
+<section class="flex flex-col gap-3">
+<!-- Dignified Return Cell -->
+<a class="bg-surface-container-lowest rounded-[1rem] p-4 shadow-sm border border-outline-variant/25 flex items-center justify-between hover:bg-surface-container-low transition-colors duration-150 group" href="#support-claim">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Need it back early?</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Contact support to withdraw remaining balance with dignity</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-0.5 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+<!-- Reassurance Notice Callout -->
+<div class="p-3.5 rounded-[1rem] bg-surface-container-low border border-outline-variant/30 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5" data-icon="verified_user">verified_user</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span class="font-medium text-on-surface">Honor system.</span> Telemetry is confidential. WillWar never keeps any portion of forfeit donations.
+          </p>
+</div>
+</section>
+</div>
+<!-- Floating Glass Bottom Navigation Bar (Context: Me tab is active) -->
+<nav class="fixed bottom-0 inset-x-0 z-50 flex justify-around items-center px-4 py-2 pb-safe max-w-md mx-auto pointer-events-none">
+<div class="w-full bg-surface-container-low/85 backdrop-blur-2xl border border-outline-variant/30 rounded-full mx-auto mb-4 max-w-sm flex justify-around items-center px-3 py-2 shadow-lg shadow-on-surface/5 pointer-events-auto">
+<!-- Tab 1: Today -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95" href="#today">
+<span class="material-symbols-outlined text-2xl" data-icon="waves">waves</span>
+<span class="text-label-md font-label-md mt-0.5">Today</span>
+</a>
+<!-- Tab 2: Pact -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95" href="#pact">
+<span class="material-symbols-outlined text-2xl" data-icon="verified">verified</span>
+<span class="text-label-md font-label-md mt-0.5">Pact</span>
+</a>
+<!-- Tab 3: Learn -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95" href="#learn">
+<span class="material-symbols-outlined text-2xl" data-icon="menu_book">menu_book</span>
+<span class="text-label-md font-label-md mt-0.5">Learn</span>
+</a>
+<!-- Tab 4: Me (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-secondary font-semibold px-3 py-1.5 rounded-full bg-secondary-container/30 active:scale-95 transition-transform duration-150" href="#me">
+<span class="material-symbols-outlined text-2xl text-secondary" data-icon="person" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-md font-label-md mt-0.5">Me</span>
+</a>
+</div>
+</nav>
+</main>
+</body></html>

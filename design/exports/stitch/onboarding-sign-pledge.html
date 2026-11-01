@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>WillWar — Step 4: Pledge</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;family=Geist:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#a8edff",
+            "tertiary-fixed": "#c3e8ff",
+            "surface-bright": "#f9f9fe",
+            "tertiary-container": "#4e7a92",
+            "on-secondary": "#ffffff",
+            "secondary": "#006878",
+            "surface-dim": "#d9dade",
+            "on-primary-fixed-variant": "#604100",
+            "on-secondary-container": "#066c7d",
+            "on-surface": "#1a1c1f",
+            "tertiary-fixed-dim": "#a0cce7",
+            "inverse-on-surface": "#f0f0f5",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#4f4537",
+            "outline": "#827565",
+            "inverse-primary": "#f6bd5d",
+            "secondary-container": "#9eecff",
+            "surface-container-highest": "#e2e2e7",
+            "surface-tint": "#7f5700",
+            "on-secondary-fixed": "#001f26",
+            "on-primary-fixed": "#281900",
+            "on-tertiary-fixed": "#001e2c",
+            "primary-fixed": "#ffdead",
+            "on-primary-container": "#fffbff",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "surface-container-high": "#e8e8ed",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f3f3f8",
+            "primary-container": "#9a6c0f",
+            "inverse-surface": "#2e3034",
+            "surface-variant": "#e2e2e7",
+            "secondary-fixed-dim": "#84d2e5",
+            "primary": "#7c5400",
+            "error": "#ba1a1a",
+            "outline-variant": "#d3c4b1",
+            "tertiary": "#356178",
+            "surface-container": "#ededf2",
+            "on-secondary-fixed-variant": "#004e5b",
+            "on-tertiary-container": "#fbfcff",
+            "surface": "#f9f9fe",
+            "on-background": "#1a1c1f",
+            "primary-fixed-dim": "#f6bd5d",
+            "background": "#f9f9fe"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin-desktop": "3rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.25rem",
+            "margin-tablet": "2rem",
+            "space-sm": "0.5rem",
+            "margin": "1.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Geist"],
+            "body-lg": ["Geist"],
+            "headline-lg-mobile": ["Epilogue"],
+            "telemetry-num": ["Geist"],
+            "title-md": ["Geist"],
+            "label-md": ["Geist"],
+            "headline-lg": ["Epilogue"],
+            "body-md": ["Geist"],
+            "display": ["Epilogue"],
+            "headline-sm": ["Epilogue"],
+            "headline-md": ["Epilogue"]
+          },
+          "fontSize": {
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+            "body-lg": ["1.0625rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "telemetry-num": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+            "display": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.625rem", "fontWeight": "500" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    
+    /* Subtle wave shimmer for tactile press */
+    @keyframes gentleDrift {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-25%); }
+      100% { transform: translateX(0); }
+    }
+    .wave-fluid {
+      animation: gentleDrift 8s ease-in-out infinite;
+    }
+    
+    /* Device wrapper styling for natural iPhone 15 frame viewport */
+    body {
+      background-color: #ededf2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Geist', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+    }
+
+    #press-progress {
+      transition: width 0.05s linear;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container text-on-surface">
+<!-- iPhone Canvas Shell (393px × 852px) -->
+<main class="relative w-[393px] h-[852px] bg-background overflow-hidden flex flex-col justify-between shadow-2xl border border-outline-variant/30 sm:rounded-[54px]">
+<!-- Top System & Onboarding Navigation Anchor -->
+<header class="w-full pt-4 px-6 flex flex-col gap-3 z-30 select-none">
+<!-- Status Notch Shim -->
+<div class="flex justify-between items-center text-xs tracking-tight font-medium text-on-surface-variant/80 px-2 pt-1 pb-1">
+<span class="font-body-sm text-body-sm font-semibold">9:41</span>
+<div class="flex items-center gap-1.5 opacity-80">
+<span class="material-symbols-outlined text-[15px]" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[17px]" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- Linear Step Bar (Step 3 of 4) -->
+<div class="w-full flex items-center gap-1.5 pt-1 px-1">
+<div class="h-1 flex-1 rounded-full bg-secondary"></div>
+<div class="h-1 flex-1 rounded-full bg-secondary"></div>
+<div class="h-1 flex-1 rounded-full bg-secondary"></div>
+<div class="h-1 flex-1 rounded-full bg-surface-container-highest"></div>
+</div>
+<!-- Action Row: Back Button & Step Telemetry -->
+<div class="flex items-center justify-between mt-1">
+<button aria-label="Back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-label-md text-label-md tracking-wider text-outline uppercase font-semibold">Step 3 of 4</span>
+<div class="w-8"></div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<div class="flex-1 px-6 pt-3 pb-4 flex flex-col justify-start overflow-y-auto">
+<!-- Headline & Context -->
+<div class="space-y-1 mb-5">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tracking-tight">
+          Make it official.
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          A clear, measured boundary you set for yourself. No scoreboards. Just your word.
+        </p>
+</div>
+<!-- Nautical Instrument Card Deck: The Pledge Contract -->
+<section class="relative bg-surface-container-lowest border border-black/[0.05] rounded-lg p-6 shadow-sm overflow-hidden mb-4">
+<!-- Sub-surface Watermark / Brass Instrument Accent -->
+<div class="absolute -right-4 -bottom-6 opacity-[0.04] pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[130px]" data-icon="explore">explore</span>
+</div>
+<div class="relative z-10 flex flex-col gap-4">
+<!-- Nautical Water Chip: Reason Badge -->
+<div class="self-start inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/25 border border-secondary/15">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="water_drop">water_drop</span>
+<span class="font-label-md text-label-md font-medium text-secondary tracking-normal">For Focus &amp; Discipline</span>
+</div>
+<!-- Pledge Statement (Title 2, 22pt / measured editorial prose) -->
+<blockquote class="font-headline-sm text-headline-sm text-on-surface leading-snug font-normal tracking-tight pt-1">
+            “Until Mon 30 November, I’ll ride out the urge instead of giving in. I’m doing it for focus.”
+          </blockquote>
+<!-- Metadata Telemetry Separator -->
+<div class="pt-3 mt-1 border-t border-surface-container flex items-center justify-between text-outline">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="verified">verified</span>
+<span class="font-label-md text-label-md text-tertiary font-medium">Personal Compact</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant/70">Ref: 24-NOV</span>
+</div>
+</div>
+</section>
+<!-- Brass Telemetry & Physical Assurance -->
+<div class="flex items-center gap-3 px-2 py-1.5 bg-surface-container-low/70 rounded-md border border-outline-variant/30">
+<div class="w-7 h-7 rounded-full bg-primary-fixed/50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[17px]" data-icon="anchor">anchor</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Binding only to your own standards. Modify or pause anytime with dignity.
+        </p>
+</div>
+</div>
+<!-- Handheld Bottom Anchor (64pt / 85px Capsule Interaction Zone) -->
+<footer class="w-full px-6 pb-9 pt-2 bg-gradient-to-t from-background via-background to-transparent flex flex-col items-center select-none z-20">
+<!-- Placeholder Signature Line Preview -->
+<div class="w-full flex items-center justify-center gap-3 mb-4 px-8">
+<div class="h-[1px] flex-1 bg-outline-variant/60"></div>
+<span class="font-label-md text-label-md text-outline tracking-wider uppercase font-medium" id="signature-label">
+          Awaiting Mark
+        </span>
+<div class="h-[1px] flex-1 bg-outline-variant/60"></div>
+</div>
+<!-- The 64pt-tall Fluid Press Capsule Button -->
+<div class="relative w-full h-16">
+<button aria-label="Hold to sign pledge" class="relative w-full h-full rounded-full overflow-hidden bg-surface-container-high border border-secondary/20 shadow-md active:scale-[0.98] transition-all flex items-center justify-center cursor-pointer group" id="sign-button" type="button">
+<!-- Tide Wave Fill Progress Indicator -->
+<div class="absolute left-0 top-0 bottom-0 w-0 bg-gradient-to-r from-secondary to-secondary-container transition-[width] duration-75 ease-out opacity-90" id="press-progress"></div>
+<!-- Subtle Refraction Gloss Rim -->
+<div class="absolute inset-0 rounded-full border border-white/40 pointer-events-none"></div>
+<!-- Button Text & Wave Glyphs -->
+<div class="relative z-10 flex items-center justify-center gap-2 pointer-events-none">
+<span class="material-symbols-outlined text-secondary group-hover:text-on-secondary transition-colors duration-150 text-[20px]" data-icon="waves" id="btn-icon">waves</span>
+<span class="font-title-md text-title-md font-semibold text-secondary tracking-tight transition-colors duration-150" id="btn-text">Hold to sign</span>
+</div>
+</button>
+</div>
+<!-- Microcopy Helper -->
+<p class="font-label-md text-label-md text-outline mt-2.5 mb-2 text-center" id="helper-note">
+        Hold for 3 seconds to commit
+      </p>
+<!-- Plain Secondary Action (No pressure, no guilt) -->
+<button class="w-full py-2.5 rounded-full text-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors active:opacity-60" type="button">
+        Skip
+      </button>
+<!-- Home Indicator Clearance -->
+<div class="w-32 h-1 bg-on-surface/20 rounded-full mt-2"></div>
+</footer>
+</main>
+<!-- Interactive Logic for the 3-Second Hold Mechanism -->
+<script>
+    (function() {
+      const button = document.getElementById('sign-button');
+      const progressBar = document.getElementById('press-progress');
+      const btnText = document.getElementById('btn-text');
+      const btnIcon = document.getElementById('btn-icon');
+      const helperNote = document.getElementById('helper-note');
+      const signatureLabel = document.getElementById('signature-label');
+      
+      let holdTimer = null;
+      let startTime = 0;
+      let isCompleted = false;
+      const DURATION = 3000; // 3 seconds
+
+      function startPress(e) {
+        if (isCompleted) return;
+        e.preventDefault();
+        startTime = Date.now();
+        
+        button.classList.add('scale-[0.98]');
+        
+        holdTimer = setInterval(() => {
+          const elapsed = Date.now() - startTime;
+          const percentage = Math.min((elapsed / DURATION) * 100, 100);
+          progressBar.style.width = percentage + '%';
+
+          if (percentage > 40) {
+            btnText.classList.remove('text-secondary');
+            btnText.classList.add('text-on-secondary');
+            btnIcon.classList.remove('text-secondary');
+            btnIcon.classList.add('text-on-secondary');
+          }
+
+          if (elapsed >= DURATION) {
+            commitPledge();
+          }
+        }, 30);
+      }
+
+      function cancelPress() {
+        if (isCompleted) return;
+        clearInterval(holdTimer);
+        progressBar.style.width = '0%';
+        btnText.classList.remove('text-on-secondary');
+        btnText.classList.add('text-secondary');
+        btnIcon.classList.remove('text-on-secondary');
+        btnIcon.classList.add('text-secondary');
+        button.classList.remove('scale-[0.98]');
+      }
+
+      function commitPledge() {
+        clearInterval(holdTimer);
+        isCompleted = true;
+        progressBar.style.width = '100%';
+        
+        // Transform button into signed state
+        btnText.innerText = "Pledge Signed";
+        btnIcon.innerText = "verified";
+        btnIcon.setAttribute('data-icon', 'verified');
+        btnText.classList.add('text-on-secondary');
+        btnIcon.classList.add('text-on-secondary');
+        
+        button.classList.remove('bg-surface-container-high');
+        button.classList.add('bg-secondary');
+        
+        // Update signature line & helper label
+        signatureLabel.innerText = "Signed on " + new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+        signatureLabel.classList.remove('text-outline');
+        signatureLabel.classList.add('text-secondary', 'font-semibold');
+        
+        helperNote.innerText = "Recorded in local log. Standing with you.";
+        helperNote.classList.remove('text-outline');
+        helperNote.classList.add('text-secondary');
+      }
+
+      // Touch & Mouse bindings
+      button.addEventListener('mousedown', startPress);
+      button.addEventListener('touchstart', startPress, { passive: false });
+
+      window.addEventListener('mouseup', cancelPress);
+      window.addEventListener('touchend', cancelPress);
+      window.addEventListener('touchcancel', cancelPress);
+    })();
+  </script>
+</body></html>

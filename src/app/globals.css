@@ -1,0 +1,369 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+/* Only token colors exist as utilities; raw palette colors are removed on purpose. */
+@theme {
+  --color-*: initial;
+  --font-*: initial;
+}
+
+@theme inline {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grouped: var(--bg-grouped);
+  --color-surface: var(--bg);
+  --color-tertiary: var(--bg-tertiary);
+  --color-label: var(--label);
+  --color-label-2: var(--label-2);
+  --color-label-3: var(--label-3);
+  --color-separator: var(--separator);
+  --color-tide: var(--tide);
+  --color-tide-deep: var(--tide-deep);
+  --color-tide-wash: var(--tide-wash);
+  --color-brass: var(--brass);
+  --color-brass-ink: var(--brass-ink);
+  --color-destructive: var(--destructive);
+  --color-on-tide: var(--on-tide);
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-harbor: var(--harbor);
+  --color-harbor-bright: var(--harbor-bright);
+  --color-glacier: var(--glacier);
+  --color-glacier-deep: var(--glacier-deep);
+  --color-dawn: var(--dawn);
+  --color-dawn-deep: var(--dawn-deep);
+  --color-sun: var(--sun);
+  --color-foam: var(--foam);
+
+  --font-sans: var(--font-system);
+  --font-num: var(--font-numerals);
+
+  /* App type scale (DESIGN.md section 3, iOS Dynamic Type Large) */
+  --text-clock: 4rem;
+  --text-clock--line-height: 4rem;
+  --text-large-title: 2.125rem;
+  --text-large-title--line-height: 2.5625rem;
+  --text-title-2: 1.375rem;
+  --text-title-2--line-height: 1.75rem;
+  --text-headline: 1.0625rem;
+  --text-headline--line-height: 1.375rem;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.375rem;
+  --text-subhead: 0.9375rem;
+  --text-subhead--line-height: 1.25rem;
+  --text-footnote: 0.8125rem;
+  --text-footnote--line-height: 1.125rem;
+  --text-tab: 0.6875rem;
+  --text-tab--line-height: 0.8125rem;
+
+  /* Landing scale */
+  --text-hero: clamp(2.75rem, 7vw, 5.5rem);
+  --text-hero--line-height: 1.04;
+  --text-h2: clamp(2rem, 4.5vw, 3.5rem);
+  --text-h2--line-height: 1.08;
+  --text-lead: 1.3125rem;
+  --text-lead--line-height: 1.875rem;
+  --text-landing-body: 1.0625rem;
+  --text-landing-body--line-height: 1.625rem;
+  --text-hero-clock: clamp(3.5rem, 12vw, 8rem);
+  --text-hero-clock--line-height: 1;
+
+  --radius-cell: 12px;
+  --radius-btn: 14px;
+  --radius-card: 16px;
+  --radius-sheet: 22px;
+
+  --shadow-float: var(--shadow-float);
+  --ease-standard: var(--ease-standard);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    background: var(--bg-grouped);
+    color: var(--label);
+    font-family: var(--font-system);
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+  :focus-visible {
+    outline: 2px solid var(--tide);
+    outline-offset: 2px;
+  }
+  input,
+  select,
+  textarea {
+    font-size: max(16px, 1rem);
+  }
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  /* Liquid Glass, web version: floating chrome only (DESIGN.md section 4). */
+  .glass {
+    background: color-mix(in srgb, var(--bg) 72%, transparent);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border: 0.5px solid var(--glass-border);
+    box-shadow: var(--glass-highlight), var(--shadow-float);
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .glass {
+      background: var(--bg);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+
+  .num {
+    font-family: var(--font-numerals);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hairline-b {
+    border-bottom: 0.5px solid var(--separator);
+  }
+
+  /* Pressed state on every tappable: scale 0.97, opacity 0.85, 120ms. */
+  .pressable {
+    transition:
+      transform var(--dur-tap) var(--ease-standard),
+      opacity var(--dur-tap) var(--ease-standard);
+    touch-action: manipulation;
+  }
+  .pressable:active:not(:disabled) {
+    transform: scale(0.97);
+    opacity: 0.85;
+  }
+
+  .no-callout {
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+@utility pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+@utility min-h-dvh-screen {
+  min-height: 100dvh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* View Transitions between tabs and routes (where supported). */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 200ms;
+    animation-timing-function: var(--ease-standard);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes hud-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes glint {
+  from {
+    transform: translateX(-120%) rotate(18deg);
+  }
+  to {
+    transform: translateX(220%) rotate(18deg);
+  }
+}
+@keyframes ring-draw {
+  from {
+    stroke-dashoffset: var(--ring-length, 1000);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ---------------------------------------------------------------- Landing */
+.landing {
+  color-scheme: dark;
+}
+/* Night at the top of the page, dawn at the bottom; --p is scroll progress (0..1). */
+.landing-sky {
+  --p: 0;
+  background:
+    radial-gradient(120% 60% at 50% calc(130% - var(--p) * 40%), color-mix(in oklab, var(--sun) calc(var(--p) * 70%), transparent), transparent 70%),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--night) calc(100% - var(--p) * 55%), var(--glacier-deep)) 0%,
+      color-mix(in oklab, var(--night-2) calc(100% - var(--p) * 100%), var(--dawn-deep)) 55%,
+      color-mix(in oklab, var(--glacier-deep) calc(100% - var(--p) * 100%), var(--dawn)) 100%
+    );
+}
+.landing-stars {
+  opacity: calc(1 - var(--p) * 1.6);
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, #fff9 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 8%, #fff8 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 44% 26%, #fff7 50%, transparent 51%),
+    radial-gradient(1px 1px at 61% 12%, #fff9 50%, transparent 51%),
+    radial-gradient(2px 2px at 78% 22%, #fffa 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 6%, #fff8 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 6% 38%, #fff6 50%, transparent 51%),
+    radial-gradient(1px 1px at 36% 42%, #fff6 50%, transparent 51%),
+    radial-gradient(1px 1px at 70% 36%, #fff7 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 94% 44%, #fff6 50%, transparent 51%);
+  background-size: 640px 520px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .landing-stars {
+    animation: twinkle 6s ease-in-out infinite alternate;
+  }
+  .landing-marquee {
+    animation: marquee 38s linear infinite;
+  }
+  .landing-marquee:hover {
+    animation-play-state: paused;
+  }
+}
+.landing-moon {
+  background: radial-gradient(circle at 35% 35%, #fff, var(--foam) 45%, color-mix(in oklab, var(--foam) 60%, var(--glacier)) 100%);
+  box-shadow:
+    0 0 60px rgb(233 247 249 / 0.35),
+    0 0 140px rgb(94 143 184 / 0.35);
+}
+.landing-sun {
+  background: radial-gradient(circle, #fff6dd 0%, var(--sun) 35%, color-mix(in oklab, var(--dawn) 80%, transparent) 62%, transparent 72%);
+  filter: saturate(1.1);
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .landing-sun {
+      animation: sun-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 60%;
+    }
+  }
+}
+.landing-dawn-text {
+  background: linear-gradient(100deg, var(--sun), var(--dawn) 55%, #f6c7b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.landing-pro-border {
+  background: linear-gradient(135deg, var(--sun), var(--dawn), var(--glacier), var(--harbor-bright), var(--sun));
+  background-size: 300% 300%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .landing-pro-border {
+    animation: border-flow 8s ease-in-out infinite;
+  }
+}
+
+@keyframes twinkle {
+  from {
+    filter: brightness(0.75);
+  }
+  to {
+    filter: brightness(1.25);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes bubble {
+  from {
+    transform: translateY(0) scale(0.6);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(-110px) scale(1.2);
+    opacity: 0;
+  }
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-18deg);
+  }
+  75% {
+    transform: rotate(18deg);
+  }
+}
+@keyframes sheen {
+  0%,
+  60% {
+    transform: translateX(0) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(420%) skewX(-20deg);
+  }
+}
+@keyframes sun-rise {
+  from {
+    transform: translate(-50%, 45%) scale(0.85);
+    opacity: 0.4;
+  }
+  to {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes border-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

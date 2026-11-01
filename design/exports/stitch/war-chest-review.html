@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>War Chest - Review &amp; Commit</title>
+<!-- Google Fonts: Epilogue & Geist -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Geist:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#4f4537",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#001e2c",
+            "primary-container": "#9a6c0f",
+            "on-primary-container": "#fffbff",
+            "outline-variant": "#d3c4b1",
+            "on-primary-fixed": "#281900",
+            "primary": "#7c5400",
+            "outline": "#827565",
+            "inverse-on-surface": "#f0f0f5",
+            "secondary-fixed": "#a8edff",
+            "on-background": "#1a1c1f",
+            "inverse-primary": "#f6bd5d",
+            "on-surface": "#1a1c1f",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#066c7d",
+            "on-secondary-fixed-variant": "#004e5b",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#f6bd5d",
+            "secondary-container": "#9eecff",
+            "on-tertiary-container": "#fbfcff",
+            "background": "#f9f9fe",
+            "surface": "#f9f9fe",
+            "inverse-surface": "#2e3034",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "surface-container-highest": "#e2e2e7",
+            "error": "#ba1a1a",
+            "surface-dim": "#d9dade",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-container": "#4e7a92",
+            "surface-container-high": "#e8e8ed",
+            "on-secondary-fixed": "#001f26",
+            "surface-container-low": "#f3f3f8",
+            "tertiary-fixed": "#c3e8ff",
+            "surface-variant": "#e2e2e7",
+            "surface-bright": "#f9f9fe",
+            "surface-container": "#ededf2",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdead",
+            "surface-tint": "#7f5700",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#a0cce7",
+            "tertiary": "#356178",
+            "on-primary-fixed-variant": "#604100",
+            "secondary-fixed-dim": "#84d2e5",
+            "on-tertiary": "#ffffff",
+            "secondary": "#006878"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin-tablet": "2rem",
+            "space-md": "1rem",
+            "margin": "1.25rem",
+            "space-xl": "2.25rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "margin-desktop": "3rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label-md": ["Geist"],
+            "telemetry-num": ["Geist"],
+            "title-md": ["Geist"],
+            "body-md": ["Geist"],
+            "headline-md": ["Epilogue"],
+            "body-lg": ["Geist"],
+            "headline-lg-mobile": ["Epilogue"],
+            "display": ["Epilogue"],
+            "headline-lg": ["Epilogue"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Epilogue"]
+          },
+          "fontSize": {
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "telemetry-num": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["1.0625rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.625rem", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Technical & Instrument Typography Utilities */
+    .tabular-numbers {
+      font-variant-numeric: tabular-nums;
+    }
+    /* Subtle refraction glass highlight */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: 0 4px 20px -2px rgba(10, 63, 85, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+    .safe-bottom {
+      padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 24px));
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="h-full bg-surface-container-high flex justify-center text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Mobile iPhone Shell Frame -->
+<main class="w-full max-w-[430px] min-h-screen bg-surface flex flex-col relative shadow-2xl overflow-x-hidden border-x border-outline-variant/10">
+<!-- Top App Bar (Task-focused: back action, suppress global BottomNavBar) -->
+<header class="sticky top-0 z-40 bg-surface/85 backdrop-blur-xl px-5 pt-12 pb-3.5 flex items-center justify-between border-b border-outline-variant/15">
+<button aria-label="Back to amount setup" class="flex items-center justify-center w-9 h-9 rounded-full bg-surface-container-low text-secondary hover:bg-surface-container active:scale-95 transition-all duration-150" onclick="window.history.back()" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h2 class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">
+        Review Commitment
+      </h2>
+<div class="w-9 h-9 flex items-center justify-center text-on-surface-variant/70">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 px-5 pt-6 pb-8 space-y-6">
+<!-- Header Section: Intention & Escrow Context -->
+<section class="space-y-1.5">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary/10 border border-secondary/20 mb-1">
+<span class="material-symbols-outlined text-secondary text-[14px]" data-icon="security">security</span>
+<span class="font-label-md text-label-md text-secondary tracking-normal">Escrow Protocol</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight font-semibold">
+          Review your compact
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Money is committed to escrow. Returned automatically upon challenge completion on Tue 1 Dec.
+        </p>
+</section>
+<!-- Section 1: Compact Summary Card -->
+<section aria-labelledby="compact-summary-heading">
+<h2 class="sr-only" id="compact-summary-heading">Compact Summary</h2>
+<div class="rounded-2xl p-5 bg-surface-container-lowest border border-outline-variant/30 shadow-sm relative overflow-hidden space-y-5">
+<!-- Subtle corner refraction water indicator -->
+<div class="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-secondary-fixed/30 blur-2xl pointer-events-none"></div>
+<!-- Committed Stake Telemetry -->
+<div class="flex items-baseline justify-between border-b border-surface-container pb-4">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block mb-1">Committed Stake</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">₹</span>
+<span class="text-[2.25rem] font-bold font-telemetry-num tracking-tight tabular-numbers text-on-surface">499</span>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-surface-container-low text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[13px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Protected</span>
+</span>
+</div>
+</div>
+<!-- Card Breakdown Rows -->
+<dl class="space-y-3.5">
+<!-- Rule -->
+<div class="flex items-start justify-between gap-3 text-left">
+<dt class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="tune">tune</span>
+<span>Rule</span>
+</dt>
+<dd class="font-telemetry-num text-telemetry-num font-medium text-on-surface text-right">
+                Steady · 25% per reset (₹125)
+              </dd>
+</div>
+<!-- Designated Cause -->
+<div class="flex items-start justify-between gap-3 text-left">
+<dt class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="waves">waves</span>
+<span>Designated Cause</span>
+</dt>
+<dd class="text-right flex flex-col items-end">
+<div class="flex items-center gap-1 text-right">
+<span class="font-body-md text-body-md font-medium text-on-surface">The Ocean Cleanup</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" data-icon="verified" data-weight="fill" title="Verified NGO">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">&amp; Coastal Habitats</span>
+</dd>
+</div>
+<!-- Settlement Date -->
+<div class="flex items-start justify-between gap-3 text-left pt-2 border-t border-surface-container">
+<dt class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="event_available">event_available</span>
+<span>Settlement Date</span>
+</dt>
+<dd class="font-telemetry-num text-telemetry-num font-medium text-on-surface text-right">
+                Returns Tue 1 Dec 2026
+              </dd>
+</div>
+</dl>
+</div>
+</section>
+<!-- Section 2: Transparent Commitments List -->
+<section aria-labelledby="transparency-heading" class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="policy">policy</span>
+<h2 class="font-title-md text-title-md text-on-surface" id="transparency-heading">
+            Transparent commitments
+          </h2>
+</div>
+<div class="rounded-2xl bg-surface-container-lowest border border-outline-variant/25 p-4 divide-y divide-surface-container shadow-sm">
+<!-- Item 1 -->
+<div class="flex items-start gap-3.5 py-3 first:pt-1 last:pb-1">
+<div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]" data-icon="handshake">handshake</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug pt-0.5">
+              Honor system. Nobody verifies your check-ins but you.
+            </p>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-3.5 py-3 first:pt-1 last:pb-1">
+<div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]" data-icon="history">history</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug pt-0.5">
+              Changed your mind? Cancel within 24 hours for an immediate full refund.
+            </p>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-3.5 py-3 first:pt-1 last:pb-1">
+<div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]" data-icon="support_agent">support_agent</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug pt-0.5">
+              Money tight later? Contact support anytime and we will return what remains.
+            </p>
+</div>
+<!-- Item 4 -->
+<div class="flex items-start gap-3.5 py-3 first:pt-1 last:pb-1">
+<div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]" data-icon="receipt_long">receipt_long</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug pt-0.5">
+              WillWar takes 0% fee. We publish monthly donation receipts.
+            </p>
+</div>
+</div>
+</section>
+<!-- Section 3: Optional Display Toggle -->
+<section aria-label="Privacy and leaderboard visibility preferences">
+<label class="cursor-pointer block" for="backed-badge-toggle">
+<div class="rounded-2xl bg-surface-container-lowest border border-outline-variant/25 p-4 shadow-sm transition hover:bg-surface-bright">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1 pr-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="shield">shield</span>
+<span class="font-title-md text-title-md text-on-surface">Show Backed badge in pact leaderboards</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Displays a quiet vault icon next to your handle in <span class="font-medium text-on-surface">@The Dawn Crew</span>. Never reveals the amount.
+                </p>
+</div>
+<!-- iOS Style Smooth Toggle -->
+<div class="shrink-0 pt-0.5">
+<input checked="" class="sr-only peer" id="backed-badge-toggle" type="checkbox"/>
+<div class="w-12 h-7 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-secondary relative"></div>
+</div>
+</div>
+</div>
+</label>
+</section>
+</div>
+<!-- Section 4: Payment Action & Grounded Marine Docks -->
+<div class="sticky bottom-0 z-30 bg-surface/90 backdrop-blur-2xl border-t border-outline-variant/15 px-5 pt-4 safe-bottom space-y-3">
+<!-- Primary Action: Calm Tide Theme (No brass urgency) -->
+<button class="w-full h-14 rounded-full bg-secondary hover:bg-on-secondary-container active:scale-[0.98] transition-all duration-150 flex items-center justify-center gap-2 text-on-secondary shadow-md shadow-secondary/15 font-title-md text-title-md font-semibold" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock_open">lock_open</span>
+<span>Pay ₹499 into my War Chest</span>
+</button>
+<!-- Alternative Mode Link -->
+<div class="text-center pt-0.5">
+<button class="font-body-sm text-body-sm text-tertiary hover:text-secondary font-medium transition-colors duration-150 inline-flex items-center gap-1 py-1" type="button">
+<span>Or switch to Promise mode (no money moves)</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Trust Footnote -->
+<div class="flex items-center justify-center gap-1.5 text-on-surface-variant/80 pb-2">
+<span class="material-symbols-outlined text-[14px] text-tertiary" data-icon="verified_user">verified_user</span>
+<p class="font-label-md text-label-md tracking-normal">
+          Secure payment via Razorpay / UPI. Encrypted and held in trust.
+        </p>
+</div>
+</div>
+</main>
+</body></html>

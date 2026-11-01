@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>War Chest - Back your pledge?</title>
+<!-- Google Fonts: Geist & Epilogue -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#4f4537",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#001e2c",
+            "primary-container": "#9a6c0f",
+            "on-primary-container": "#fffbff",
+            "outline-variant": "#d3c4b1",
+            "on-primary-fixed": "#281900",
+            "primary": "#7c5400",
+            "outline": "#827565",
+            "inverse-on-surface": "#f0f0f5",
+            "secondary-fixed": "#a8edff",
+            "on-background": "#1a1c1f",
+            "inverse-primary": "#f6bd5d",
+            "on-surface": "#1a1c1f",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#066c7d",
+            "on-secondary-fixed-variant": "#004e5b",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#f6bd5d",
+            "secondary-container": "#9eecff",
+            "on-tertiary-container": "#fbfcff",
+            "background": "#f9f9fe",
+            "surface": "#f9f9fe",
+            "inverse-surface": "#2e3034",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "surface-container-highest": "#e2e2e7",
+            "error": "#ba1a1a",
+            "surface-dim": "#d9dade",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-container": "#4e7a92",
+            "surface-container-high": "#e8e8ed",
+            "on-secondary-fixed": "#001f26",
+            "surface-container-low": "#f3f3f8",
+            "tertiary-fixed": "#c3e8ff",
+            "surface-variant": "#e2e2e7",
+            "surface-bright": "#f9f9fe",
+            "surface-container": "#ededf2",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdead",
+            "surface-tint": "#7f5700",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#a0cce7",
+            "tertiary": "#356178",
+            "on-primary-fixed-variant": "#604100",
+            "secondary-fixed-dim": "#84d2e5",
+            "on-tertiary": "#ffffff",
+            "secondary": "#006878"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin-tablet": "2rem",
+            "space-md": "1rem",
+            "margin": "1.25rem",
+            "space-xl": "2.25rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "margin-desktop": "3rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label-md": ["Geist", "sans-serif"],
+            "telemetry-num": ["Geist", "sans-serif"],
+            "title-md": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "headline-md": ["Epilogue", "sans-serif"],
+            "body-lg": ["Geist", "sans-serif"],
+            "headline-lg-mobile": ["Epilogue", "sans-serif"],
+            "display": ["Epilogue", "sans-serif"],
+            "headline-lg": ["Epilogue", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "headline-sm": ["Epilogue", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "telemetry-num": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["1.0625rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.625rem", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .glass-sheet {
+      background: rgba(249, 249, 254, 0.94);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+    }
+    .tide-rim {
+      box-shadow: 0 0 0 1.5px #006878, 0 4px 16px rgba(0, 104, 120, 0.12);
+    }
+    .neutral-card {
+      background: #ffffff;
+      box-shadow: 0 2px 12px rgba(10, 63, 85, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+    .tide-wash {
+      background-color: rgba(0, 104, 120, 0.07);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-high min-h-screen text-on-surface antialiased flex justify-center items-start sm:py-8">
+<!-- iPhone Frame Mockup Context Container -->
+<main class="w-full max-w-md min-h-screen sm:min-h-[880px] sm:max-h-[920px] bg-surface flex flex-col relative overflow-hidden sm:rounded-lg shadow-2xl">
+<!-- Top Grabber & Modal Sheet Bar -->
+<header class="sticky top-0 z-30 pt-3 pb-3 px-5 flex flex-col items-center glass-sheet border-b border-surface-container">
+<!-- Sheet Grabber Handle -->
+<div aria-hidden="true" class="w-10 h-1 bg-surface-container-highest rounded-full mb-3"></div>
+<div class="w-full flex items-center justify-between">
+<!-- Leading Back / Close (Subtle Icon) -->
+<button aria-label="Close" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+<!-- Sheet Title -->
+<h1 class="text-headline-sm font-headline-sm tracking-tight text-on-surface">War Chest</h1>
+<!-- Balanced spacer -->
+<div aria-hidden="true" class="w-8 h-8 opacity-0 pointer-events-none"></div>
+</div>
+</header>
+<!-- Scrollable Sheet Content Canvas -->
+<div class="flex-1 overflow-y-auto px-5 pt-3 pb-44 space-y-6">
+<!-- Section 1: Offer Header -->
+<section class="space-y-3">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full tide-wash border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-[15px]" data-icon="anchor">anchor</span>
+<span class="text-label-md font-label-md text-secondary">Post-Day 1 Milestone Commitment</span>
+</div>
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile tracking-tight text-on-surface">
+          Back your pledge?
+        </h2>
+<div class="space-y-2 text-body-lg font-body-lg text-on-surface">
+<p class="leading-relaxed">
+            Put an amount behind it. Each reset sends a quarter to a cause you pick. Make it to Mon 30 November and whatever's left comes back to you.
+          </p>
+<p class="text-secondary font-medium">
+            WillWar never keeps any of it.
+          </p>
+</div>
+<div class="pt-1">
+<p class="text-body-sm font-body-sm text-outline">
+            We'll only ask once. You'll find it in Me if you change your mind.
+          </p>
+</div>
+</section>
+<!-- Section 2: Amount Picker -->
+<section class="neutral-card rounded-DEFAULT p-4 space-y-3.5">
+<div class="flex items-baseline justify-between">
+<h3 class="text-title-md font-title-md text-on-surface">How much?</h3>
+<span class="text-label-md font-label-md text-secondary uppercase tracking-wider">Reflex Stake</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          Pick an amount you'd notice, not one that would hurt.
+        </p>
+<!-- Chips Row / Grid -->
+<div aria-label="Pledge Amount" class="grid grid-cols-3 gap-2 pt-1" role="radiogroup">
+<!-- ₹99 -->
+<button aria-checked="false" class="py-2.5 px-3 rounded-DEFAULT border border-surface-container-highest bg-surface-container-lowest text-center hover:border-secondary/40 active:scale-95 transition-all" role="radio" type="button">
+<span class="block text-telemetry-num font-telemetry-num text-on-surface">₹99</span>
+</button>
+<!-- ₹199 -->
+<button aria-checked="false" class="py-2.5 px-3 rounded-DEFAULT border border-surface-container-highest bg-surface-container-lowest text-center hover:border-secondary/40 active:scale-95 transition-all" role="radio" type="button">
+<span class="block text-telemetry-num font-telemetry-num text-on-surface">₹199</span>
+</button>
+<!-- ₹499 (Selected) -->
+<button aria-checked="true" class="py-2.5 px-3 rounded-DEFAULT tide-wash tide-rim text-center active:scale-95 transition-all relative" role="radio" type="button">
+<span class="block text-telemetry-num font-telemetry-num text-secondary font-semibold">₹499</span>
+<div class="absolute -top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary"></div>
+</button>
+<!-- ₹999 -->
+<button aria-checked="false" class="py-2.5 px-3 rounded-DEFAULT border border-surface-container-highest bg-surface-container-lowest text-center hover:border-secondary/40 active:scale-95 transition-all" role="radio" type="button">
+<span class="block text-telemetry-num font-telemetry-num text-on-surface">₹999</span>
+</button>
+<!-- Custom Chip -->
+<button aria-checked="false" class="col-span-2 py-2.5 px-3 rounded-DEFAULT border border-surface-container-highest bg-surface-container-lowest flex items-center justify-between hover:border-secondary/40 active:scale-95 transition-all" role="radio" type="button">
+<span class="text-body-md font-body-md text-on-surface font-medium">Custom</span>
+<span class="text-body-sm font-body-sm text-outline">₹49–₹5,000</span>
+</button>
+</div>
+</section>
+<!-- Section 3: Rule Selector -->
+<section class="space-y-2.5">
+<h3 class="text-title-md font-title-md text-on-surface px-1">Choose the rule</h3>
+<div aria-label="Enforcement Rules" class="space-y-2.5" role="radiogroup">
+<!-- Option 1: Steady (Recommended & Selected) -->
+<div aria-checked="true" class="neutral-card tide-rim tide-wash rounded-DEFAULT p-4 flex items-start gap-3.5 cursor-pointer transition-all" role="radio" tabindex="0">
+<div class="mt-0.5 w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center bg-surface-container-lowest">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-title-md font-title-md text-secondary">Steady</span>
+<span class="text-label-md font-label-md px-2 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container">Recommended</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-snug">
+                Each reset sends 25% to your cause. One slip doesn't end it.
+              </p>
+</div>
+</div>
+<!-- Option 2: Strict -->
+<div aria-checked="false" class="neutral-card rounded-DEFAULT p-4 flex items-start gap-3.5 cursor-pointer hover:border-secondary/40 transition-all opacity-85" role="radio" tabindex="0">
+<div class="mt-0.5 w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center bg-surface-container-lowest"></div>
+<div class="flex-1 space-y-1">
+<div class="text-title-md font-title-md text-on-surface">Strict</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-snug">
+                Your first reset sends all of it.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Causes Preview -->
+<section>
+<button class="w-full neutral-card rounded-DEFAULT p-3.5 flex items-center justify-between gap-3 text-left hover:border-secondary/40 transition-all group" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-8 h-8 rounded-full tide-wash flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="water_drop">water_drop</span>
+</div>
+<div class="min-w-0">
+<span class="block text-body-sm font-body-sm text-outline">Selected cause</span>
+<span class="block text-body-md font-body-md text-on-surface font-medium truncate">Clean Water &amp; Ocean Cleanup</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors shrink-0 text-[20px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</section>
+</div>
+<!-- Section 5: Actions at Bottom (Fixed Safe Floating Shelf) -->
+<footer class="absolute bottom-0 inset-x-0 glass-sheet border-t border-surface-container-highest px-5 pt-3.5 pb-7 flex flex-col gap-2.5 z-40">
+<!-- Reassurance text banner -->
+<p class="text-center text-label-md font-label-md text-outline tracking-normal">
+        Honor system · Zero platform fee · Full refund within 24h
+      </p>
+<!-- Primary Tide Action Button (h: 50px, radius: 14px) -->
+<button class="w-full bg-secondary hover:bg-on-secondary-container text-on-secondary font-title-md text-title-md flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all" style="height: 50px; border-radius: 14px;" type="button">
+<span>Continue to cause &amp; review</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Secondary Plain Dismiss Button -->
+<button class="w-full py-2.5 text-center text-body-md font-body-md text-on-surface-variant hover:text-on-surface active:scale-[0.98] transition-all" type="button">
+        Not now
+      </button>
+</footer>
+</main>
+</body></html>

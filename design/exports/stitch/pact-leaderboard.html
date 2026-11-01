@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>WillWar - The Dawn Crew Pact</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#f9f9fe",
+            "primary-container": "#9a6c0f",
+            "on-primary-fixed-variant": "#604100",
+            "on-primary": "#ffffff",
+            "on-surface": "#1a1c1f",
+            "secondary-fixed-dim": "#84d2e5",
+            "surface-container": "#ededf2",
+            "surface-container-low": "#f3f3f8",
+            "on-background": "#1a1c1f",
+            "on-secondary-fixed-variant": "#004e5b",
+            "outline": "#827565",
+            "on-secondary-fixed": "#001f26",
+            "inverse-primary": "#f6bd5d",
+            "on-secondary-container": "#066c7d",
+            "surface-variant": "#e2e2e7",
+            "secondary": "#006878",
+            "on-primary-fixed": "#281900",
+            "primary-fixed-dim": "#f6bd5d",
+            "inverse-surface": "#2e3034",
+            "secondary-fixed": "#a8edff",
+            "surface-tint": "#7f5700",
+            "tertiary-fixed": "#c3e8ff",
+            "secondary-container": "#9eecff",
+            "on-tertiary-fixed": "#001e2c",
+            "on-error": "#ffffff",
+            "tertiary-container": "#4e7a92",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#e2e2e7",
+            "on-surface-variant": "#4f4537",
+            "background": "#f9f9fe",
+            "on-tertiary-container": "#fbfcff",
+            "tertiary": "#356178",
+            "error": "#ba1a1a",
+            "surface-dim": "#d9dade",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#ffdead",
+            "surface-bright": "#f9f9fe",
+            "on-primary-container": "#fffbff",
+            "outline-variant": "#d3c4b1",
+            "surface-container-high": "#e8e8ed",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "inverse-on-surface": "#f0f0f5",
+            "tertiary-fixed-dim": "#a0cce7",
+            "primary": "#7c5400",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "margin": "1.25rem",
+            "space-xl": "2.25rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "margin-desktop": "3rem",
+            "margin-tablet": "2rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Geist"],
+            "headline-lg": ["Epilogue"],
+            "telemetry-num": ["Geist"],
+            "headline-lg-mobile": ["Epilogue"],
+            "body-md": ["Geist"],
+            "title-md": ["Geist"],
+            "label-md": ["Geist"],
+            "headline-sm": ["Epilogue"],
+            "body-sm": ["Geist"],
+            "headline-md": ["Epilogue"],
+            "display": ["Epilogue"]
+          },
+          "fontSize": {
+            "body-lg": ["1.0625rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "telemetry-num": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.625rem", "fontWeight": "500" }],
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Liquid glass and instrument specular layers */
+    .brass-burnish {
+      background: linear-gradient(135deg, #B8862B 0%, #8A6114 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 4px 16px rgba(138, 97, 20, 0.28);
+    }
+    .marine-glass {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 8px 32px rgba(10, 63, 85, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+    .tide-wash {
+      background: linear-gradient(90deg, rgba(168, 237, 255, 0.28) 0%, rgba(158, 236, 255, 0.12) 100%);
+      border: 1px solid rgba(0, 104, 120, 0.24);
+    }
+    .pulse-subtle {
+      animation: subtleBreathing 4s ease-in-out infinite;
+    }
+    @keyframes subtleBreathing {
+      0%, 100% { transform: scale(1); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 4px 16px rgba(138, 97, 20, 0.28); }
+      50% { transform: scale(1.008); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 6px 20px rgba(138, 97, 20, 0.35); }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container min-h-screen pb-44">
+<!-- Main Container constrained for mobile/handheld precision -->
+<main class="max-w-lg mx-auto px-5 pt-8 md:pt-12">
+<!-- Top Marine Bar / Header Cluster -->
+<header class="flex items-start justify-between mb-6">
+<div>
+<div class="flex items-center gap-1.5 mb-1 text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="waves">waves</span>
+<span class="font-label-md text-label-md tracking-wider text-secondary font-semibold uppercase">Pact Telemetry</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-tight">The Dawn Crew</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span>4 people</span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-secondary font-medium">Updated just now</span>
+</p>
+</div>
+<!-- Trailing Action: Glass Invite Pill -->
+<button class="marine-glass flex items-center gap-1 px-3.5 py-1.5 rounded-full text-secondary hover:text-on-secondary-fixed-variant active:scale-95 transition-all text-label-md font-label-md mt-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="group_add">group_add</span>
+<span>+ Invite</span>
+</button>
+</header>
+<!-- Challenge Card: First to 14 days -->
+<section class="marine-glass rounded-lg p-5 mb-5 relative overflow-hidden">
+<!-- Watermark Instrument Accents -->
+<div class="absolute -right-4 -bottom-4 w-28 h-28 rounded-full bg-secondary-fixed/30 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-3 relative z-10">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-container/10 border border-primary-container/20 text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">First to 14 days</span>
+</div>
+<span class="font-label-md text-label-md px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-medium">
+          Ends Fri 20 Nov
+        </span>
+</div>
+<!-- Milestone progress status -->
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant mb-2.5">
+<span>Squad milestone velocity</span>
+<span class="font-telemetry-num text-telemetry-num font-semibold text-primary">100% Target Met (dev.s)</span>
+</div>
+<!-- Instrument Pebble Dot Meter (14 days representation) -->
+<div class="grid grid-cols-14 gap-1.5 p-2 rounded-xl bg-surface-container-low/80 border border-outline-variant/30">
+<!-- 14 individual pebble dots illustrating day units -->
+<span class="h-2 rounded-full bg-primary-container" title="Day 1"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 2"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 3"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 4"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 5"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 6"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 7"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 8"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 9"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 10"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 11"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 12"></span>
+<span class="h-2 rounded-full bg-primary-container" title="Day 13"></span>
+<span class="h-2 rounded-full bg-primary-container ring-2 ring-primary-fixed ring-offset-1" title="Day 14 - Completed"></span>
+</div>
+<div class="flex justify-between items-center mt-2.5 pt-2 border-t border-outline-variant/20 font-label-md text-label-md text-on-surface-variant">
+<span>Day 01</span>
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="stars">stars</span> Crown Milestone reached
+        </span>
+<span>Day 14</span>
+</div>
+</section>
+<!-- Segmented Control Matrix -->
+<div class="mb-4">
+<div class="p-1 rounded-full bg-surface-container-highest/60 backdrop-blur-md flex items-center gap-1 border border-outline-variant/20">
+<button class="flex-1 py-1.5 px-3 rounded-full bg-surface-container-lowest text-secondary shadow-sm text-title-md font-title-md text-center transition-all">
+          Current
+        </button>
+<button class="flex-1 py-1.5 px-3 rounded-full text-on-surface-variant hover:text-on-surface text-title-md font-title-md text-center transition-all">
+          Best
+        </button>
+<button class="flex-1 py-1.5 px-3 rounded-full text-on-surface-variant hover:text-on-surface text-title-md font-title-md text-center transition-all">
+          Days
+        </button>
+</div>
+<p class="font-body-sm text-body-sm text-outline text-center mt-2">
+        Time since each person's last reset.
+      </p>
+</div>
+<!-- Leaderboard Inset Grouped Stack (52pt cells) -->
+<section class="space-y-2 mb-6">
+<!-- Rank 1: dev.s -->
+<article class="bg-surface-container-lowest rounded-DEFAULT border border-outline-variant/30 px-4 min-h-[52px] flex items-center justify-between shadow-sm hover:border-outline-variant/50 transition-all">
+<div class="flex items-center gap-3">
+<!-- Rank milestone badge -->
+<div class="w-6 text-center font-telemetry-num text-telemetry-num font-bold text-primary">
+            1
+          </div>
+<!-- Deep teal/brass pebble avatar -->
+<div class="relative w-9 h-9 rounded-full bg-gradient-to-tr from-secondary to-primary-container p-0.5 flex items-center justify-center text-on-primary shadow-sm">
+<div class="w-full h-full rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="font-headline-sm text-[13px] font-semibold text-secondary">DS</span>
+</div>
+<span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-primary rounded-full flex items-center justify-center text-on-primary text-[9px] ring-1 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[10px]" data-icon="workspace_premium" data-weight="fill" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</span>
+</div>
+<!-- User telemetry -->
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-surface leading-tight">dev.s</div>
+<div class="font-telemetry-num text-telemetry-num font-medium text-primary">14d 08h</div>
+</div>
+</div>
+<!-- Trailing action: Nudge -->
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-secondary text-label-md font-label-md border border-outline-variant/30 active:scale-95 transition-transform flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="bolt">bolt</span>
+<span>Nudge</span>
+</button>
+</article>
+<!-- Rank 2: @quietmile (YOU) - highlighted with tide-wash -->
+<article class="tide-wash rounded-DEFAULT px-4 min-h-[52px] flex items-center justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-center gap-3">
+<!-- Rank index -->
+<div class="w-6 text-center font-telemetry-num text-telemetry-num font-bold text-secondary">
+            2
+          </div>
+<!-- Pebble avatar for quietmile -->
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed border border-secondary/30">
+<span class="material-symbols-outlined text-[20px]" data-icon="waves">waves</span>
+</div>
+<!-- User telemetry & badges -->
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-bold text-on-surface leading-tight">@quietmile</span>
+<!-- "You" Badge -->
+<span class="bg-secondary text-on-secondary px-1.5 py-0.2 rounded-full font-label-md text-[10px] tracking-wide">
+                YOU
+              </span>
+<!-- Backed Badge with small vault icon -->
+<span class="inline-flex items-center gap-0.5 bg-primary-fixed text-on-primary-fixed px-1.5 py-0.2 rounded-full font-label-md text-[10px] font-medium" title="Stake Backed">
+<span class="material-symbols-outlined text-[10px]" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Backed</span>
+</span>
+</div>
+<div class="font-telemetry-num text-telemetry-num font-semibold text-secondary">06d 14h</div>
+</div>
+</div>
+<!-- Steady State Badge for self -->
+<div class="flex items-center gap-1 text-secondary font-label-md text-label-md bg-surface-container-lowest/80 px-2.5 py-1 rounded-full border border-secondary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>Anchored</span>
+</div>
+</article>
+<!-- Rank 3: rohan_k -->
+<article class="bg-surface-container-lowest rounded-DEFAULT border border-outline-variant/30 px-4 min-h-[52px] flex items-center justify-between shadow-sm hover:border-outline-variant/50 transition-all">
+<div class="flex items-center gap-3">
+<!-- Rank index -->
+<div class="w-6 text-center font-telemetry-num text-telemetry-num font-medium text-on-surface-variant">
+            3
+          </div>
+<!-- Pebble avatar -->
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary font-semibold text-[13px]">
+            RK
+          </div>
+<!-- User telemetry -->
+<div>
+<div class="font-body-md text-body-md font-medium text-on-surface leading-tight">rohan_k</div>
+<div class="font-telemetry-num text-telemetry-num text-on-surface-variant font-medium">04d 21h</div>
+</div>
+</div>
+<!-- Trailing action: Nudge -->
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-secondary text-label-md font-label-md border border-outline-variant/30 active:scale-95 transition-transform flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="bolt">bolt</span>
+<span>Nudge</span>
+</button>
+</article>
+<!-- Rank 4: arjun_m (Paused / Stale row) -->
+<article class="bg-surface-container-lowest/70 opacity-75 rounded-DEFAULT border border-dashed border-outline-variant/40 px-4 min-h-[52px] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<!-- Rank index -->
+<div class="w-6 text-center font-telemetry-num text-telemetry-num font-medium text-outline">
+            4
+          </div>
+<!-- Stale pebble avatar -->
+<div class="w-9 h-9 rounded-full bg-surface-variant flex items-center justify-center text-outline font-semibold text-[13px]">
+            AM
+          </div>
+<!-- User telemetry: Paused label -->
+<div>
+<div class="font-body-md text-body-md font-normal text-on-surface-variant leading-tight">arjun_m</div>
+<div class="flex items-center gap-1 text-label-md font-label-md text-outline">
+<span class="material-symbols-outlined text-[13px]" data-icon="pause_circle">pause_circle</span>
+<span>Paused · No check-in for 2 days</span>
+</div>
+</div>
+</div>
+<!-- Trailing action: Nudge -->
+<button class="px-3 py-1 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant text-label-md font-label-md border border-outline-variant/40 active:scale-95 transition-transform flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="notifications">notifications</span>
+<span>Nudge</span>
+</button>
+</article>
+</section>
+<!-- Privacy Note Inset Grouped Card -->
+<footer class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-[20px] mt-0.5 shrink-0" data-icon="shield">shield</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong class="font-semibold text-on-surface">Handles, not names.</strong> Your pact sees your streak number, never the reason it reset.
+      </p>
+</footer>
+</main>
+<!-- ================= FLOATING CHROME LAYER ================= -->
+<!-- Persistent "Ride it out" Control Floating 12pt (1.5rem) Above Tab Bar -->
+<div class="fixed bottom-24 inset-x-0 z-40 px-5 max-w-sm mx-auto pointer-events-none">
+<button class="pointer-events-auto w-full brass-burnish pulse-subtle text-on-primary py-3 px-5 rounded-full flex items-center justify-center gap-2.5 active:scale-98 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-[20px]" data-icon="waves">waves</span>
+<span class="font-title-md text-title-md font-semibold tracking-wide">Ride it out</span>
+</button>
+</div>
+<!-- Shared Component: BottomNavBar (Exact JSON Execution with "Pact" Selected) -->
+<nav class="fixed bottom-0 inset-x-0 z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-low/85 backdrop-blur-2xl rounded-full mx-auto mb-5 max-w-sm border border-outline-variant/30 shadow-lg shadow-on-surface/5">
+<!-- Item 1: Today -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="waves">waves</span>
+<span class="font-label-md text-label-md mt-0.5">Today</span>
+</a>
+<!-- Item 2: Pact (ACTIVE ITEM as defined in destination intent) -->
+<a class="flex flex-col items-center justify-center text-secondary font-semibold px-3 py-1.5 rounded-full bg-secondary-container/30 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-md text-label-md mt-0.5">Pact</span>
+</a>
+<!-- Item 3: Learn -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="menu_book">menu_book</span>
+<span class="font-label-md text-label-md mt-0.5">Learn</span>
+</a>
+<!-- Item 4: Me -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+<span class="font-label-md text-label-md mt-0.5">Me</span>
+</a>
+</nav>
+<script>
+    // Gentle tactile feedback toggle for Nudge buttons
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (btn.innerText.includes('Nudge')) {
+          const original = btn.innerHTML;
+          btn.innerHTML = `<span class="material-symbols-outlined text-[14px]">check</span><span>Nudged</span>`;
+          btn.classList.add('bg-secondary-fixed/50', 'text-on-secondary-fixed-variant');
+          setTimeout(() => {
+            btn.innerHTML = original;
+            btn.classList.remove('bg-secondary-fixed/50', 'text-on-secondary-fixed-variant');
+          }, 2000);
+        }
+      });
+    });
+  </script>
+</body></html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings — WillWar</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#84d2e5",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#604100",
+            "secondary-container": "#9eecff",
+            "primary-fixed": "#ffdead",
+            "error-container": "#ffdad6",
+            "primary": "#7c5400",
+            "inverse-primary": "#f6bd5d",
+            "outline-variant": "#d3c4b1",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#f0f0f5",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e8e8ed",
+            "on-tertiary-fixed-variant": "#1c4c62",
+            "primary-container": "#9a6c0f",
+            "primary-fixed-dim": "#f6bd5d",
+            "on-tertiary-fixed": "#001e2c",
+            "surface-container": "#ededf2",
+            "on-background": "#1a1c1f",
+            "tertiary-fixed-dim": "#a0cce7",
+            "surface": "#f9f9fe",
+            "on-primary-fixed": "#281900",
+            "surface-bright": "#f9f9fe",
+            "surface-container-highest": "#e2e2e7",
+            "background": "#f9f9fe",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-variant": "#e2e2e7",
+            "tertiary-fixed": "#c3e8ff",
+            "surface-container-low": "#f3f3f8",
+            "surface-tint": "#7f5700",
+            "tertiary-container": "#4e7a92",
+            "on-secondary-fixed-variant": "#004e5b",
+            "on-primary-container": "#fffbff",
+            "on-secondary-fixed": "#001f26",
+            "on-tertiary-container": "#fbfcff",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#4f4537",
+            "on-secondary-container": "#066c7d",
+            "surface-dim": "#d9dade",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#2e3034",
+            "on-surface": "#1a1c1f",
+            "secondary-fixed": "#a8edff",
+            "secondary": "#006878",
+            "outline": "#827565",
+            "tertiary": "#356178"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1.25rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "space-xl": "2.25rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin-desktop": "3rem",
+            "margin-tablet": "2rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Epilogue"],
+            "body-lg": ["Geist"],
+            "telemetry-num": ["Geist"],
+            "title-md": ["Geist"],
+            "label-md": ["Geist"],
+            "display": ["Epilogue"],
+            "body-sm": ["Geist"],
+            "headline-lg-mobile": ["Epilogue"],
+            "body-md": ["Geist"],
+            "headline-sm": ["Epilogue"],
+            "headline-lg": ["Epilogue"]
+          },
+          "fontSize": {
+            "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["1.0625rem", { "lineHeight": "1.625rem", "fontWeight": "400" }],
+            "telemetry-num": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "display": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.625rem", "fontWeight": "500" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /* Hide scrollbars for clean hardware viewport imitation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim font-body-md text-on-surface antialiased min-h-screen flex items-center justify-center p-0 md:p-6 select-none">
+<!-- iPhone Mockup Enclosure Frame -->
+<div class="relative w-full max-w-[412px] h-[892px] bg-background rounded-[48px] shadow-2xl overflow-hidden flex flex-col border-[9px] border-[#1e2024] ring-1 ring-black/10">
+<!-- Top Hardware Notch / Dynamic Island Shell Bar -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-xl shrink-0 pt-3 pb-2 px-6">
+<!-- Status Indicators -->
+<div class="flex items-center justify-between text-on-surface text-[14px] font-semibold mb-2">
+<span class="tracking-tight pl-1">9:41</span>
+<!-- Dynamic Island -->
+<div class="w-28 h-6 bg-black rounded-full mx-auto -ml-3"></div>
+<div class="flex items-center space-x-1.5 pr-1">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</div>
+<!-- Navigation Bar (iOS Top Anchor with Me Back Action) -->
+<nav class="flex items-center justify-between pt-1">
+<a class="inline-flex items-center text-secondary hover:opacity-75 transition-opacity -ml-1.5 py-1" href="#me">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+<span class="font-body-md text-body-md font-medium -ml-0.5">Me</span>
+</a>
+<div class="w-6"></div>
+</nav>
+<!-- Large Title (iOS Navigation Transition Standard) -->
+<div class="pt-2 pb-1">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Settings</h1>
+</div>
+</header>
+<!-- Scrollable Content Canvas (iOS Inset Grouped Architecture) -->
+<main class="flex-1 overflow-y-auto no-scrollbar px-4 pb-28 pt-2 space-y-6">
+<!-- SECTION 1: ACCOUNT -->
+<section aria-labelledby="section-account">
+<h2 class="px-3 pb-1.5 font-label-md text-label-md text-on-surface-variant font-medium" id="section-account">Account</h2>
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-black/[0.04] shadow-[0_2px_12px_rgba(10,63,85,0.03)] overflow-hidden">
+<!-- Handle -->
+<button class="w-full flex items-center justify-between px-4 py-3.5 text-left active:bg-surface-container-low transition-colors duration-150">
+<span class="font-body-md text-body-md text-on-surface">Handle</span>
+<div class="flex items-center space-x-1">
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">@quietmile</span>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</button>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Email -->
+<div class="flex items-center justify-between px-4 py-3.5">
+<span class="font-body-md text-body-md text-on-surface">Email</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">quietmile@icloud.com</span>
+</div>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Sign Out -->
+<button class="w-full flex items-center px-4 py-3.5 text-left active:bg-surface-container-low transition-colors duration-150">
+<span class="font-body-md text-body-md text-primary font-medium">Sign out</span>
+</button>
+</div>
+</section>
+<!-- SECTION 2: CHALLENGE -->
+<section aria-labelledby="section-challenge">
+<h2 class="px-3 pb-1.5 font-label-md text-label-md text-on-surface-variant font-medium" id="section-challenge">Challenge</h2>
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-black/[0.04] shadow-[0_2px_12px_rgba(10,63,85,0.03)] overflow-hidden">
+<!-- Current Challenge -->
+<div class="flex items-center justify-between px-4 py-3.5">
+<span class="font-body-md text-body-md text-on-surface">Current Challenge</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">No Nut November 2026</span>
+</div>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Challenge End Date -->
+<button class="w-full flex items-center justify-between px-4 py-3.5 text-left active:bg-surface-container-low transition-colors duration-150">
+<span class="font-body-md text-body-md text-on-surface">Challenge end date</span>
+<div class="flex items-center space-x-1.5">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-telemetry-num text-label-md font-medium">30 Nov 2026</span>
+<span class="material-symbols-outlined text-outline text-[20px]">calendar_today</span>
+</div>
+</button>
+</div>
+</section>
+<!-- SECTION 3: NOTIFICATIONS -->
+<section aria-labelledby="section-notifications">
+<h2 class="px-3 pb-1.5 font-label-md text-label-md text-on-surface-variant font-medium" id="section-notifications">Notifications</h2>
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-black/[0.04] shadow-[0_2px_12px_rgba(10,63,85,0.03)] overflow-hidden">
+<!-- Daily reminder -->
+<button class="w-full flex items-center justify-between px-4 py-3.5 text-left active:bg-surface-container-low transition-colors duration-150">
+<span class="font-body-md text-body-md text-on-surface">Daily reminder</span>
+<div class="flex items-center space-x-1">
+<span class="px-2.5 py-1 bg-surface-container rounded-md font-telemetry-num text-telemetry-num font-semibold text-secondary">21:30</span>
+<span class="material-symbols-outlined text-outline text-[20px]">schedule</span>
+</div>
+</button>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Discreet notifications -->
+<div class="flex items-start justify-between px-4 py-3.5">
+<div class="pr-3">
+<span class="font-body-md text-body-md text-on-surface block">Discreet notifications</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5 leading-snug">WillWar · Day 12. Tap to check in.</span>
+</div>
+<!-- iOS Brass Switch Active -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-12 h-7 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-6 after:w-6 after:transition-all after:shadow-sm peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Night watch -->
+<div class="flex items-start justify-between px-4 py-3.5">
+<div class="pr-3">
+<span class="font-body-md text-body-md text-on-surface block">Night watch</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5 leading-snug">Gentle check-in prompt at 23:00</span>
+</div>
+<!-- iOS Brass Switch Active -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-12 h-7 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-6 after:w-6 after:transition-all after:shadow-sm peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- SECTION 4: PRIVACY & TELEMETRY -->
+<section aria-labelledby="section-privacy">
+<h2 class="px-3 pb-1.5 font-label-md text-label-md text-on-surface-variant font-medium" id="section-privacy">Privacy &amp; Telemetry</h2>
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-black/[0.04] shadow-[0_2px_12px_rgba(10,63,85,0.03)] overflow-hidden">
+<!-- Who sees your streak -->
+<button class="w-full flex items-center justify-between px-4 py-3.5 text-left active:bg-surface-container-low transition-colors duration-150">
+<span class="font-body-md text-body-md text-on-surface">Who sees your streak</span>
+<div class="flex items-center space-x-1">
+<span class="font-body-md text-body-md text-on-surface-variant">My pacts</span>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</button>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Backed badge -->
+<div class="flex items-start justify-between px-4 py-3.5">
+<div class="pr-3">
+<span class="font-body-md text-body-md text-on-surface block">Backed badge</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5 leading-snug">Shows chest badge to pact members</span>
+</div>
+<!-- iOS Brass Switch Active -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-12 h-7 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-6 after:w-6 after:transition-all after:shadow-sm peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Export my data -->
+<button class="w-full flex items-center justify-between px-4 py-3.5 text-left active:bg-surface-container-low transition-colors duration-150">
+<span class="font-body-md text-body-md text-on-surface">Export my data</span>
+<span class="material-symbols-outlined text-outline text-[20px]">file_download</span>
+</button>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Delete my account -->
+<button class="w-full flex items-center px-4 py-3.5 text-left active:bg-error-container/20 transition-colors duration-150">
+<span class="font-body-md text-body-md text-error font-medium">Delete my account</span>
+</button>
+</div>
+</section>
+<!-- SECTION 5: APPEARANCE -->
+<section aria-labelledby="section-appearance">
+<h2 class="px-3 pb-1.5 font-label-md text-label-md text-on-surface-variant font-medium" id="section-appearance">Appearance</h2>
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-black/[0.04] shadow-[0_2px_12px_rgba(10,63,85,0.03)] overflow-hidden">
+<!-- Appearance theme Segmented Control -->
+<div class="p-3">
+<span class="font-body-md text-body-md text-on-surface block mb-2 px-1">Appearance theme</span>
+<div class="grid grid-cols-3 bg-surface-container p-1 rounded-DEFAULT gap-1 text-center font-body-sm text-body-sm font-medium">
+<button class="py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface transition-all">System</button>
+<button class="py-1.5 rounded-lg bg-surface-container-lowest text-primary shadow-sm font-semibold transition-all">Light</button>
+<button class="py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface transition-all">Dark</button>
+</div>
+</div>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Tide waterline theme -->
+<button class="w-full flex items-center justify-between px-4 py-3.5 text-left active:bg-surface-container-low transition-colors duration-150">
+<span class="font-body-md text-body-md text-on-surface">Tide waterline theme</span>
+<div class="flex items-center space-x-2">
+<span class="font-body-md text-body-md text-on-surface-variant">Harbor (Default)</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-primary-fixed text-on-primary-fixed uppercase tracking-wider">PRO</span>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</button>
+</div>
+</section>
+<!-- SECTION 6: SUBSCRIPTION & SUPPORT -->
+<section aria-labelledby="section-subscription" class="pb-4">
+<h2 class="px-3 pb-1.5 font-label-md text-label-md text-on-surface-variant font-medium" id="section-subscription">Subscription &amp; Support</h2>
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-black/[0.04] shadow-[0_2px_12px_rgba(10,63,85,0.03)] overflow-hidden">
+<!-- Membership -->
+<div class="flex items-center justify-between px-4 py-3.5">
+<div>
+<span class="font-body-md text-body-md text-on-surface font-semibold block">WillWar Pro</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Active until Dec 2026</span>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[24px]">verified</span>
+</div>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Get support now -->
+<button class="w-full flex items-center justify-between px-4 py-3.5 text-left active:bg-surface-container-low transition-colors duration-150">
+<div>
+<span class="font-body-md text-body-md text-secondary font-medium block">Get support now</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tele-MANAS &amp; Crisis resources</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">arrow_outward</span>
+</button>
+<div class="ml-4 border-b border-black/[0.06]"></div>
+<!-- Report a problem -->
+<button class="w-full flex items-center justify-between px-4 py-3.5 text-left active:bg-surface-container-low transition-colors duration-150">
+<span class="font-body-md text-body-md text-on-surface">Report a problem</span>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Clinical Editorial Disclaimer -->
+<p class="px-4 pt-3 pb-6 text-center font-label-md text-label-md text-on-surface-variant">
+          18+ only. Not medical advice.
+        </p>
+</section>
+</main>
+<!-- Floating Glass Tab Bar (Me Tab Active per Brand JSON Blueprint) -->
+<nav class="fixed bottom-0 inset-x-0 z-50 flex justify-around items-center px-4 py-2 pb-safe max-w-[412px] mx-auto pointer-events-none">
+<div class="pointer-events-auto w-full bg-surface-container-low/85 backdrop-blur-2xl rounded-full mx-auto mb-5 max-w-sm border border-outline-variant/30 shadow-lg shadow-on-surface/5 flex justify-around items-center px-2 py-1.5">
+<!-- Tab: Today -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95" href="#today">
+<span class="material-symbols-outlined text-[22px]">waves</span>
+<span class="font-label-md text-label-md mt-0.5">Today</span>
+</a>
+<!-- Tab: Pact -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95" href="#pact">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+<span class="font-label-md text-label-md mt-0.5">Pact</span>
+</a>
+<!-- Tab: Learn -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-secondary transition-colors duration-150 active:scale-95" href="#learn">
+<span class="material-symbols-outlined text-[22px]">menu_book</span>
+<span class="font-label-md text-label-md mt-0.5">Learn</span>
+</a>
+<!-- Tab: Me (Active Destination for Settings) -->
+<a class="flex flex-col items-center justify-center text-secondary font-semibold px-3 py-1.5 rounded-full bg-secondary-container/30 active:scale-95 transition-transform duration-150" href="#me">
+<span class="material-symbols-outlined text-[22px]">person</span>
+<span class="font-label-md text-label-md mt-0.5">Me</span>
+</a>
+</div>
+</nav>
+<!-- iOS Home Indicator Line -->
+<div class="absolute bottom-1.5 inset-x-0 flex justify-center pointer-events-none z-50">
+<div class="w-32 h-1 bg-black/40 rounded-full"></div>
+</div>
+</div>
+</body></html>

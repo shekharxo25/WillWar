@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>WillWar — Make it to December.</title>
+  <meta name="description" content="A streak clock that counts every second, a three-minute game for when the urge hits, and a private leaderboard with the friends you trust. Free. 18+." />
+  
+  <!-- Apple Web App & PWA Settings -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+
+  <!-- Typography: Epilogue for display editorial presence, Geist for clean telemetry -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,500;0,600;0,700;1,500&family=Geist:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ==================== ATMOSPHERIC SUBSURFACE BACKGROUNDS ==================== -->
+  <div class="ambient-glow-wrapper" aria-hidden="true">
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+  </div>
+
+  <!-- ==================== FLOATING LIQUID GLASS HEADER ==================== -->
+  <header class="header-fixed">
+    <div class="container">
+      <nav class="header-inner glass-specular" aria-label="Main Navigation">
+        <!-- Wordmark with Dual Wave Crest Mark -->
+        <a href="#" class="brand-link" aria-label="WillWar Home">
+          <div class="brand-wave-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+              <path d="M4 8.5C6 8.5 7.5 23.5 10 23.5S13.5 12.5 16 12.5 19.5 23.5 22 23.5 26 8.5 28 8.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <span class="brand-title">WillWar</span>
+          <span class="tide-badge" style="font-size: 0.6875rem; padding: 2px 8px; margin-left: 2px;">Off-season</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="#timeline" class="nav-link">30-day timeline</a></li>
+          <li><a href="#ride-it-out" class="nav-link">Ride it out</a></li>
+          <li><a href="#pacts" class="nav-link">Pacts</a></li>
+          <li><a href="#war-chest" class="nav-link">War chest</a></li>
+          <li><a href="#learn" class="nav-link">Evidence</a></li>
+          <li><a href="#pricing" class="nav-link">Access</a></li>
+        </ul>
+
+        <!-- Right Action Hub -->
+        <div class="header-actions">
+          <button class="theme-toggle-btn pressable" id="theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Appearance">
+            <span class="material-symbols-outlined" id="theme-toggle-icon" style="font-size: 18px;">dark_mode</span>
+          </button>
+          <a href="#signin" class="open-pledge-trigger" style="text-decoration: none; font-size: 0.875rem; font-weight: 500; color: var(--label); padding: 6px 12px; display: none;">Sign in</a>
+          <button class="btn-primary pressable open-pledge-trigger" style="padding: 9px 18px; font-size: 0.875rem;">
+            <span>Start my 30 days</span>
+            <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+          </button>
+          <button class="mobile-menu-btn pressable" id="mobile-menu-btn" aria-label="Open Navigation Menu">
+            <span class="material-symbols-outlined" style="font-size: 20px;">menu</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-nav-drawer" style="display: none;" class="glass-specular">
+    <div style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+      <a href="#timeline" class="nav-link mobile-nav-link" style="font-size: 1.125rem;">30-day timeline</a>
+      <a href="#ride-it-out" class="nav-link mobile-nav-link" style="font-size: 1.125rem;">Ride it out</a>
+      <a href="#pacts" class="nav-link mobile-nav-link" style="font-size: 1.125rem;">Pacts</a>
+      <a href="#war-chest" class="nav-link mobile-nav-link" style="font-size: 1.125rem;">War chest</a>
+      <a href="#learn" class="nav-link mobile-nav-link" style="font-size: 1.125rem;">Evidence</a>
+      <a href="#pricing" class="nav-link mobile-nav-link" style="font-size: 1.125rem;">Access</a>
+    </div>
+  </div>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section">
+    <div class="container">
+      
+      <!-- Off-season Pill Badge -->
+      <div class="hero-pill-badge">
+        <span class="pulse-dot"></span>
+        <span>Off-season mode: Thirty days. Starting tonight.</span>
+        <span style="font-weight: 700; color: var(--tide);">Nov 1 – Dec 1</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-h1">
+        Make it to December.
+      </h1>
+
+      <!-- Lead Subtitle -->
+      <p class="hero-lead">
+        A streak clock that counts every second, a three-minute game for when the urge hits, and a private leaderboard with the friends you trust.
+      </p>
+
+      <!-- Live Session Chronometer Capsule (godly.website & modulify.ai inspired) -->
+      <div class="hero-clock-box">
+        <div class="hero-clock-capsule">
+          <div class="hero-clock-label">
+            <span class="material-symbols-outlined" style="font-size: 18px; animation: spin-slow 12s linear infinite;">timelapse</span>
+            <span>Active Session</span>
+          </div>
+          <div class="hero-clock-divider"></div>
+          <div class="tnum hero-clock-digits" id="hero-clock">00d 00h 01m 24s</div>
+        </div>
+        <span class="hero-clock-caption">This clock started when you opened the page.</span>
+      </div>
+
+      <!-- Hero Call-to-Action -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+        <button class="btn-primary pressable open-pledge-trigger tide-shadow" style="padding: 15px 36px; font-size: 1.0625rem;">
+          <span>Start my 30 days</span>
+          <span class="material-symbols-outlined" style="font-size: 18px;">north_east</span>
+        </button>
+        <span style="font-size: 0.8125rem; color: var(--label-2);">
+          Free. 18+ only. Installs from your browser, no app store.
+        </span>
+      </div>
+
+      <!-- Hero Visual Phone Frame with Living Canvas Tide -->
+      <div class="phone-mockup-wrapper">
+        <div class="phone-ambient-halo"></div>
+        <div class="phone-hardware-rim">
+          <div class="phone-screen">
+            
+            <!-- Dynamic Island -->
+            <div>
+              <div class="dynamic-island">
+                <div class="dynamic-island-sensor"></div>
+              </div>
+
+              <!-- Phone Status Bar -->
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8125rem; color: var(--label-2);">
+                <div style="display: flex; align-items: center; gap: 6px; font-weight: 600; color: var(--label);">
+                  <span class="material-symbols-outlined" style="font-size: 14px; color: var(--tide);">waves</span>
+                  <span>WillWar</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <span class="tide-badge" style="font-size: 10px; padding: 1px 6px;">Day 1</span>
+                  <span class="material-symbols-outlined" style="font-size: 14px;">tune</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tide Circular Dial with HTML5 Living Waves -->
+            <div class="tide-dial-canvas-container" id="phone-tide-dial">
+              <canvas class="phone-tide-canvas" id="phone-tide-canvas"></canvas>
+              <div class="dial-text-layer">
+                <span style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--tide); display: block;">Tide Depth</span>
+                <div class="tnum" id="phone-dial-tide-text" style="font-size: 2rem; font-weight: 700; margin: 2px 0;">01d 04h</div>
+                <span style="font-size: 0.75rem; color: var(--label-2); font-weight: 500;">Goal: 30d 00h</span>
+              </div>
+            </div>
+
+            <!-- Dial Subtitle -->
+            <div style="font-size: 0.75rem; color: var(--label-2); text-align: center;">
+              Waterline calm. Next milestone in 5d 20h.
+            </div>
+
+            <!-- Phone Actions: Ride it out button & Floating dock -->
+            <div>
+              <button class="btn-primary pressable open-pledge-trigger" style="width: 100%; padding: 12px 16px; font-size: 0.875rem; justify-content: center; margin-bottom: 12px;">
+                <span class="material-symbols-outlined" style="font-size: 16px;">bolt</span>
+                <span>Ride it out (3 min)</span>
+              </button>
+
+              <div style="display: flex; justify-content: space-around; font-size: 0.6875rem; color: var(--label-2); padding-top: 4px; border-top: 0.5px solid var(--separator);">
+                <span style="color: var(--tide); font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">waves</span>
+                  Today
+                </span>
+                <span style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">verified</span>
+                  Pact
+                </span>
+                <span style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">menu_book</span>
+                  Learn
+                </span>
+                <span style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">person</span>
+                  Me
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== "SCROLL THROUGH YOUR 30 DAYS" (SIGNATURE MOMENT) ==================== -->
+  <section class="section-pad" id="timeline" style="background: var(--bg); border-top: 1px solid rgba(60, 60, 67, 0.08); border-bottom: 1px solid rgba(60, 60, 67, 0.08);">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="eyebrow">Progressive Telemetry</span>
+        <h2 class="font-headline" style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em;">
+          Scroll through your 30 days.
+        </h2>
+        <p class="section-lead">
+          Waterlines rise silently. Day 1 is quiet resolve; Day 7 brings your first brass mark. See how the terrain changes before you step onto it.
+        </p>
+
+        <!-- Interactive Scrubber Range Slider (60fps.design) -->
+        <div class="timeline-slider-row">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.8125rem; font-weight: 600; color: var(--label);">Interactive Day Scrubber</span>
+            <span class="tnum" style="font-size: 0.8125rem; font-weight: 700; color: var(--tide);">Drag to scrub</span>
+          </div>
+          <input type="range" class="timeline-slider" id="timeline-slider" min="1" max="30" value="1" step="1" aria-label="30-day timeline scrubber" />
+          <div style="display: flex; justify-content: space-between; font-size: 0.6875rem; color: var(--label-3); margin-top: 4px;" class="tnum">
+            <span>Day 1 (Start)</span>
+            <span>Day 7 (Brass I)</span>
+            <span>Day 14 (Brass II)</span>
+            <span>Day 21 (Brass III)</span>
+            <span>Day 30 (Goal)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrubber Grid: Milestone Cards on Left, Sticky Radial Horizon on Right -->
+      <div class="timeline-grid">
+        
+        <!-- Left: Milestone Cards -->
+        <div class="timeline-cards-list">
+          
+          <!-- Day 1 Card -->
+          <div class="milestone-card active-scrub" data-day="1">
+            <div class="milestone-card-header">
+              <span class="tide-badge">Day 1</span>
+              <span class="tnum" style="font-size: 0.8125rem; color: var(--label-2);">Waterline: 3%</span>
+            </div>
+            <h3 class="milestone-card-title">The easy part. Pick your reason and tell one friend.</h3>
+            <p class="milestone-card-body">
+              Adrenaline is high and memory of why you started is fresh. Set your morning notification time and select your pledge.
+            </p>
+          </div>
+
+          <!-- Day 3 Card -->
+          <div class="milestone-card" data-day="3">
+            <div class="milestone-card-header">
+              <span class="tide-badge">Day 3</span>
+              <span class="tnum" style="font-size: 0.8125rem; color: var(--label-2);">Waterline: 10%</span>
+            </div>
+            <h3 class="milestone-card-title">Boredom shows up. Have a three-minute plan for it.</h3>
+            <p class="milestone-card-body">
+              Novelty fades. This is where drift puzzles break automatic finger patterns before habits lock in.
+            </p>
+          </div>
+
+          <!-- Day 7 Card (Brass Accent) -->
+          <div class="milestone-card brass-featured" data-day="7">
+            <div class="milestone-card-header">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="brass-badge brass-gradient">Day 7</span>
+                <span class="brass-badge">
+                  <span class="material-symbols-outlined" style="font-size: 14px;">stars</span>
+                  Brass Milestone I
+                </span>
+              </div>
+              <span class="tnum" style="font-size: 0.8125rem; color: var(--label-2);">Waterline: 23%</span>
+            </div>
+            <h3 class="milestone-card-title">First milestone. Your pact sees it light up.</h3>
+            <p class="milestone-card-body">
+              A week of clean wakeups. Your private crew receives the badge in their morning telemetry feed.
+            </p>
+          </div>
+
+          <!-- Day 14 Card (Brass Accent) -->
+          <div class="milestone-card brass-featured" data-day="14">
+            <div class="milestone-card-header">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="brass-badge brass-gradient">Day 14</span>
+                <span class="brass-badge">
+                  <span class="material-symbols-outlined" style="font-size: 14px;">workspace_premium</span>
+                  Brass Milestone II
+                </span>
+              </div>
+              <span class="tnum" style="font-size: 0.8125rem; color: var(--label-2);">Waterline: 46%</span>
+            </div>
+            <h3 class="milestone-card-title">Halfway. Your urge log shows what sets you off.</h3>
+            <p class="milestone-card-body">
+              Patterns emerge: 11:30 PM after long screens, or Sunday afternoons alone. Now you predict them.
+            </p>
+          </div>
+
+          <!-- Day 21 Card (Brass Accent) -->
+          <div class="milestone-card brass-featured" data-day="21">
+            <div class="milestone-card-header">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="brass-badge brass-gradient">Day 21</span>
+                <span class="brass-badge">
+                  <span class="material-symbols-outlined" style="font-size: 14px;">military_tech</span>
+                  Brass Milestone III
+                </span>
+              </div>
+              <span class="tnum" style="font-size: 0.8125rem; color: var(--label-2);">Waterline: 70%</span>
+            </div>
+            <h3 class="milestone-card-title">The routine is doing the work now.</h3>
+            <p class="milestone-card-body">
+              Willpower requirement drops. The friction of breaking a 3-week string exceeds the transient pull of old loops.
+            </p>
+          </div>
+
+          <!-- Day 30 Card (Full Horizon Crown) -->
+          <div class="milestone-card brass-featured" data-day="30" style="border-width: 2px; border-color: var(--brass);">
+            <div class="milestone-card-header">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="brass-badge brass-gradient" style="padding: 4px 12px; font-weight: 700;">Day 30</span>
+                <span class="brass-badge" style="font-weight: 700;">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">trophy</span>
+                  Full Brass Horizon
+                </span>
+              </div>
+              <span class="tnum" style="font-size: 0.8125rem; font-weight: 700; color: var(--brass);">100% Complete</span>
+            </div>
+            <h3 class="milestone-card-title">December 1st. Your record stays, even if you go again.</h3>
+            <p class="milestone-card-body">
+              The full chronometer seals. The pledge unlocks, your War Chest returns in full, and the proof remains on your device forever.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right: Sticky Live Milestones Radial Horizon Gauge -->
+        <div class="sticky-gauge-container">
+          <div class="gauge-box">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+              <div style="text-align: left;">
+                <span style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--label-2); font-weight: 600;">Active Chronometer</span>
+                <h4 style="font-size: 1.125rem; font-weight: 700; color: var(--label);">The 30-Day Rise</h4>
+              </div>
+              <span class="brass-badge brass-gradient" style="font-size: 11px;">Dec 01 Target</span>
+            </div>
+
+            <!-- Radial Horizon Display with Rising Fluid -->
+            <div class="radial-horizon-display">
+              <div class="gauge-water-level" id="radial-gauge-water" style="height: 3%;">
+                <div class="gauge-waterline-crest"></div>
+              </div>
+
+              <div class="gauge-overlay-content">
+                <span class="tnum" style="font-size: 0.75rem; font-weight: 700; color: var(--label-2);">30d (Dec 1)</span>
+                
+                <div style="background: var(--glass-bg); backdrop-filter: blur(12px); padding: 8px 16px; border-radius: var(--radius-card); border: 1px solid var(--glass-border); box-shadow: var(--shadow-card);">
+                  <span id="radial-gauge-milestone-badge" class="tide-badge" style="font-size: 11px; margin-bottom: 2px;">Quiet Resolve</span>
+                  <div class="tnum" id="radial-gauge-day-text" style="font-size: 1.25rem; font-weight: 700; color: var(--label);">Day 1 Reached</div>
+                  <span class="tnum" id="radial-gauge-percent-text" style="font-size: 0.75rem; color: var(--label-2);">3% Waterline</span>
+                </div>
+
+                <span class="tnum" style="font-size: 0.75rem; font-weight: 700; color: var(--label-2);">Day 0 (Start)</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 0.8125rem; color: var(--label-2); padding-top: 12px; border-top: 0.5px solid var(--separator);">
+              <span>Next Checkpoint</span>
+              <span class="tnum" style="font-weight: 600; color: var(--tide);">Day 7 · Brass Medal</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== "RIDE IT OUT" (URGES CREST, THEN THEY FALL) ==================== -->
+  <section class="section-pad" id="ride-it-out">
+    <div class="container">
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;" class="ride-grid-resp">
+        
+        <!-- Left: Cognitive Load Science -->
+        <div>
+          <span class="eyebrow">Cognitive Load Protocol</span>
+          <h2 class="font-headline" style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; line-height: 1.1; margin-bottom: 16px;">
+            Urges crest. Then they fall.
+          </h2>
+          <p style="font-size: 1.0625rem; color: var(--label-2); line-height: 1.6; margin-bottom: 24px;">
+            Tap <strong style="color: var(--label);">Ride it out</strong> and play a three-minute visual puzzle. In a week-long study at the University of Plymouth, three minutes of a block puzzle made cravings noticeably weaker, for food and drink as well as activities like sex.
+          </p>
+
+          <!-- Citation Card -->
+          <div class="glass-card" style="padding: 16px; display: flex; gap: 12px; align-items: flex-start; margin-bottom: 24px;">
+            <span class="material-symbols-outlined" style="font-size: 20px; color: var(--tide); margin-top: 2px;">menu_book</span>
+            <div style="font-size: 0.8125rem; color: var(--label-2);">
+              <strong style="color: var(--label);">Skorka-Brown et al., <em>Addictive Behaviors</em>, 2015.</strong>
+              <div style="margin-top: 2px;">Visual-spatial tasks compete directly with mental imagery of cravings.</div>
+            </div>
+          </div>
+
+          <!-- Exercise Switcher Chips -->
+          <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button class="exercise-chip pressable active" data-exercise="swell" style="flex: 1; padding: 12px; border-radius: var(--radius-md); border: 1px solid rgba(60, 60, 67, 0.12); background: var(--bg); text-align: center; cursor: pointer;">
+              <span class="material-symbols-outlined" style="font-size: 20px; color: var(--tide); display: block; margin: 0 auto 4px;">air</span>
+              <div style="font-size: 0.875rem; font-weight: 600; color: var(--label);">Swell</div>
+              <div style="font-size: 0.6875rem; color: var(--label-2);">4s/6s cadence</div>
+            </button>
+
+            <button class="exercise-chip pressable" data-exercise="drift" style="flex: 1; padding: 12px; border-radius: var(--radius-md); border: 1px solid rgba(60, 60, 67, 0.12); background: var(--bg); text-align: center; cursor: pointer;">
+              <span class="material-symbols-outlined" style="font-size: 20px; color: var(--tide); display: block; margin: 0 auto 4px;">grid_view</span>
+              <div style="font-size: 0.875rem; font-weight: 600; color: var(--label);">Drift</div>
+              <div style="font-size: 0.6875rem; color: var(--label-2);">Spatial raft</div>
+            </button>
+
+            <button class="exercise-chip pressable" data-exercise="knots" style="flex: 1; padding: 12px; border-radius: var(--radius-md); border: 1px solid rgba(60, 60, 67, 0.12); background: var(--bg); text-align: center; cursor: pointer; position: relative;">
+              <span style="position: absolute; top: 4px; right: 4px; font-size: 9px; font-weight: 700; background: var(--brass-glow); color: var(--brass-ink); padding: 1px 4px; border-radius: 4px;">PRO</span>
+              <span class="material-symbols-outlined" style="font-size: 20px; color: var(--brass); display: block; margin: 0 auto 4px;">conversion_path</span>
+              <div style="font-size: 0.875rem; font-weight: 600; color: var(--label);">Knots</div>
+              <div style="font-size: 0.6875rem; color: var(--label-2);">Line untangling</div>
+            </button>
+          </div>
+
+          <!-- Dynamic Exercise Previews -->
+          <div class="exercise-panel" data-panel="swell">
+            <div class="glass-card" style="padding: 20px; text-align: center;">
+              <div class="breathing-pacer-box">
+                <div class="breathing-circle-ring"></div>
+                <div style="position: absolute; z-index: 2;">
+                  <span id="breathing-cadence-state" style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--tide); display: block;">Inhale</span>
+                  <span class="tnum" id="breathing-cadence-sec" style="font-size: 1.25rem; font-weight: 700; color: var(--label);">4s</span>
+                </div>
+              </div>
+              <span style="font-size: 0.75rem; color: var(--label-2);">Follow the breathing circle. 4s inhale, 6s exhale parasympathetic activation.</span>
+            </div>
+          </div>
+
+          <div class="exercise-panel" data-panel="drift" style="display: none;">
+            <div class="glass-card" style="padding: 20px; text-align: center;">
+              <div style="height: 120px; background: var(--tide-wash); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="width: 48px; height: 32px; border-radius: 8px; background: var(--brass); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; box-shadow: 0 4px 12px var(--brass-glow); cursor: grab;">
+                  RAFT
+                </div>
+              </div>
+              <span style="font-size: 0.75rem; color: var(--label-2); margin-top: 8px; display: block;">Guide the raft through water locks to engage working memory.</span>
+            </div>
+          </div>
+
+          <div class="exercise-panel" data-panel="knots" style="display: none;">
+            <div class="glass-card" style="padding: 20px; text-align: center;">
+              <div style="height: 120px; background: var(--bg-tertiary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
+                <span class="brass-badge" style="font-size: 12px;">Included in WillWar Pro Pass</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Tactile Wave Press & Hold Interactive Sandbox (60fps.design) -->
+        <div>
+          <div class="ride-it-out-card">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 0.5px solid var(--separator);">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 2px;">Tactile Wave Module</span>
+                <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--label);">Live Urge Buffer</h3>
+              </div>
+              <span class="tnum" id="wave-timer-text" style="font-size: 0.8125rem; font-weight: 600; color: var(--label-2);">03:00 Remaining</span>
+            </div>
+
+            <!-- Wave Compression Chamber -->
+            <div class="wave-chamber">
+              <div class="interactive-wave-fill" id="interactive-wave-fill">
+                <div class="wave-surface-line"></div>
+              </div>
+              <div class="chamber-status-center">
+                <span id="wave-status-text" style="font-family: var(--font-headline); font-size: 1.25rem; font-weight: 700; color: var(--label);">Wave in progress</span>
+                <span style="font-size: 0.75rem; color: var(--label-2); margin-top: 4px;">Sustain contact until sea calms</span>
+              </div>
+            </div>
+
+            <!-- Hold to Ride Button -->
+            <button class="btn-brass pressable" id="wave-hold-btn" style="width: 100%; padding: 16px; font-size: 1.0625rem;">
+              <span class="material-symbols-outlined" style="font-size: 20px;">touch_app</span>
+              <span id="wave-btn-text">Hold to ride a wave</span>
+            </button>
+
+            <p style="font-size: 0.75rem; color: var(--label-3); text-align: center; margin-top: 12px;">
+              Press and hold. Releasing early drains progress. Complete hold triggers gentle haptic dampening.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== "PACTS" SECTION ==================== -->
+  <section class="section-pad" id="pacts" style="background: var(--bg); border-top: 1px solid rgba(60, 60, 67, 0.08); border-bottom: 1px solid rgba(60, 60, 67, 0.08);">
+    <div class="container">
+      
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+        <span class="eyebrow">Quiet Accountability</span>
+        <h2 class="font-headline" style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px;">
+          Bring the friends who'll actually check.
+        </h2>
+        <p class="section-lead" style="margin: 0 auto;">
+          Handles, not names. Your pact sees your number, never the reason it reset. No public feeds, no commentary threads.
+        </p>
+      </div>
+
+      <!-- Private Leaderboard Card -->
+      <div class="leaderboard-card">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-bottom: 18px; border-bottom: 0.5px solid var(--separator);">
+          <div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">groups</span>
+              <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--label);">The Dawn Crew</h3>
+            </div>
+            <span style="font-size: 0.75rem; color: var(--label-2);">4 members · Closed circle</span>
+          </div>
+
+          <!-- Segmented Filter Control -->
+          <div class="segmented-control">
+            <button class="segment-btn leader-segment-btn active" data-metric="current">Current</button>
+            <button class="segment-btn leader-segment-btn" data-metric="best">Best</button>
+            <button class="segment-btn leader-segment-btn" data-metric="days">Days</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Rows Rendered by pact-leaderboard.js -->
+        <div class="leaderboard-rows" id="leaderboard-rows-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--label-2); padding-top: 16px; margin-top: 8px; border-top: 0.5px solid var(--separator);">
+          <span>Encrypted broadcast. Zero chat logs.</span>
+          <button id="invite-pact-btn" class="pressable" style="background: none; border: none; color: var(--tide); font-weight: 600; cursor: pointer;">
+            + Invite fifth friend
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== "WAR CHEST" SECTION ==================== -->
+  <section class="section-pad" id="war-chest">
+    <div class="container">
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;" class="ride-grid-resp">
+        
+        <!-- Left: Interactive Vault Simulator -->
+        <div>
+          <div class="vault-contract-card">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 0.5px solid var(--separator); margin-bottom: 20px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--tide-wash); color: var(--tide); display: flex; align-items: center; justify-content: center;">
+                  <span class="material-symbols-outlined" style="font-size: 18px;">lock</span>
+                </div>
+                <div>
+                  <h3 style="font-size: 1rem; font-weight: 700; color: var(--label);">Commitment Contract</h3>
+                  <span style="font-size: 0.6875rem; color: var(--label-3);">ID: CHEST-30-2026</span>
+                </div>
+              </div>
+              <span class="tide-badge">Active Vault</span>
+            </div>
+
+            <!-- Amount Preset Chips -->
+            <div style="margin-bottom: 16px;">
+              <label style="font-size: 0.75rem; font-weight: 600; color: var(--label-2); display: block; margin-bottom: 6px;">Select Stake Collateral:</label>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <button class="amount-preset-chip pressable" data-amount="99" style="padding: 6px 14px; border-radius: var(--radius-full); border: 1px solid rgba(60, 60, 67, 0.15); background: var(--bg-grouped); font-size: 0.8125rem; font-weight: 600;">₹99</button>
+                <button class="amount-preset-chip pressable" data-amount="199" style="padding: 6px 14px; border-radius: var(--radius-full); border: 1px solid rgba(60, 60, 67, 0.15); background: var(--bg-grouped); font-size: 0.8125rem; font-weight: 600;">₹199</button>
+                <button class="amount-preset-chip pressable active" data-amount="499" style="padding: 6px 14px; border-radius: var(--radius-full); border: 1px solid var(--tide); background: var(--tide-wash); color: var(--tide); font-size: 0.8125rem; font-weight: 700;">₹499</button>
+                <button class="amount-preset-chip pressable" data-amount="999" style="padding: 6px 14px; border-radius: var(--radius-full); border: 1px solid rgba(60, 60, 67, 0.15); background: var(--bg-grouped); font-size: 0.8125rem; font-weight: 600;">₹999</button>
+              </div>
+            </div>
+
+            <!-- Total Collateral Staked -->
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+              <span style="font-size: 0.875rem; color: var(--label-2);">Total Collateral Staked</span>
+              <span class="tnum" id="chest-total-staked" style="font-size: 1.75rem; font-weight: 700; color: var(--label);">₹499</span>
+            </div>
+
+            <!-- Dynamic Split Bar -->
+            <div class="vault-split-bar">
+              <div class="split-yours" id="chest-split-yours-bar" style="width: 75%;"></div>
+              <div class="split-cause" id="chest-split-cause-bar" style="width: 25%;"></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 600; margin-bottom: 20px;">
+              <span id="chest-split-yours-text" style="color: var(--tide);">Still yours: ₹374 (75%)</span>
+              <span id="chest-split-cause-text" style="color: var(--destructive);">Given to cause: ₹125 (25%)</span>
+            </div>
+
+            <!-- Recipient Cause Selector -->
+            <div class="glass-card" style="padding: 14px; margin-bottom: 16px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <span style="font-size: 0.75rem; font-weight: 600; color: var(--label-2);">Designated Cause:</span>
+                <span class="tide-badge" style="font-size: 10px;">Verified 501(c)(3)</span>
+              </div>
+              <select id="chest-cause-select" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(60,60,67,0.15); background: var(--bg); color: var(--label); font-size: 0.8125rem;">
+                <option value="The Ocean Cleanup">The Ocean Cleanup</option>
+                <option value="GiveDirectly Poverty Fund">GiveDirectly Poverty Fund</option>
+                <option value="Mental Health Crisis Line">Mental Health Crisis Line</option>
+              </select>
+            </div>
+
+            <!-- Promise Mode Toggle -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 0.5px solid var(--separator); font-size: 0.75rem; color: var(--label-2);">
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" id="chest-promise-mode-toggle" style="accent-color: var(--tide);" />
+                <span>Promise Mode (Honor system, donate yourself)</span>
+              </label>
+              <span class="material-symbols-outlined" style="font-size: 16px; color: var(--label-3);">info</span>
+            </div>
+            <div id="chest-mode-desc" style="font-size: 0.6875rem; color: var(--label-3); margin-top: 4px;">
+              Escrow Vault active: Funds held in segregated trust, returned Dec 1.
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Skin in the game copy & science -->
+        <div>
+          <span class="eyebrow">Skin in the game</span>
+          <h2 class="font-headline" style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; line-height: 1.1; margin-bottom: 16px;">
+            Put something on it.
+          </h2>
+          <p style="font-size: 1.0625rem; color: var(--label-2); line-height: 1.6; margin-bottom: 20px;">
+            Pick an amount and a cause you care about. Each reset sends a quarter of it to that cause. Make it to the end, and whatever's left comes back to you. WillWar never keeps any of it.
+          </p>
+
+          <!-- Reassurance Pills -->
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;">
+            <span class="tide-badge" style="background: var(--bg-tertiary); color: var(--label);">Optional. Free to skip.</span>
+            <span class="tide-badge" style="background: var(--bg-tertiary); color: var(--label);">Honor system: nobody checks but you.</span>
+            <span class="tide-badge" style="background: var(--bg-tertiary); color: var(--label);">Zero platform take.</span>
+          </div>
+
+          <!-- Academic Citation -->
+          <div class="glass-card" style="padding: 16px;">
+            <p style="font-size: 0.8125rem; color: var(--label-2); line-height: 1.5;">
+              <strong style="color: var(--label);">Behavioral Economics Foundation:</strong>
+              "In a field study, smokers offered a contract like this, with their own money returned on success and given to charity otherwise, were more likely to quit."
+              <span style="display: block; font-weight: 600; color: var(--tide); margin-top: 4px;">
+                Giné, Karlan and Zinman, <em>American Economic Review</em>, 2010.
+              </span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== "MORNING LINE" SECTION ==================== -->
+  <section class="section-pad" id="morning-line" style="background: var(--bg); border-top: 1px solid rgba(60, 60, 67, 0.08); border-bottom: 1px solid rgba(60, 60, 67, 0.08);">
+    <div class="container">
+      
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+        <span class="eyebrow">Daily Calibration</span>
+        <h2 class="font-headline" style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px;">
+          One line every morning, written for your day.
+        </h2>
+        <p class="section-lead" style="margin: 0 auto;">
+          No generic aphorisms. Just a calibrated 15-second orientation waiting when you unlock your phone. Choose the voice that actually grounds you.
+        </p>
+      </div>
+
+      <!-- 4 Tone Preview Bento Grid -->
+      <div class="morning-grid">
+        
+        <!-- Tone 1: Steady -->
+        <div class="morning-card selected-tone pressable" data-tone="steady">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="tide-badge" style="font-size: 11px;">Steady</span>
+              <span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">anchor</span>
+            </div>
+            <p style="font-size: 0.9375rem; font-style: italic; line-height: 1.6; color: var(--label);">
+              "Day 9. You've already handled nine evenings like this one. Handle tonight the same way."
+            </p>
+          </div>
+          <div style="font-size: 0.6875rem; color: var(--label-3); padding-top: 12px; border-top: 0.5px solid var(--separator);">
+            Delivered at 07:00 AM
+          </div>
+        </div>
+
+        <!-- Tone 2: Stoic -->
+        <div class="morning-card pressable" data-tone="stoic">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="tide-badge" style="font-size: 11px;">Stoic</span>
+              <span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">shield</span>
+            </div>
+            <p style="font-size: 0.9375rem; font-style: italic; line-height: 1.6; color: var(--label);">
+              "Day 9. The urge asks for your attention. Give it three minutes of breathing instead."
+            </p>
+          </div>
+          <div style="font-size: 0.6875rem; color: var(--label-3); padding-top: 12px; border-top: 0.5px solid var(--separator);">
+            Delivered at 07:00 AM
+          </div>
+        </div>
+
+        <!-- Tone 3: Coach -->
+        <div class="morning-card pressable" data-tone="coach">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="tide-badge" style="font-size: 11px;">Coach</span>
+              <span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">flag</span>
+            </div>
+            <p style="font-size: 0.9375rem; font-style: italic; line-height: 1.6; color: var(--label);">
+              "Day 9. Phone out of the bedroom tonight. That's the whole plan."
+            </p>
+          </div>
+          <div style="font-size: 0.6875rem; color: var(--label-3); padding-top: 12px; border-top: 0.5px solid var(--separator);">
+            Delivered at 07:00 AM
+          </div>
+        </div>
+
+        <!-- Tone 4: Playful -->
+        <div class="morning-card pressable" data-tone="playful">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="tide-badge" style="font-size: 11px;">Playful</span>
+              <span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">sailing</span>
+            </div>
+            <p style="font-size: 0.9375rem; font-style: italic; line-height: 1.6; color: var(--label);">
+              "Day 9. Single digits for one more day. Make tomorrow a double."
+            </p>
+          </div>
+          <div style="font-size: 0.6875rem; color: var(--label-3); padding-top: 12px; border-top: 0.5px solid var(--separator);">
+            Delivered at 07:00 AM
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Voice Line Audio Simulator Bar -->
+      <div class="glass-card" style="max-width: 620px; margin: 32px auto 0; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button class="btn-primary pressable" id="morning-play-audio-btn" style="width: 40px; height: 40px; padding: 0; border-radius: 50%;">
+            <span class="material-symbols-outlined" style="font-size: 20px;">volume_up</span>
+          </button>
+          <div>
+            <div style="font-size: 0.8125rem; font-weight: 600; color: var(--label);">Audio Orientation Preview (<span id="morning-preview-tone-label">Steady</span>)</div>
+            <div style="font-size: 0.75rem; color: var(--label-2); font-style: italic;" id="morning-preview-quote">"Day 9. You've already handled nine evenings..."</div>
+          </div>
+        </div>
+        <span class="tide-badge" style="font-size: 11px;">Calm Voice Synthesis</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== "PRIVACY" SECTION ==================== -->
+  <section class="section-pad" id="privacy">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="eyebrow">Uncompromising Restraint</span>
+        <h2 class="font-headline" style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em;">
+          Your streak is yours.
+        </h2>
+        <p class="section-lead">
+          We designed WillWar around the premise that vulnerability requires zero audience. What happens on your device stays on your physical hardware.
+        </p>
+      </div>
+
+      <!-- 2x2 Bento Grid -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;" class="privacy-grid-resp">
+        
+        <div class="glass-card" style="padding: 28px; display: flex; gap: 16px; align-items: flex-start;">
+          <div style="width: 48px; height: 48px; border-radius: 14px; background: var(--tide-wash); color: var(--tide); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <span class="material-symbols-outlined" style="font-size: 24px;">badge</span>
+          </div>
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--label); margin-bottom: 6px;">We never ask for your real name.</h3>
+            <p style="font-size: 0.9375rem; color: var(--label-2); line-height: 1.5;">Pick any handle you want for pacts. No legal names, no contact book scraping, and no automated social linking.</p>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 28px; display: flex; gap: 16px; align-items: flex-start;">
+          <div style="width: 48px; height: 48px; border-radius: 14px; background: var(--tide-wash); color: var(--tide); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <span class="material-symbols-outlined" style="font-size: 24px;">phonelink_lock</span>
+          </div>
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--label); margin-bottom: 6px;">Your journal stays on your phone.</h3>
+            <p style="font-size: 0.9375rem; color: var(--label-2); line-height: 1.5;">Urge triggers and notes are saved directly in IndexedDB. Unless you enable encrypted Pro cloud backups, it never touches our servers.</p>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 28px; display: flex; gap: 16px; align-items: flex-start;">
+          <div style="width: 48px; height: 48px; border-radius: 14px; background: var(--tide-wash); color: var(--tide); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <span class="material-symbols-outlined" style="font-size: 24px;">visibility_off</span>
+          </div>
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--label); margin-bottom: 6px;">Ads here never use what you do in the app.</h3>
+            <p style="font-size: 0.9375rem; color: var(--label-2); line-height: 1.5;">Free users see discreet, context-agnostic banner placements. We do not integrate tracking pixels or sell behavioral profiles.</p>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 28px; display: flex; gap: 16px; align-items: flex-start;">
+          <div style="width: 48px; height: 48px; border-radius: 14px; background: var(--tide-wash); color: var(--tide); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <span class="material-symbols-outlined" style="font-size: 24px;">delete_forever</span>
+          </div>
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--label); margin-bottom: 6px;">Delete everything in one tap.</h3>
+            <p style="font-size: 0.9375rem; color: var(--label-2); line-height: 1.5;">A clean nuclear button in Settings wipes browser cache, IndexedDB records, and removes your handle from pacts immediately.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== "LEARN" SECTION ==================== -->
+  <section class="section-pad" id="learn" style="background: var(--bg); border-top: 1px solid rgba(60, 60, 67, 0.08); border-bottom: 1px solid rgba(60, 60, 67, 0.08);">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="eyebrow">Research Library</span>
+        <h2 class="font-headline" style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em;">
+          Straight answers, graded.
+        </h2>
+        <p class="section-lead">
+          Every article shows how strong the evidence is. When the internet says one thing and the research says another, we show you both without editorial spin.
+        </p>
+      </div>
+
+      <!-- 3 Evidence Graded Article Cards -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;" class="articles-grid-resp">
+        
+        <!-- Article 1: Myth -->
+        <article class="glass-card" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <span style="font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px; background: rgba(255, 59, 48, 0.1); color: var(--destructive); border: 0.5px solid rgba(255, 59, 48, 0.2);">[Myth]</span>
+              <span style="font-size: 0.75rem; color: var(--label-2);">4 min read</span>
+            </div>
+            <h3 style="font-family: var(--font-headline); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: var(--label); margin-bottom: 8px;">
+              The day-7 testosterone claim, traced to its source
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--label-2); line-height: 1.5;">
+              How a single 2003 Chinese study with 28 participants was turned into internet doctrine, and what hormonal tracking actually shows.
+            </p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 16px; margin-top: 16px; border-top: 0.5px solid var(--separator); font-size: 0.75rem; color: var(--label-2);">
+            <span>Endocrinology</span>
+            <span style="color: var(--tide); font-weight: 600; display: flex; align-items: center; gap: 2px;">Read <span class="material-symbols-outlined" style="font-size: 12px;">arrow_forward</span></span>
+          </div>
+        </article>
+
+        <!-- Article 2: Moderate -->
+        <article class="glass-card" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <span class="brass-badge">[Moderate]</span>
+              <span style="font-size: 0.75rem; color: var(--label-2);">6 min read</span>
+            </div>
+            <h3 style="font-family: var(--font-headline); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: var(--label); margin-bottom: 8px;">
+              Why one slip turns into a week, and how to stop it
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--label-2); line-height: 1.5;">
+              The Abstinence Violation Effect: the cognitive trap where people decide that because perfection ended, total collapse is justified.
+            </p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 16px; margin-top: 16px; border-top: 0.5px solid var(--separator); font-size: 0.75rem; color: var(--label-2);">
+            <span>Behavioral psychology</span>
+            <span style="color: var(--tide); font-weight: 600; display: flex; align-items: center; gap: 2px;">Read <span class="material-symbols-outlined" style="font-size: 12px;">arrow_forward</span></span>
+          </div>
+        </article>
+
+        <!-- Article 3: Strong -->
+        <article class="glass-card" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <span class="tide-badge">[Strong]</span>
+              <span style="font-size: 0.75rem; color: var(--label-2);">5 min read</span>
+            </div>
+            <h3 style="font-family: var(--font-headline); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: var(--label); margin-bottom: 8px;">
+              Three minutes of a puzzle versus a craving
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--label-2); line-height: 1.5;">
+              Why working memory load directly inhibits intrusive mental imagery, and how spatial interaction overrides compulsive physical loops.
+            </p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 16px; margin-top: 16px; border-top: 0.5px solid var(--separator); font-size: 0.75rem; color: var(--label-2);">
+            <span>Cognitive load</span>
+            <span style="color: var(--tide); font-weight: 600; display: flex; align-items: center; gap: 2px;">Read <span class="material-symbols-outlined" style="font-size: 12px;">arrow_forward</span></span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== "PRICING" SECTION ==================== -->
+  <section class="section-pad" id="pricing">
+    <div class="container">
+      
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+        <span class="eyebrow">Clear Terms</span>
+        <h2 class="font-headline" style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px;">
+          Transparent access. No dark patterns.
+        </h2>
+        <p class="section-lead" style="margin: 0 auto;">
+          Free is fully functional for 30 days. Pro adds deep ergonomics, audio coaching, and zero interruptions.
+        </p>
+      </div>
+
+      <!-- Pricing Comparison Columns -->
+      <div class="pricing-grid">
+        
+        <!-- Free Tier -->
+        <div class="pricing-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--label);">Free</h3>
+              <span class="tide-badge" style="background: var(--bg-tertiary); color: var(--label);">Standard</span>
+            </div>
+            <div class="tnum" style="font-size: 2.25rem; font-weight: 700; color: var(--label); margin-bottom: 12px;">
+              ₹0 <span style="font-size: 0.875rem; font-weight: 500; color: var(--label-2);">/ always free</span>
+            </div>
+            <p style="font-size: 0.875rem; color: var(--label-2); margin-bottom: 24px; padding-bottom: 20px; border-bottom: 0.5px solid var(--separator);">
+              The complete navigational toolkit to make it to December 1st without financial obligation.
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.875rem; color: var(--label); margin-bottom: 32px;">
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> Streak clock counting down to second</li>
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> Daily check-in & morning line</li>
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> Two urge games (Drift & Swell)</li>
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> One pact circle (up to 5 friends)</li>
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> All research & evidence library</li>
+              <li style="display: flex; align-items: center; gap: 8px; color: var(--label-3);"><span class="material-symbols-outlined" style="font-size: 18px;">info</span> Includes discreet static ads</li>
+            </ul>
+          </div>
+          <button class="btn-secondary pressable open-pledge-trigger" style="width: 100%; justify-content: center;">
+            Start free
+          </button>
+        </div>
+
+        <!-- Pro Tier (Featured) -->
+        <div class="pricing-card featured-pro">
+          <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--tide); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 14px; border-radius: 9999px;">
+            Recommended
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--label);">Pro Pass</h3>
+              <span class="brass-badge brass-gradient">Unlimited</span>
+            </div>
+            <div class="tnum" style="font-size: 2.25rem; font-weight: 700; color: var(--label); margin-bottom: 12px;">
+              ₹149 <span style="font-size: 0.875rem; font-weight: 500; color: var(--label-2);">season pass / or $3.99</span>
+            </div>
+            <p style="font-size: 0.875rem; color: var(--label-2); margin-bottom: 24px; padding-bottom: 20px; border-bottom: 0.5px solid var(--separator);">
+              For individuals seeking maximal telemetry, audio coaching, and zero commercial noise.
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.875rem; color: var(--label); margin-bottom: 32px;">
+              <li style="display: flex; align-items: center; gap: 8px; font-weight: 600;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">done_all</span> Everything in Free</li>
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> All 3 urge games (including Knots)</li>
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> Audio urge coach (guided sessions)</li>
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> Unlimited pacts up to 50 people</li>
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> Trigger insights & time-of-day analytics</li>
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> 2 streak shields per month</li>
+              <li style="display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--tide);">check</span> Encrypted private journal backup</li>
+              <li style="display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--tide);"><span class="material-symbols-outlined" style="font-size: 18px;">verified</span> Zero advertisements ever</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--label-3); text-align: center; margin-bottom: 8px;">Annual pass also available: ₹799 / $24.99</div>
+            <button class="btn-primary pressable open-pledge-trigger tide-shadow" style="width: 100%; justify-content: center;">
+              Get Pro Pass
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; max-width: 600px; margin: 32px auto 0; font-size: 0.75rem; color: var(--label-3);">
+        Prices include taxes. Cancel anytime in Settings with immediate confirmation. The War Chest is separate, completely optional and available on Free and Pro alike.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== "QUESTIONS" (FAQ ACCORDION) ==================== -->
+  <section class="section-pad" id="faq" style="background: var(--bg); border-top: 1px solid rgba(60, 60, 67, 0.08); border-bottom: 1px solid rgba(60, 60, 67, 0.08);">
+    <div class="container">
+      
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+        <span class="eyebrow">Inquiries</span>
+        <h2 class="font-headline" style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px;">
+          Frequently asked questions.
+        </h2>
+        <p class="section-lead" style="margin: 0 auto;">
+          Clear, unvarnished policies on installation, age restrictions, and streak resets.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Why is WillWar strictly 18+ only?</span>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </div>
+          <div class="faq-answer">
+            WillWar is built for mature adults navigating digital sobriety and sexual self-regulation. We maintain an uncompromising boundary to guarantee that all microcopy, evidence discussions, and features remain frank, clinical, and intended solely for independent adults.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does it install from Safari without an App Store?</span>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </div>
+          <div class="faq-answer">
+            WillWar is an engineered Progressive Web App (PWA). In Safari on your iPhone, tap the Share icon and select <strong>"Add to Home Screen"</strong>. It runs in its own full-screen container with offline capability, swift performance, and zero App Store surveillance.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What happens if I slip and reset my streak?</span>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </div>
+          <div class="faq-answer">
+            There is zero shame or gamified penalty. The app asks for a simple, optional trigger tag (e.g., "Late night exhaustion") to populate your insights. Your pact members see your number return to Day 0, but never the cause. Your historical days logged remain permanently in your journal.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can anyone in my pact see my private journal notes?</span>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </div>
+          <div class="faq-answer">
+            Never. Pacts only broadcast two data points: your anonymized handle and your current streak duration. Journals, urge timestamps, and personal reflections are isolated inside your device storage.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Does the clock work offline on airplanes or without data?</span>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </div>
+          <div class="faq-answer">
+            Yes. The chronometer derives its state from hardware epoch time. You can play Drift and Swell completely offline. Pact synchronization occurs silently the moment your connection re-establishes.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is WillWar considered medical therapy?</span>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </div>
+          <div class="faq-answer">
+            No. WillWar is a self-directed behavioral accountability tool, not psychotherapy, medical treatment, or clinical intervention. If you are struggling with compulsive behavioral disorders that impair daily functioning, please consult a licensed mental health professional.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does the War Chest handle payments and charity transfers?</span>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </div>
+          <div class="faq-answer">
+            Collateral is held in segregated trust. If a reset occurs, that fractional sum is sent directly via payment partner to the verified 501(c)(3) or charitable trust you selected. Upon successful completion of your 30-day challenge on December 1st, 100% of remaining funds return to your originating payment method. WillWar charges zero brokerage fees on pledges.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA BANNER ==================== -->
+  <section class="section-pad" style="text-align: center; position: relative; overflow: hidden;">
+    <div class="container">
+      <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--tide); color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+        <span class="material-symbols-outlined" style="font-size: 24px;">waves</span>
+      </div>
+      <h2 class="font-headline" style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em;">
+        The clock starts when you say it does.
+      </h2>
+      <p style="font-size: 1.125rem; color: var(--label-2); max-width: 520px; margin: 0 auto 28px;">
+        No email verification bottlenecks. No App Store gatekeepers. Install to your home screen in 10 seconds.
+      </p>
+      <button class="btn-primary pressable open-pledge-trigger tide-shadow" style="padding: 16px 40px; font-size: 1.125rem;">
+        <span>Start my 30 days</span>
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+      </button>
+      <span style="display: block; font-size: 0.8125rem; color: var(--label-3); margin-top: 14px;">
+        Off-season target: 30 days through December 1st.
+      </span>
+    </div>
+  </section>
+
+  <!-- ==================== ARCHITECTURAL FOOTER (footer.design inspired) ==================== -->
+  <footer class="footer-architectural">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        <!-- Brand Info -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+            <div class="brand-wave-icon" style="width: 24px; height: 24px;">
+              <svg width="14" height="14" viewBox="0 0 32 32" fill="none">
+                <path d="M4 8.5C6 8.5 7.5 23.5 10 23.5S13.5 12.5 16 12.5 19.5 23.5 22 23.5 26 8.5 28 8.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <span style="font-family: var(--font-headline); font-size: 1.125rem; font-weight: 700;">WillWar</span>
+          </div>
+          <p style="font-size: 0.8125rem; color: var(--label-2); line-height: 1.6; max-width: 300px;">
+            A 30-day streak tracker for adults. Built on cognitive load theory, quiet accountability, and zero hyperbole.
+          </p>
+          <div style="font-size: 0.75rem; color: var(--label-3); margin-top: 12px;">
+            Designed for mobile hardware Safari PWA.
+          </div>
+        </div>
+
+        <!-- Product Col -->
+        <div>
+          <div class="footer-col-title">Product</div>
+          <ul class="footer-link-list">
+            <li><a href="#timeline">30-Day Timeline</a></li>
+            <li><a href="#ride-it-out">Ride It Out Game</a></li>
+            <li><a href="#pacts">Private Pacts</a></li>
+            <li><a href="#war-chest">War Chest Contract</a></li>
+            <li><a href="#pricing">Pro Pass</a></li>
+          </ul>
+        </div>
+
+        <!-- Support Col -->
+        <div>
+          <div class="footer-col-title">Support</div>
+          <ul class="footer-link-list">
+            <li><a href="#install">iOS Installation Guide</a></li>
+            <li><a href="#android">Android PWA Setup</a></li>
+            <li><a href="#learn">Evidence Sources</a></li>
+            <li><a href="#contact">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal Col -->
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul class="footer-link-list">
+            <li><a href="#privacy">Privacy Architecture</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#age">Age Verification (18+)</a></li>
+            <li><a href="#disclaimer">Medical Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Telemetry Bottom Bar -->
+      <div class="footer-telemetry-bar">
+        <div>18+ only. Not medical advice. © WillWar. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: 12px;" class="tnum">
+          <span>Tide Engine v2.4</span>
+          <span>•</span>
+          <span>Local Device Storage</span>
+          <span>•</span>
+          <span style="color: var(--tide); font-weight: 600;">Off-Season Active</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== HUD TOAST NOTIFICATION ==================== -->
+  <div class="hud-toast" id="hud-toast" role="alert" aria-live="polite">
+    <span class="material-symbols-outlined" id="hud-toast-icon" style="color: var(--tide); font-size: 18px;">waves</span>
+    <span id="hud-toast-text">Day 1 started.</span>
+  </div>
+
+  <!-- ==================== PLEDGE COMMITMENT DRAWER MODAL ==================== -->
+  <div class="modal-overlay" id="pledge-modal-overlay">
+    <div class="pledge-sheet glass-specular" role="dialog" aria-modal="true" aria-labelledby="pledge-title">
+      <div class="pledge-grabber"></div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <span class="eyebrow" style="margin-bottom: 0;">Step 1 of 1 · Free Commitment</span>
+        <button id="pledge-modal-close" class="pressable" style="background: none; border: none; font-size: 1.25rem; color: var(--label-2); cursor: pointer;" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <h3 id="pledge-title" class="font-headline" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: var(--label);">
+        I hold the line until December 1st.
+      </h3>
+      <p style="font-size: 0.875rem; color: var(--label-2); line-height: 1.6; margin-bottom: 24px;">
+        Thirty days of clean wakeups, three minutes when urges crest, and real accountability with friends I trust.
+      </p>
+
+      <!-- Handle Input Field -->
+      <div style="margin-bottom: 20px;">
+        <label for="pledge-handle-input" style="font-size: 0.75rem; font-weight: 600; color: var(--label-2); display: block; margin-bottom: 6px;">
+          Choose your pact handle (never your real name):
+        </label>
+        <input type="text" id="pledge-handle-input" placeholder="@quietmile" value="@quietmile" style="width: 100%; height: 50px; padding: 0 16px; border-radius: var(--radius-md); border: 1px solid rgba(60,60,67,0.2); background: var(--bg-grouped); color: var(--label); font-size: 1rem; font-weight: 600; outline: none;" />
+      </div>
+
+      <!-- Tactile Hold to Sign Capsule (DESIGN.md section 4) -->
+      <div style="position: relative; height: 56px; border-radius: var(--radius-full); background: var(--bg-tertiary); overflow: hidden; margin-bottom: 12px;">
+        <div id="pledge-btn-fill" style="position: absolute; top: 0; left: 0; bottom: 0; width: 0%; background: var(--tide); transition: width 60ms linear;"></div>
+        <button id="pledge-hold-btn" class="pressable" style="position: absolute; inset: 0; width: 100%; height: 100%; background: transparent; border: none; color: var(--label); font-size: 1rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; z-index: 2; cursor: pointer;">
+          <span class="material-symbols-outlined" style="font-size: 20px;">fingerprint</span>
+          <span id="pledge-btn-text">Hold to sign pledge (or Space)</span>
+        </button>
+      </div>
+
+      <!-- Signed Seal Display -->
+      <div id="pledge-signed-seal" style="display: none; text-align: center; padding: 12px; background: rgba(184, 134, 43, 0.1); border: 1px solid var(--brass); border-radius: var(--radius-card); margin-bottom: 12px;">
+        <div class="brass-badge brass-gradient" style="margin-bottom: 4px;">PLEDGE SEALED</div>
+        <div class="tnum" id="seal-handle-text" style="font-weight: 700; color: var(--label);">@quietmile</div>
+        <div style="font-size: 0.75rem; color: var(--label-2);">Your clock is active. Off-season begins now.</div>
+      </div>
+
+      <div style="text-align: center;">
+        <button onclick="document.getElementById('pledge-modal-overlay').classList.remove('open')" style="background: none; border: none; font-size: 0.8125rem; color: var(--label-3); cursor: pointer;">
+          Skip for now
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main JavaScript App -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
