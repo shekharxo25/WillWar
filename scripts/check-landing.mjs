@@ -1,8 +1,10 @@
 // Interaction checks for the landing page: chalk scroll, hold-to-last demo (mouse, touch, Space), no-JS render.
-// Usage: node scripts/check-landing.cjs [baseUrl] (server must be running)
-const { chromium } = require("playwright");
-const path = require("node:path");
-const assert = require("node:assert");
+// Usage: node scripts/check-landing.mjs [baseUrl] (server must be running)
+import { chromium } from "playwright";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import assert from "node:assert";
 
 (async () => {
   const base = process.argv[2] || "http://localhost:3101";

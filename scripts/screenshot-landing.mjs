@@ -1,12 +1,15 @@
 // Screenshots of the landing page at iPhone 15 and desktop sizes.
-// Usage: node scripts/screenshot-landing.cjs [baseUrl] (server must be running)
-const { chromium } = require("playwright");
-const path = require("node:path");
+// Usage: node scripts/screenshot-landing.mjs [baseUrl] (server must be running)
+import { chromium } from "playwright";
+import path from "node:path";
+import { mkdirSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 (async () => {
   const base = process.argv[2] || "http://localhost:3101";
   const out = path.join(__dirname, "..", "docs", "screenshots");
-  require("node:fs").mkdirSync(out, { recursive: true });
+  mkdirSync(out, { recursive: true });
   const b = await chromium.launch();
   for (const [name, w, h, mobile, scheme] of [
     ["mobile", 393, 852, true, "dark"],
