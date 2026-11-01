@@ -1,0 +1,81 @@
+/* Fight Night tokens (docs/design/DESIGN.md, Part 2). The only file with raw color values. */
+:root {
+  color-scheme: dark;
+  --bg: #262422;
+  --bg-raised: #33302d;
+  --housing: #0e0e0e;
+  --text: #eceae4;
+  --text-2: rgba(236, 234, 228, 0.64);
+  --text-3: rgba(236, 234, 228, 0.36);
+  --hairline: rgba(236, 234, 228, 0.12);
+  --led: #ff3b1f;
+  --led-housing: #ff3b1f;
+  --led-ghost: rgba(255, 59, 31, 0.1);
+  --lamp-go: #39d353;
+  --lamp-warn: #ffb020;
+  --brass: #c9a24b;
+  --brass-ink: #c9a24b;
+  --leather: #7a2a20;
+  --leather-wash: rgba(122, 42, 32, 0.35);
+  --ink: #141414;
+  --on-primary: #141414;
+  --primary: #eceae4;
+  --destructive: #ff453a;
+  --screw: #2a2a2a;
+  --housing-highlight: rgba(255, 255, 255, 0.06);
+  --tape: #d9d4c3;
+  --dim: rgba(0, 0, 0, 0.5);
+  --knob: #eceae4;
+  --housing-label: rgba(236, 234, 228, 0.36);
+  --glass: rgba(51, 48, 45, 0.82);
+
+  --r-housing: 6px;
+  --r-plate: 2px;
+  --r-toast: 4px;
+  --r-key: 6px;
+  --r-chip: 8px;
+  --r-button: 10px;
+  --r-card: 12px;
+  --r-sheet: 16px;
+
+  --dur-snap: 90ms;
+  --dur-ui: 180ms;
+  --ease-mech: cubic-bezier(0.3, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #e4e2dd;
+    --bg-raised: #f2f1ee;
+    --text: #1a1917;
+    --text-2: rgba(26, 25, 23, 0.64);
+    --text-3: rgba(26, 25, 23, 0.36);
+    --hairline: rgba(26, 25, 23, 0.14);
+    --led: #d93218;
+    --brass: #9c7a2e;
+    --brass-ink: #6e5520;
+    --leather-wash: rgba(122, 42, 32, 0.14);
+    --primary: #1a1917;
+    --on-primary: #f2f1ee;
+    --tape: #cfc9b6;
+    --glass: rgba(242, 241, 238, 0.82);
+  }
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #e4e2dd;
+  --bg-raised: #f2f1ee;
+  --text: #1a1917;
+  --text-2: rgba(26, 25, 23, 0.64);
+  --text-3: rgba(26, 25, 23, 0.36);
+  --hairline: rgba(26, 25, 23, 0.14);
+  --led: #d93218;
+  --brass: #9c7a2e;
+  --brass-ink: #6e5520;
+  --leather-wash: rgba(122, 42, 32, 0.14);
+  --primary: #1a1917;
+  --on-primary: #f2f1ee;
+  --tape: #cfc9b6;
+  --glass: rgba(242, 241, 238, 0.82);
+}
