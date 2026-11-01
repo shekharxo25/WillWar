@@ -144,7 +144,7 @@ export function Today() {
           why={snap.profile.whyTags}
           checkins7={snap.checkins.filter((c) => c.status !== "reset" && c.localDate > addDays(v.today, -7)).length}
           rounds7={snap.urgeSessions.filter((u) => u.completed && (now?.getTime() ?? 0) - new Date(u.startedAt).getTime() < 7 * 86400_000).length}
-          weekday={now ? weekday(now, snap.profile.timezone) : "Today"}
+          weekday={(now ? weekday(now, snap.profile.timezone) : "Monday") as "Monday"}
         />}
       </div>
 
