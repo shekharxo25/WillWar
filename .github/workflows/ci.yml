@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  app:
+    name: Lint, typecheck, test, build
+    runs-on: ubuntu-latest
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      NEXT_PUBLIC_WAR_CHEST_MODE: promise
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run content:check
+      - run: npm run build
+      - name: Stake mode stays off
+        run: |
+          if grep -RIn "NEXT_PUBLIC_WAR_CHEST_MODE=stake" --exclude-dir=node_modules --exclude-dir=.git --exclude=*.md . ; then
+            echo "War Chest stake mode must stay off until legal sign-off" && exit 1
+          fi
+
+  database:
+    name: Database (pgTAP via Supabase CLI)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - run: supabase db start
+      - name: RLS gate and database tests
+        run: supabase test db

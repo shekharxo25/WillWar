@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "willwar",
+  "compatibility_date": "2026-10-15",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    // Self-reference service binding (must match the worker name). See https://opennext.js.org/cloudflare/caching
+    { "binding": "WORKER_SELF_REFERENCE", "service": "willwar" }
+  ],
+  // Daily War Chest settlement at 02:00 UTC (calls /api/cron/war-chest-settle with CRON_SECRET).
+  "triggers": { "crons": ["0 2 * * *"] },
+  "observability": { "enabled": true }
+}

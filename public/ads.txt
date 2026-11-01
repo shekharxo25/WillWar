@@ -1,0 +1,2 @@
+# ads.txt placeholder. WillWar runs house ads only (NEXT_PUBLIC_ADS_MODE=house).
+# After AdSense approval add: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
