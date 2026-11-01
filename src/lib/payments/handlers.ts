@@ -94,7 +94,13 @@ export async function handleEvent(db: RpcClient, eventId: string, ev: RazorpayEv
     const r = ev.payload.refund?.entity;
     const chest = r?.notes?.war_chest_id;
     if (!r || !chest) return { ok: true, action: "ignored" };
-    await call(db, "record_refund", { p_chest: chest, p_refund_ref: String(r.id), p_amount_minor: Number(r.amount) });
+    try {
+      await call(db, "record_refund", { p_chest: chest, p_refund_ref: String(r.id), p_amount_minor: Number(r.amount) });
+    } catch (e) {
+      // The settlement job or account deletion records the refund when it's created; a later webhook is a no-op.
+      if (e instanceof Error && /not_settling/.test(e.message)) return { ok: true, action: "refund_already_recorded" };
+      throw e;
+    }
     return { ok: true, action: "refund_recorded" };
   }
 
