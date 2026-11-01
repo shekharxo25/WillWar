@@ -41,3 +41,27 @@ Without `NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY`, the pledge-li
 ## 2026-11-01 OG image font on Workers
 
 `src/app/opengraph-image.tsx` reads League Gothic from disk at request time. On Workers there's no filesystem at runtime, so it falls back to the default font. Before launch, either inline the font bytes or pre-render the OG image as a static PNG.
+
+## 2026-11-01 CSP is a strict allowlist, not nonces
+
+Nonces force dynamic rendering, which would make the landing page and the offline shell uncacheable and break the Lighthouse target. `src/proxy.ts` sends a per-route allowlist CSP (Turnstile only on `/`, Razorpay only on Pro/War Chest/onboarding, Google ad domains only on allowlisted ad routes when `NEXT_PUBLIC_ADS_MODE` isn't `house`) plus nosniff, Referrer-Policy, Permissions-Policy and frame-ancestors none. `script-src` still allows `'unsafe-inline'` for Next's inline bootstrap. Revisit with Next's SRI support before launch. HSTS turns on with `ENABLE_HSTS=1` after launch week.
+
+## 2026-11-01 Forfeit amounts are exact
+
+`log_reset` forfeits `amount_minor / 4` (integer paise/cents), so ₹499 Steady forfeits ₹124.75, leaving ₹374.25. The spec's mockups round this to ₹125/₹375; the UI shows the exact figures the database stores.
+
+## 2026-11-01 Rewarded and interstitial ad flows live in `AdSlot`
+
+The round screens and Me render `AdSlot` directly; the 5-second house rewarded card and the once-per-session post-round sheet are implemented once in `src/components/ads/AdSlot.tsx`.
+
+## 2026-11-01 Learn drafts hidden in production
+
+All 12 articles are drafts (empty `reviewed_by`). Production builds hide them ("Articles are with our reviewers") unless `NEXT_PUBLIC_SHOW_DRAFTS=1`; development shows them with a draft note.
+
+## 2026-11-01 `eval:ai` runs through Vitest
+
+Node's type stripping can't resolve the `@/` alias or JSON imports, so `npm run eval:ai` runs `scripts/eval-ai.ts` through Vitest with its own config. Without `ANTHROPIC_API_KEY` it runs against the mock adapter; judgement cases use keyword heuristics and are labelled as needing a real run.
+
+## 2026-11-01 Onboarding draft in sessionStorage during Google sign-in
+
+The Google redirect leaves the page, so the onboarding draft (including the date of birth needed by `complete_onboarding`'s server-side age check) is kept in `sessionStorage` for that tab and removed as soon as onboarding completes. Nothing is written to `localStorage` or the server.
