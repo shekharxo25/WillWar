@@ -186,4 +186,13 @@ describe("server-only shields", () => {
     await db.query("select public.grant_shield($1, 'rewarded_ad')", [B]);
     expect(await raises(db.query("select public.grant_shield($1, 'rewarded_ad')", [B]))).toMatch(/shield_cap/);
   });
+
+  // PGlite has one connection, so two grants can't actually race here. This guards the lock
+  // that makes the cap hold under concurrent requests on a real Postgres.
+  it("takes a per-user lock before counting toward the cap", async () => {
+    const r = await db.query<{ src: string }>("select prosrc src from pg_proc where oid = 'public.grant_shield(uuid,text)'::regprocedure");
+    const src = r.rows[0].src;
+    expect(src).toMatch(/pg_advisory_xact_lock\(.*p_user/);
+    expect(src.indexOf("pg_advisory_xact_lock")).toBeLessThan(src.indexOf("count(*)"));
+  });
 });
