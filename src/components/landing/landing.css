@@ -1,0 +1,44 @@
+/* Landing-only styles. Values come from tokens.css. */
+.poster-paper {
+  background: var(--knob);
+  color: var(--ink);
+}
+.poster-name {
+  font-size: clamp(96px, 22vw, 280px);
+  line-height: 0.86;
+}
+.l-h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-size: clamp(44px, 7vw, 96px);
+  line-height: 0.92;
+}
+.l-lead {
+  font-size: 20px;
+  line-height: 30px;
+}
+.l-body {
+  font-size: 17px;
+  line-height: 26px;
+}
+.l-col {
+  max-width: 680px;
+}
+.l-section {
+  padding-top: 96px;
+}
+.l-wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1120px;
+  padding-inline: 16px;
+}
+@media (min-width: 414px) {
+  .l-wrap { padding-inline: 20px; }
+}
+@media (min-width: 768px) {
+  .l-wrap { padding-inline: 40px; }
+}
+.chalk-sticky[data-enhanced="false"] { display: none; }
+.chalk-static[data-enhanced="true"] { display: none; }
