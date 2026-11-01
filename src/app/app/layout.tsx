@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AppProvider } from "@/components/AppProvider";
+import { RegisterSW } from "@/components/shell/RegisterSW";
 
 // Discreet by default: in-app titles never mention the challenge subject.
 export const metadata: Metadata = { title: { default: "WillWar", template: "%s Â· WillWar" }, robots: { index: false } };
@@ -7,6 +8,7 @@ export const metadata: Metadata = { title: { default: "WillWar", template: "%s Â
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <AppProvider>
+      <RegisterSW />
       <div className="mx-auto min-h-dvh w-full max-w-[480px]">{children}</div>
     </AppProvider>
   );
