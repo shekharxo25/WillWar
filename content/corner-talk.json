@@ -1,0 +1,847 @@
+{
+  "reviewed_by": "",
+  "reviewed_on": "",
+  "note": "Curated fallback lines. {day} is replaced with the day number. Founder reviews before launch.",
+  "lines": [
+    {
+      "id": "steady-001",
+      "tone": "steady",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. A fresh start and a clean slate. Tonight, decide where your phone sleeps, and leave it there."
+    },
+    {
+      "id": "steady-002",
+      "tone": "steady",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. Nothing to prove yet except that you showed up. Check in tonight and that counts as the whole job."
+    },
+    {
+      "id": "steady-003",
+      "tone": "steady",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1 is on the wall. Pick the hour that usually gets loud and plan something for it."
+    },
+    {
+      "id": "steady-004",
+      "tone": "steady",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. You've done this {day} days running. Do today the same way, one evening at a time."
+    },
+    {
+      "id": "steady-005",
+      "tone": "steady",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. The early days are mostly habit and timing. Notice when the urge tends to show up and be ready then."
+    },
+    {
+      "id": "steady-006",
+      "tone": "steady",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Keep it plain today: eat properly, get outside once, and go to bed at a sensible hour."
+    },
+    {
+      "id": "steady-007",
+      "tone": "steady",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. If a rough moment comes, it passes in a few minutes. Start a round and let the clock carry it."
+    },
+    {
+      "id": "steady-008",
+      "tone": "steady",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Boredom tends to arrive around now. Have one three-minute plan ready before the evening starts."
+    },
+    {
+      "id": "steady-009",
+      "tone": "steady",
+      "minDay": 7,
+      "maxDay": 7,
+      "text": "Day 7. The first plate goes on the wall today. Handle tonight the way you handled the last six."
+    },
+    {
+      "id": "steady-010",
+      "tone": "steady",
+      "minDay": 7,
+      "maxDay": 7,
+      "text": "Day 7. One full week. Nothing dramatic, just seven evenings handled. Do the eighth the same way."
+    },
+    {
+      "id": "steady-011",
+      "tone": "steady",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. You've handled {day} evenings like this one. Handle tonight the same way."
+    },
+    {
+      "id": "steady-012",
+      "tone": "steady",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. The routine is starting to hold. Keep the phone out of the bedroom and keep checking in."
+    },
+    {
+      "id": "steady-013",
+      "tone": "steady",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. Look at what set you off in week one and move one thing out of the way tonight."
+    },
+    {
+      "id": "steady-014",
+      "tone": "steady",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. Steady beats intense. A short walk after dinner is a good way to close the day."
+    },
+    {
+      "id": "steady-015",
+      "tone": "steady",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. You don't need a big day. You need an ordinary one with a check-in at the end."
+    },
+    {
+      "id": "steady-016",
+      "tone": "steady",
+      "minDay": 14,
+      "maxDay": 14,
+      "text": "Day 14. Halfway. The tally on the wall is yours whatever happens next. Keep the evenings simple."
+    },
+    {
+      "id": "steady-017",
+      "tone": "steady",
+      "minDay": 14,
+      "maxDay": 14,
+      "text": "Day 14. Two weeks done. Your log shows what sets you off, so plan around the worst hour tonight."
+    },
+    {
+      "id": "steady-018",
+      "tone": "steady",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. Past halfway. The days look alike now, and that is the point. Check in and rest."
+    },
+    {
+      "id": "steady-019",
+      "tone": "steady",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. When an urge shows up, name it, start a round, and let three minutes go by."
+    },
+    {
+      "id": "steady-020",
+      "tone": "steady",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. Same plan as yesterday: phone out of the bedroom, lights out at a decent hour, check in."
+    },
+    {
+      "id": "steady-021",
+      "tone": "steady",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. You've got a routine now. Protect it from late nights, because that is where it gets tested."
+    },
+    {
+      "id": "steady-022",
+      "tone": "steady",
+      "minDay": 21,
+      "maxDay": 21,
+      "text": "Day 21. Three plates on the wall. Now the routine does most of the work. Let it."
+    },
+    {
+      "id": "steady-023",
+      "tone": "steady",
+      "minDay": 21,
+      "maxDay": 21,
+      "text": "Day 21. Three weeks. Keep doing the small things that got you here, starting with an early night."
+    },
+    {
+      "id": "steady-024",
+      "tone": "steady",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. The finish is in sight, but today is still just today. Handle this evening and check in."
+    },
+    {
+      "id": "steady-025",
+      "tone": "steady",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. Close to the bell. Don't change what works. Same routine, same check-in, same time."
+    },
+    {
+      "id": "steady-026",
+      "tone": "steady",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. A few days left. If tonight gets loud, go a round first and decide after."
+    },
+    {
+      "id": "steady-027",
+      "tone": "steady",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. You know your hard hour by now. Be somewhere else, doing something else, when it comes."
+    },
+    {
+      "id": "steady-028",
+      "tone": "steady",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. You went the distance. The record stays on the wall. Decide calmly what comes next."
+    },
+    {
+      "id": "steady-029",
+      "tone": "steady",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. The tally is full. Take a quiet minute to notice what changed in your days, then rest."
+    },
+    {
+      "id": "steady-030",
+      "tone": "steady",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. You kept going past the bell. Keep the routine that helped and drop the ones that didn't."
+    },
+    {
+      "id": "stoic-031",
+      "tone": "stoic",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. Every record begins with a single mark. Make today's mark and leave tomorrow for tomorrow."
+    },
+    {
+      "id": "stoic-032",
+      "tone": "stoic",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. You cannot finish thirty days today. You can finish this one. That is enough."
+    },
+    {
+      "id": "stoic-033",
+      "tone": "stoic",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. Begin without fuss. The first step is small, and it is also the one that matters most."
+    },
+    {
+      "id": "stoic-034",
+      "tone": "stoic",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. The urge wants your attention. Give it three minutes and nothing more."
+    },
+    {
+      "id": "stoic-035",
+      "tone": "stoic",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. You control where you put your attention. Put it somewhere useful this evening."
+    },
+    {
+      "id": "stoic-036",
+      "tone": "stoic",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. A craving is a visitor, not a resident. Let it knock, and keep doing what you were doing."
+    },
+    {
+      "id": "stoic-037",
+      "tone": "stoic",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Discomfort is information, not an order. Notice it, breathe, and carry on with your evening."
+    },
+    {
+      "id": "stoic-038",
+      "tone": "stoic",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Do the next right thing, then the one after that. A day is only a chain of small choices."
+    },
+    {
+      "id": "stoic-039",
+      "tone": "stoic",
+      "minDay": 7,
+      "maxDay": 7,
+      "text": "Day 7. Seven days. Not a triumph, just evidence. You can do what you said you would do."
+    },
+    {
+      "id": "stoic-040",
+      "tone": "stoic",
+      "minDay": 7,
+      "maxDay": 7,
+      "text": "Day 7. A week of choices made one at a time. Make the next one the same way."
+    },
+    {
+      "id": "stoic-041",
+      "tone": "stoic",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. What you practice grows stronger. You have practiced holding the line for {day} days."
+    },
+    {
+      "id": "stoic-042",
+      "tone": "stoic",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. The urge rises and falls whether you act on it or not. Wait for the fall."
+    },
+    {
+      "id": "stoic-043",
+      "tone": "stoic",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. Most of discipline is arranging the room before the moment arrives. Arrange tonight's room now."
+    },
+    {
+      "id": "stoic-044",
+      "tone": "stoic",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. You don't have to feel ready. You only have to stay with the plan for the next hour."
+    },
+    {
+      "id": "stoic-045",
+      "tone": "stoic",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. Today asks for nothing heroic. Keep your word to yourself in small, quiet ways."
+    },
+    {
+      "id": "stoic-046",
+      "tone": "stoic",
+      "minDay": 14,
+      "maxDay": 14,
+      "text": "Day 14. Halfway is a place to stand, not a place to rest. Stand here and look ahead."
+    },
+    {
+      "id": "stoic-047",
+      "tone": "stoic",
+      "minDay": 14,
+      "maxDay": 14,
+      "text": "Day 14. Two weeks of practice. The road ahead is the same road. Walk it the same way."
+    },
+    {
+      "id": "stoic-048",
+      "tone": "stoic",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. Calm is a skill, and you have been training it. Use it when the evening gets loud."
+    },
+    {
+      "id": "stoic-049",
+      "tone": "stoic",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. The mind makes the urge seem permanent. It never is. Three minutes will show you."
+    },
+    {
+      "id": "stoic-050",
+      "tone": "stoic",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. You cannot choose every thought. You can choose the next thing your hands do."
+    },
+    {
+      "id": "stoic-051",
+      "tone": "stoic",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. Keep your attention on what is in front of you. Tonight, that is one evening."
+    },
+    {
+      "id": "stoic-052",
+      "tone": "stoic",
+      "minDay": 21,
+      "maxDay": 21,
+      "text": "Day 21. Three weeks. What once took effort now takes less. Notice that, and keep going."
+    },
+    {
+      "id": "stoic-053",
+      "tone": "stoic",
+      "minDay": 21,
+      "maxDay": 21,
+      "text": "Day 21. A habit is built by repetition and kept by attention. Keep paying attention tonight."
+    },
+    {
+      "id": "stoic-054",
+      "tone": "stoic",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. The end of a thing is like the start: one day, handled well. Handle this one."
+    },
+    {
+      "id": "stoic-055",
+      "tone": "stoic",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. Don't count the days left. Make this day count, and the rest will follow."
+    },
+    {
+      "id": "stoic-056",
+      "tone": "stoic",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. The last stretch tests patience more than will. Be patient with the hour you are in."
+    },
+    {
+      "id": "stoic-057",
+      "tone": "stoic",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. You have kept your word for {day} days. Keep it once more, quietly, tonight."
+    },
+    {
+      "id": "stoic-058",
+      "tone": "stoic",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. The record is written. What you learned about yourself is yours to keep."
+    },
+    {
+      "id": "stoic-059",
+      "tone": "stoic",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. The bell has rung. Rest, then choose deliberately whether to go again."
+    },
+    {
+      "id": "stoic-060",
+      "tone": "stoic",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. You did what you set out to do, one day at a time. That method still works."
+    },
+    {
+      "id": "coach-061",
+      "tone": "coach",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. Fresh start. Tonight, put your phone on charge outside the bedroom. That's the whole game plan."
+    },
+    {
+      "id": "coach-062",
+      "tone": "coach",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. Tell one friend you're doing this, then check in before bed. Two jobs, both small."
+    },
+    {
+      "id": "coach-063",
+      "tone": "coach",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. Write down your riskiest hour of the day and plan three minutes for it. Start there."
+    },
+    {
+      "id": "coach-064",
+      "tone": "coach",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Phone out of the bedroom tonight. That's the game plan."
+    },
+    {
+      "id": "coach-065",
+      "tone": "coach",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Get outside for ten minutes before dinner. Fresh air beats a long evening on the couch."
+    },
+    {
+      "id": "coach-066",
+      "tone": "coach",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. If the urge hits, tap Go a round before you think about anything else. Then decide."
+    },
+    {
+      "id": "coach-067",
+      "tone": "coach",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Set a bedtime and stick to it. Late nights are where most rounds get hard."
+    },
+    {
+      "id": "coach-068",
+      "tone": "coach",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Make an if-then plan: if you're bored after nine, then you go for a walk."
+    },
+    {
+      "id": "coach-069",
+      "tone": "coach",
+      "minDay": 7,
+      "maxDay": 7,
+      "text": "Day 7. First plate. Text your camp a thumbs-up, then do exactly what you did yesterday."
+    },
+    {
+      "id": "coach-070",
+      "tone": "coach",
+      "minDay": 7,
+      "maxDay": 7,
+      "text": "Day 7. One week down. Look at your log and cut out the one thing that keeps showing up."
+    },
+    {
+      "id": "coach-071",
+      "tone": "coach",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. Do twenty squats right now. Then check in. Short, simple, done."
+    },
+    {
+      "id": "coach-072",
+      "tone": "coach",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. Plan tonight before it starts: what you'll do at nine, at ten, and when the lights go out."
+    },
+    {
+      "id": "coach-073",
+      "tone": "coach",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. Get your phone off the pillow. Charge it across the room and get up to turn off the alarm."
+    },
+    {
+      "id": "coach-074",
+      "tone": "coach",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. Cook something tonight. Busy hands, a full stomach, and an early night."
+    },
+    {
+      "id": "coach-075",
+      "tone": "coach",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. If you're scrolling with no reason, stop, stand up, and go a round instead."
+    },
+    {
+      "id": "coach-076",
+      "tone": "coach",
+      "minDay": 14,
+      "maxDay": 14,
+      "text": "Day 14. Halfway. Check your log, find your worst hour, and have a plan ready before it arrives."
+    },
+    {
+      "id": "coach-077",
+      "tone": "coach",
+      "minDay": 14,
+      "maxDay": 14,
+      "text": "Day 14. Two weeks in. Message one person in your camp and ask how they're holding up."
+    },
+    {
+      "id": "coach-078",
+      "tone": "coach",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. Lights out by eleven. Set an alarm for the time you start winding down."
+    },
+    {
+      "id": "coach-079",
+      "tone": "coach",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. Take a walk without your phone today. Twenty minutes, then back to normal."
+    },
+    {
+      "id": "coach-080",
+      "tone": "coach",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. When it gets loud, don't negotiate. Go a round first and talk to yourself after."
+    },
+    {
+      "id": "coach-081",
+      "tone": "coach",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. Plan something for Saturday night now, so it doesn't plan itself for you."
+    },
+    {
+      "id": "coach-082",
+      "tone": "coach",
+      "minDay": 21,
+      "maxDay": 21,
+      "text": "Day 21. Three plates. Keep the routine exactly as it is. Don't loosen the bedtime now."
+    },
+    {
+      "id": "coach-083",
+      "tone": "coach",
+      "minDay": 21,
+      "maxDay": 21,
+      "text": "Day 21. Write down the two things that helped most. Keep doing both this week."
+    },
+    {
+      "id": "coach-084",
+      "tone": "coach",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. Close to the bell. Same routine tonight: phone out, lights off, check in."
+    },
+    {
+      "id": "coach-085",
+      "tone": "coach",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. If you feel restless, get up and move for five minutes before you do anything else."
+    },
+    {
+      "id": "coach-086",
+      "tone": "coach",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. Keep your hardest hour busy. Book something into it today, even a phone call."
+    },
+    {
+      "id": "coach-087",
+      "tone": "coach",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. Check in early tonight, then put the phone away and leave it there."
+    },
+    {
+      "id": "coach-088",
+      "tone": "coach",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. You went the distance. Write down what worked, then decide whether to go again."
+    },
+    {
+      "id": "coach-089",
+      "tone": "coach",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. Record's on the wall. Keep the bedtime and the phone rule; they earned their place."
+    },
+    {
+      "id": "coach-090",
+      "tone": "coach",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. You're past the bell. Pick one habit from this month and keep it for the next."
+    },
+    {
+      "id": "playful-091",
+      "tone": "playful",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. Clean slate, new clock, zero drama. The only thing on today's list is showing up tonight."
+    },
+    {
+      "id": "playful-092",
+      "tone": "playful",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. The clock's running and it has no opinions. Check in tonight and it stays that way."
+    },
+    {
+      "id": "playful-093",
+      "tone": "playful",
+      "minDay": 1,
+      "maxDay": 1,
+      "text": "Day 1. Every tally wall starts empty. Yours gets its first stroke tonight. Try not to make it a big deal."
+    },
+    {
+      "id": "playful-094",
+      "tone": "playful",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. One more and the tally gets more interesting. Don't stop at the bell."
+    },
+    {
+      "id": "playful-095",
+      "tone": "playful",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Boredom is a terrible sparring partner with great timing. Have a plan for when it shows up."
+    },
+    {
+      "id": "playful-096",
+      "tone": "playful",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Your phone would like to stay up late with you. Tell it you have an early start."
+    },
+    {
+      "id": "playful-097",
+      "tone": "playful",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. The urge keeps showing up uninvited. Give it three minutes in the waiting room and it leaves."
+    },
+    {
+      "id": "playful-098",
+      "tone": "playful",
+      "minDay": 2,
+      "maxDay": 6,
+      "text": "Day {day}. Nothing heroic needed today. Just the usual: check in, sleep, repeat. Thrilling stuff."
+    },
+    {
+      "id": "playful-099",
+      "tone": "playful",
+      "minDay": 7,
+      "maxDay": 7,
+      "text": "Day 7. A whole week, and the wall finally has some brass on it. Try to look unimpressed."
+    },
+    {
+      "id": "playful-100",
+      "tone": "playful",
+      "minDay": 7,
+      "maxDay": 7,
+      "text": "Day 7. Seven strokes and a plate. Your camp will notice. Act like you do this every week."
+    },
+    {
+      "id": "playful-101",
+      "tone": "playful",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. One more and you're in double digits. Don't stop at the bell."
+    },
+    {
+      "id": "playful-102",
+      "tone": "playful",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. The bag isn't going to swing itself. Actually it is, it's in the app. Go breathe with it."
+    },
+    {
+      "id": "playful-103",
+      "tone": "playful",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. Your evening has two settings: plan or autopilot. Autopilot has terrible taste in timing."
+    },
+    {
+      "id": "playful-104",
+      "tone": "playful",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. Double digits suit you. Keep the phone out of the bedroom and keep the streak boring."
+    },
+    {
+      "id": "playful-105",
+      "tone": "playful",
+      "minDay": 8,
+      "maxDay": 13,
+      "text": "Day {day}. You've lasted every round so far. The next one is three minutes, which is shorter than most ads."
+    },
+    {
+      "id": "playful-106",
+      "tone": "playful",
+      "minDay": 14,
+      "maxDay": 14,
+      "text": "Day 14. Halfway. The tally wall is starting to look like someone means business. That someone is you."
+    },
+    {
+      "id": "playful-107",
+      "tone": "playful",
+      "minDay": 14,
+      "maxDay": 14,
+      "text": "Day 14. Two weeks. The clock is unbothered, and frankly, so are you. Keep it that way tonight."
+    },
+    {
+      "id": "playful-108",
+      "tone": "playful",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. The late-night scroll is calling. Let it go to voicemail and go to bed."
+    },
+    {
+      "id": "playful-109",
+      "tone": "playful",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. You and the clock have an understanding now. Don't make it awkward at eleven tonight."
+    },
+    {
+      "id": "playful-110",
+      "tone": "playful",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. The urge is like a loud neighbor. Annoying, temporary, and gone by the time you've made tea."
+    },
+    {
+      "id": "playful-111",
+      "tone": "playful",
+      "minDay": 15,
+      "maxDay": 20,
+      "text": "Day {day}. Past halfway and still checking in. The wall is running out of empty space, in a good way."
+    },
+    {
+      "id": "playful-112",
+      "tone": "playful",
+      "minDay": 21,
+      "maxDay": 21,
+      "text": "Day 21. Three plates on the wall. At this point the routine is basically running itself. Let it drive."
+    },
+    {
+      "id": "playful-113",
+      "tone": "playful",
+      "minDay": 21,
+      "maxDay": 21,
+      "text": "Day 21. Three weeks. If anyone asks what changed, tell them you got very good at going to bed."
+    },
+    {
+      "id": "playful-114",
+      "tone": "playful",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. Close enough to see the bell, far enough to stay sharp. Keep your guard up tonight."
+    },
+    {
+      "id": "playful-115",
+      "tone": "playful",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. The final stretch. The clock doesn't do speeches, so just check in and get some sleep."
+    },
+    {
+      "id": "playful-116",
+      "tone": "playful",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. You've survived every evening so far. This one has the same plot. You know the ending."
+    },
+    {
+      "id": "playful-117",
+      "tone": "playful",
+      "minDay": 22,
+      "maxDay": 29,
+      "text": "Day {day}. The tally wall is nearly full. Leave room for the belt and keep the evening quiet."
+    },
+    {
+      "id": "playful-118",
+      "tone": "playful",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. You went the distance. The wall is full, the belt is up, and the clock is still unbothered."
+    },
+    {
+      "id": "playful-119",
+      "tone": "playful",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. Thirty strokes and a belt. Take a bow, then go to bed at a reasonable hour."
+    },
+    {
+      "id": "playful-120",
+      "tone": "playful",
+      "minDay": 30,
+      "maxDay": 400,
+      "text": "Day {day}. Past the bell and still going. The clock respects that, in its own quiet way."
+    }
+  ]
+}
