@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { loadOgFont } from "@/lib/server/og-fonts";
 
 /**
  * Share card (Part 2.9): "DAY 17", "of 30", the tally and a strip of the LED housing.
@@ -9,10 +8,9 @@ import { join } from "node:path";
  */
 const C = { bg: "#262422", text: "#ECEAE4", text2: "rgba(236,234,228,0.64)", housing: "#0E0E0E", led: "#FF3B1F", ghost: "rgba(255,59,31,0.10)", go: "#39D353", brass: "#C9A24B", ink: "#141414" };
 
-let fonts: Promise<[Buffer, Buffer]> | null = null;
+let fonts: Promise<[ArrayBuffer, ArrayBuffer]> | null = null;
 function loadFonts() {
-  const dir = join(process.cwd(), "src/app/api/og/streak/fonts");
-  fonts ??= Promise.all([readFile(join(dir, "LeagueGothic.woff")), readFile(join(dir, "DSEG7.woff"))]);
+  fonts ??= Promise.all([loadOgFont("LeagueGothic.woff"), loadOgFont("DSEG7.woff")]);
   return fonts;
 }
 

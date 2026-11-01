@@ -4,7 +4,7 @@ WillWar is an 18+ Progressive Web App for the No Nut November season and rolling
 
 ## Stack
 
-Next.js 16 (App Router, Cache Components on, `proxy.ts` instead of middleware), React 19, TypeScript strict, Tailwind CSS v4 with tokens in `src/styles/tokens.css`, Radix primitives, Phosphor icons, motion. Supabase (Postgres, Auth, RLS, Realtime, pg_cron, Edge Functions). Claude API for corner talk and the coach. Razorpay for payments. Cloudflare Workers via `@opennextjs/cloudflare`. Vitest, PGlite (local DB tests), pgTAP (CI), Playwright.
+Next.js 16 (App Router, Cache Components off for Workers, `proxy.ts` instead of middleware), React 19, TypeScript strict, Tailwind CSS v4 with tokens in `src/styles/tokens.css`, Radix primitives, Phosphor icons, motion. Supabase (Postgres, Auth, RLS, Realtime, pg_cron, Edge Functions). Claude API for corner talk and the coach. Razorpay for payments. Cloudflare Workers via `@opennextjs/cloudflare`. Vitest, PGlite (local DB tests), pgTAP (CI), Playwright.
 
 ## Commands
 

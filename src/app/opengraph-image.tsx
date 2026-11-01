@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { loadOgFont } from "@/lib/server/og-fonts";
 
 export const alt = "WillWar presents YOU vs. THE URGE. 30 days.";
 export const size = { width: 1200, height: 630 };
@@ -13,7 +12,7 @@ const INK = "#141414";
 const TAPE = "#D9D4C3";
 
 export default async function Image() {
-  const league = await readFile(join(process.cwd(), "src/app/fonts/LeagueGothic-Latin.woff2")).catch(() => null);
+  const league = await loadOgFont("LeagueGothic.woff").catch(() => null);
   return new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", background: WALL, display: "flex", alignItems: "center", justifyContent: "center" }}>

@@ -18,7 +18,7 @@ With no Supabase values the app runs in **device mode**: the record stays on the
 
 ```bash
 npm run dev           # dev server
-npm run build         # production build (Cache Components on)
+npm run build         # production build
 npm run typecheck     # next typegen + tsc
 npm run lint          # ESLint
 npm test              # Vitest: unit + database (PGlite, no Docker)

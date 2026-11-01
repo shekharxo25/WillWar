@@ -12,7 +12,7 @@
   - payments or the War Chest: `docs/guardrails/war-chest.md`
   - camps and boards: `docs/guardrails/social-integrity.md`
   - PWA, iOS, notifications: `docs/guardrails/pwa-native-feel.md`
-- Cache Components is on. No `Date.now()`, `new Date()` or `Math.random()` during prerender; time-based UI renders after mount (`useNow()` in `src/components/AppProvider.tsx`).
+- Cache Components is off (it hangs page renders on Cloudflare Workers; see `docs/DECISIONS.md`). Keep time-based UI rendering after mount anyway (`useNow()` in `src/components/AppProvider.tsx`) so prerendered HTML never shows a stale clock.
 - The device engine (`src/lib/store/engine.ts`) mirrors the SQL functions. Change both together and keep their tests in step.
 - Run typecheck, lint, tests and a production build before claiming something is done. Say what you ran.
 - Never run the `scripts/*.py` tools mentioned in the engineering skills; they don't exist here.

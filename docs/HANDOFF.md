@@ -28,7 +28,8 @@ npm run dev            # http://localhost:3000
 
 ### Not verified
 
-- [ ] `npm run preview` (OpenNext on workerd) and a real Cloudflare deploy
+- [x] OpenNext build + local workerd (`wrangler dev`): every page, the OG image and the share card return 200; Playwright 6/6 against it
+- [ ] A real Cloudflare deploy (blocked: this environment's network policy denies `api.cloudflare.com`)
 - [ ] Lighthouse scores (target: performance ≥ 90, accessibility ≥ 95, CLS < 0.05)
 - [ ] pgTAP files under real pgTAP (`supabase test db`); they ran through a PGlite shim only
 - [ ] 60fps on a mid-range Android, with a performance trace
@@ -96,7 +97,6 @@ Decisions with reasons are in `docs/DECISIONS.md`. Known gaps:
 
 - **CSP:** a strict per-route allowlist instead of nonces, because nonces would make static pages dynamic. `script-src` still allows `'unsafe-inline'`.
 - **Rate limits** run in memory per Worker isolate, so they only stop bursts. The coach's 20-turns-a-day counter is also in memory. The limits that matter (nudges, shields, money) are enforced in the database.
-- **The OG image and the share card read fonts from disk**, which may fall back to a default font on Workers. Pre-render them, or inline the font bytes.
 - **Offline cloud check-ins** are dated by the server when they sync, so a check-in made offline at 23:50 and synced after midnight counts for the next day.
 - **Device-mode camps** contain labelled demo members. Mute, report and remove only show a toast, and joining another person's code can't work without the cloud.
 - **The View Transitions shared-element expand** from the Go a round button into the round housing isn't wired. The round opens as a normal page change.
